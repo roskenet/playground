@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: helloworlddeployment
+spec:
+  replicas: 3
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: helloworld
+        image: roskenet/helloworld:1.0.0
+        ports:
+        - containerPort: 8080 
