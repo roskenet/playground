@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: helloworlddeployment
 spec:
-  replicas: 3
+  replicas: 1
   template: # create pods using pod definition in this template
     metadata:
       labels:
@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: roskenet/helloworld:1.1.0
+        image: roskenet/helloworld:1.3.0
         ports:
         - name: service
           containerPort: 8080 
