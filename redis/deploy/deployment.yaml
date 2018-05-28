@@ -1,16 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: discoverydeployment
+  name: redisdeployment
 spec:
   replicas: 1
   template: # create pods using pod definition in this template
     metadata:
       labels:
-        app: discovery
+        app: redis
     spec:
       containers:
-      - name: admin
-        image: roskenet/discovery:1.0.0
+      - name: redis
+        image: redis:3
         ports:
-        - containerPort: 8761
+        - name: service
+          containerPort: 6379
