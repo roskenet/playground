@@ -76,7 +76,7 @@
               <name>roskenet/${project.name}:${project.version}</name>
               <alias>helloworld</alias>
               <build>
-                <from>openjdk:10-jre</from>
+                <from>openjdk:10-jre-slim</from>
                 <assembly>
                   <descriptorRef>artifact</descriptorRef>
                 </assembly>
