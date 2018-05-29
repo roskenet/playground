@@ -5,7 +5,7 @@
 
 	<groupId>de.roskenet.cloud</groupId>
 	<artifactId>discovery</artifactId>
-	<version>1.0.0</version>
+	<version>1.4.0</version>
 	<packaging>jar</packaging>
 
 	<name>discovery</name>
@@ -51,12 +51,45 @@
 	</dependencyManagement>
 
 	<build>
-	<finalName>discovery</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+          <plugin>
+        <groupId>io.fabric8</groupId>
+        <artifactId>docker-maven-plugin</artifactId>
+        <version>0.26.0</version>
+        <configuration>
+          <images>
+            <image>
+              <name>roskenet/${project.name}:${project.version}</name>
+              <alias>discovery</alias>
+              <build>
+                <from>openjdk:8-jre-slim</from>
+                <assembly>
+                  <descriptorRef>artifact</descriptorRef>
+                </assembly>
+                <cmd>java -jar maven/${project.name}-${project.version}.jar</cmd>
+              </build>
+              <run>
+                <ports>
+                  <port>8761:8761</port>
+                </ports>
+              </run>
+            </image>
+          </images>
+        </configuration>
+        <executions>
+          <execution>
+            <id>docker:start</id>
+            <phase>install</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 		</plugins>
 	</build>
 
