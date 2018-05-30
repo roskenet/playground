@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: helloworld-svc
+  name: gateway-svc
   labels:
-    run: helloworldservice
+    run: gatewayservice
 spec:
   selector:
-    app: helloworld
+    app: gateway
   ports:
   - port: 8080
     name: service
     protocol: TCP
-    nodePort: 30010
+    nodePort: 30300
   type: NodePort
