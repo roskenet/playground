@@ -9,4 +9,4 @@ zuul:
   routes:
     frontend:
       path: /**
-      url: http://frontend-svc.default.svc.cluster.local:80/
+      url: http://frontend-svc.default.svc.cluster.local:8080/
