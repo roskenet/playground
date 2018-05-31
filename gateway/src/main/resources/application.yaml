@@ -7,6 +7,6 @@ eureka:
 
 zuul:
   routes:
-    frontend:
+    fallback:
       path: /**
-      url: http://frontend-svc.default.svc.cluster.local:8080/
+      service-id: frontend
