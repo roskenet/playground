@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: configury-depl
+spec:
+  replicas: 1
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: configury-app
+    spec:
+      containers:
+      - name: discovery
+        image: roskenet/configury:0.0.1
+        ports:
+        - containerPort: 8080

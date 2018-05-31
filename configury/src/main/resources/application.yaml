@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: configury
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/roskenet/config
+          search-paths:
+          - helloworld
