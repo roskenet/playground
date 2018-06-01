@@ -9,9 +9,9 @@ spec:
         app: postgres
     spec:
       volumes:
-      - name: pg-data
+      - name: data
         persistentVolumeClaim:
-          claimName: pg-claim
+          claimName: postgres-claim
       containers:
       - name: postgres
         image: postgres:10.4
@@ -28,4 +28,4 @@ spec:
           value: /var/lib/postgresql/data/pgdata
         volumeMounts:
         - mountPath: /var/lib/postgresql/data/
-          name: pg-data
+          name: data
