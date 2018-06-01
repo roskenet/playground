@@ -64,7 +64,7 @@
           <images>
             <image>
               <name>roskenet/${project.name}:${project.version}</name>
-              <alias>helloworld</alias>
+              <alias>${project.name}</alias>
               <build>
                 <from>openjdk:10-jre-slim</from>
                 <assembly>
