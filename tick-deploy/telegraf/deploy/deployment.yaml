@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: telegraf-depl
+  name: telegraf
 spec:
   replicas: 1
   template: # create pods using pod definition in this template
@@ -10,8 +10,8 @@ spec:
         app: telegraf
     spec:
       containers:
-      - name: helloworld
-        image: roskenet/telegraf:1.5.3
+      - name: telegraf
+        image: roskenet/telegraf:1.5.3-1
         ports:
         - name: service
           containerPort: 8125

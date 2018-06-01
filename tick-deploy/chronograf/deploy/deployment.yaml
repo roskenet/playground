@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: chronograf-depl
+  name: chronograf
 spec:
   replicas: 1
   template: # create pods using pod definition in this template
@@ -17,6 +17,6 @@ spec:
           containerPort: 8888
         env:
         - name: INFLUXDB_URL
-          value: http://influxdb-svc.default.svc.cluster.local:8086
+          value: http://influxdb.default.svc.cluster.local:8086
         - name: KAPACITOR_URL
-          value: http://kapacitor-svc.default.svc.cluster.local:9092
+          value: http://kapacitor.default.svc.cluster.local:9092

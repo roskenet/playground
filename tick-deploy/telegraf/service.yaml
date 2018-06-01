@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: telegraf
+  labels:
+    run: telegraf
+spec:
+  selector:
+    app: telegraf
+  ports:
+  - port: 8125
+    protocol: UDP

@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: chronograf-svc
+  name: chronograf
   labels:
-    run: chronograf-svc
+    run: chronograf
 spec:
   selector:
     app: chronograf

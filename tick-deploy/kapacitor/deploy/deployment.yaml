@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: kapacitor-depl
+  name: kapacitor
 spec:
   replicas: 1
   template: # create pods using pod definition in this template
@@ -17,6 +17,6 @@ spec:
           containerPort: 9092
         env:
         - name: KAPACITOR_HOSTNAME
-          value: kapacitor-svc.default.svc.cluster.local
+          value: kapacitor.default.svc.cluster.local
         - name: KAPACITOR_INFLUXDB_0_URLS_0
-          value: http://influxdb-svc.default.svc.cluster.local:8086                           
+          value: http://influxdb.default.svc.cluster.local:8086                           
