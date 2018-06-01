@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: gateway-depl
+  name: gateway
 spec:
   replicas: 1
   template: # create pods using pod definition in this template
@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: gateway
-        image: roskenet/gateway:0.0.1
+        image: roskenet/gateway:1.0.0
         ports:
         - name: service
           containerPort: 8080 

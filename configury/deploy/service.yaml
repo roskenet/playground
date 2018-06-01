@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: configury-svc
+  name: configury
   labels:
-    run: configury-svc
+    run: configury
 spec:
   selector:
-    app: configury-app
+    app: configury
   ports:
   - port: 8080
     protocol: TCP

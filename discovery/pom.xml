@@ -5,7 +5,7 @@
 
 	<groupId>de.roskenet.cloud</groupId>
 	<artifactId>discovery</artifactId>
-	<version>1.4.0</version>
+	<version>1.5.0</version>
 	<packaging>jar</packaging>
 
 	<name>discovery</name>
@@ -64,7 +64,7 @@
           <images>
             <image>
               <name>roskenet/${project.name}:${project.version}</name>
-              <alias>discovery</alias>
+              <alias>${project.name}</alias>
               <build>
                 <from>openjdk:8-jre-slim</from>
                 <assembly>

@@ -3,4 +3,4 @@ spring:
     name: helloworld
   cloud:
     config:
-      uri: http://configury-svc.default.svc.cluster.local:8080/
+      uri: http://configury.default.svc.cluster.local:8080/
