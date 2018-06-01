@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    config:
+      uri: http://configury-svc.default.svc.cluster.local:8080/

@@ -9,3 +9,4 @@ spring:
           uri: https://github.com/roskenet/config
           search-paths:
           - helloworld
+          - gateway
