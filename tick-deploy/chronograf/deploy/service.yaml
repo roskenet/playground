@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: chronograf-svc
+  labels:
+    run: chronograf-svc
+spec:
+  selector:
+    app: chronograf
+  ports:
+  - port: 8888
+    protocol: TCP
+    nodePort: 30888
+  type: NodePort
