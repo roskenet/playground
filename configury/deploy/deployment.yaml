@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: configury
-        image: roskenet/configury:1.2.0
+        image: roskenet/configury:1.2.1
         ports:
         - containerPort: 8080

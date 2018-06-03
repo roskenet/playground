@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: discovery
-        image: roskenet/discovery:1.5.0
+        image: roskenet/discovery:1.5.2
         ports:
         - containerPort: 8761
