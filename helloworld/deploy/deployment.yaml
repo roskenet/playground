@@ -10,6 +10,12 @@ spec:
         app: helloworld
     spec:
       containers:
+      - name: telegraf
+        image: roskenet/telegraf:1.5.3-4
+        ports:
+        - name: service
+          containerPort: 8125
+          protocol: UDP
       - name: helloworld
         image: roskenet/helloworld:2.0.4
         ports:

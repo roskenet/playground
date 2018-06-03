@@ -42,9 +42,3 @@ spec:
           value: kapacitor.default.svc.cluster.local
         - name: KAPACITOR_INFLUXDB_0_URLS_0
           value: http://localhost:8086                           
-      - name: telegraf
-        image: roskenet/telegraf:1.5.3-2
-        ports:
-        - name: service
-          containerPort: 8125
-          protocol: UDP
