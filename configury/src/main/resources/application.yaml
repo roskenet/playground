@@ -7,3 +7,4 @@ spring:
           search-paths:
           - helloworld
           - gateway
+          - discovery
