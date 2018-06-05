@@ -3,3 +3,7 @@ Dashboard runs on:
 http://192.168.99.100:30000
 
 
+Setting preferred namespace:
+$ kubectl config set-context $(kubectl config current-context) --namespace=<insert-namespace-name-here>
+# Validate it
+$ kubectl config view | grep namespace:
