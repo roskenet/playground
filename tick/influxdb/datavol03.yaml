@@ -2,7 +2,6 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
   name: datavol03
-  namespace: tick
   labels:
     type: local
 spec:

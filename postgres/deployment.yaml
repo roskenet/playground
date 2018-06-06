@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: postgres-depl
+  name: postgres
 spec:
   template: # create pods using pod definition in this template
     metadata:
@@ -11,7 +11,7 @@ spec:
       volumes:
       - name: data
         persistentVolumeClaim:
-          claimName: postgres-claim
+          claimName: postgres
       containers:
       - name: postgres
         image: postgres:10.4
@@ -22,7 +22,7 @@ spec:
         - name: POSTGRES_PASSWORD
           valueFrom: 
             secretKeyRef:
-              name: postgres-cred
+              name: postgres-admin
               key: password
         - name: PGDATA
           value: /var/lib/postgresql/data/pgdata

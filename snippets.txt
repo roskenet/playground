@@ -7,3 +7,11 @@ Setting preferred namespace:
 $ kubectl config set-context $(kubectl config current-context) --namespace=<insert-namespace-name-here>
 # Validate it
 $ kubectl config view | grep namespace:
+
+
+elk stack:
+
+felix:~/Projects/cloud-playground/elk$ sysctl vm.max_map_count
+vm.max_map_count = 65530
+
+https://www.informatik-aktuell.de/entwicklung/methoden/kubernetes-funktioniert-das-wirklich.html
