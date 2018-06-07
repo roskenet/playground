@@ -1,0 +1,25 @@
+keycloak-client:
+  server-url: http://192.168.99.100:30111/auth
+  realm: Helloworld
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          # This 'Demo:' is the id used inside the redirect-uri-template and must be the same as your realm
+          Helloworld: 
+            client-id: helloworld
+            client-secret: a0fe1b28-02f1-4751-a4eb-a72f78882a47
+            client-name: helloworld
+            provider: keycloak
+            scope: openid, profile, user
+            redirect-uri-template: "{baseUrl}/login/oauth2/code/{registrationId}"
+            authorization-grant-type: authorization_code
+        provider:
+          keycloak:
+            token-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/token
+            authorization-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/auth
+            user-info-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/userinfo
+            jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
+            user-name-attribute: preferred_username

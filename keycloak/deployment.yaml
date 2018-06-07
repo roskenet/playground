@@ -18,7 +18,17 @@ spec:
         - name: KEYCLOAK_PASSWORD
           value: admin
         - name: DB_VENDOR
-          value: H2
+          value: POSTGRES
+        - name: DB_ADDR
+          value: postgres.default.svc.cluster.local
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_USER
+          value: keycloak
+        - name: DB_PASSWORD
+          value: keycloak
+        - name: DB_DATABASE
+          value: keycloak
         ports:
         - name: service
           containerPort: 8080

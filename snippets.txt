@@ -15,3 +15,6 @@ felix:~/Projects/cloud-playground/elk$ sysctl vm.max_map_count
 vm.max_map_count = 65530
 
 https://www.informatik-aktuell.de/entwicklung/methoden/kubernetes-funktioniert-das-wirklich.html
+
+# kubectl autocompletion:
+source <(kubectl completion bash)
