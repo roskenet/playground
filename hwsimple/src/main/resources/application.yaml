@@ -1,6 +1,6 @@
 keycloak-client:
-  server-url: http://192.168.99.100:30111/auth
-  realm: Helloworld
+  server-url: http://keycloak.default.svc.cluster.local:8080/auth
+  realm: Demo
 
 spring:
   security:
@@ -8,7 +8,7 @@ spring:
       client:
         registration:
           # This 'Demo:' is the id used inside the redirect-uri-template and must be the same as your realm
-          Helloworld: 
+          Demo: 
             client-id: helloworld
             client-secret: a0fe1b28-02f1-4751-a4eb-a72f78882a47
             client-name: helloworld
