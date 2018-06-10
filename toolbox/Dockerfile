@@ -22,4 +22,6 @@ RUN echo 'toolbox:toolbox' | chpasswd
 
 RUN usermod -a -G sudo toolbox
 
+RUN apt-get clean
+
 CMD ["/usr/sbin/sshd", "-D"]
