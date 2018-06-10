@@ -2,7 +2,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: keycloak
-  namespace: keycloak
 spec:
   replicas: 1
   template: # create pods using pod definition in this template
@@ -21,7 +20,7 @@ spec:
         - name: DB_VENDOR
           value: postgres
         - name: DB_ADDR
-          value: postgres-svc.default.svc.cluster.local
+          value: postgres-db.default.svc.cluster.local
         - name: DB_PORT
           value: "5432"
         - name: DB_USER
