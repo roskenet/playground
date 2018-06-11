@@ -23,6 +23,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Finchley.BUILD-SNAPSHOT</spring-cloud.version>
+        <docker.from>openjdk:8-jre-slim</docker.from>
+        <docker.repo>roskenet</docker.repo>
 	</properties>
 
 	<dependencies>
@@ -63,10 +65,10 @@
         <configuration>
           <images>
             <image>
-              <name>roskenet/${project.name}:${project.version}</name>
+              <name>${docker.repo}/${project.name}:${project.version}</name>
               <alias>${project.name}</alias>
               <build>
-                <from>openjdk:8-jre-slim</from>
+                <from>${docker.from}</from>
                 <assembly>
                   <descriptorRef>artifact</descriptorRef>
                 </assembly>

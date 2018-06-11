@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: greeter-app
+  labels:
+    run: greeter-app
+spec:
+  selector:
+    app: greeter-app
+  ports:
+  - port: 80
+    name: service
+    protocol: TCP

@@ -18,9 +18,9 @@ spec:
         - name: KEYCLOAK_PASSWORD
           value: admin
         - name: DB_VENDOR
-          value: POSTGRES
+          value: postgres
         - name: DB_ADDR
-          value: postgres.default.svc.cluster.local
+          value: postgres-db.default.svc.cluster.local
         - name: DB_PORT
           value: "5432"
         - name: DB_USER

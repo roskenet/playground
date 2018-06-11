@@ -20,10 +20,7 @@ spec:
         - containerPort: 5432 
         env:
         - name: POSTGRES_PASSWORD
-          valueFrom: 
-            secretKeyRef:
-              name: postgres-admin
-              key: password
+          value: password
         - name: PGDATA
           value: /var/lib/postgresql/data/pgdata
         volumeMounts:
