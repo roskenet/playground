@@ -18,3 +18,11 @@ https://www.informatik-aktuell.de/entwicklung/methoden/kubernetes-funktioniert-d
 
 # kubectl autocompletion:
 source <(kubectl completion bash)
+
+#Gtk3 forced:
+export SWT_GTK3=1
+eclipse
+
+#Gtk2 forced:
+export SWT_GTK3=0
+eclipse
