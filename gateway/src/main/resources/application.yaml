@@ -1,0 +1,7 @@
+zuul:
+  routes:
+    greeter:
+      path: /greeter/**
+      url: http://greeter-app.default/
+      stripPrefix: true
+  sensitive-headers: Authorization,Cookie,Set-Cookie
