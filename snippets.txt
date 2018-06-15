@@ -29,3 +29,9 @@ eclipse
 #Gtk2 forced:
 export SWT_GTK3=0
 eclipse
+
+# Shutdown k8s pods gracefuly
+https://pracucci.com/graceful-shutdown-of-kubernetes-pods.html
+
+# Run local docker repo
+docker run -d -v /home/registry:/var/lib/registry -p 5000:5000 --name registry registry:2
