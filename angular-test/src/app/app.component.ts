@@ -11,10 +11,16 @@ export class AppComponent {
   title = 'app';
   name: string;
 
+  myClickHandler() {
+      this.name = "Dies passiert nach einem Click!";
+  }
+  myDeleteHandler() {
+      this.name = "";
+  }
   constructor(private http: Http) {
-    http.get('http://192.168.99.100:30100/greet/Felix')
-        .map(res => res.json())
-        .subscribe(val => this.name = val['name']);
+//    http.get('http://192.168.99.100:30100/greet/Felix')
+//        .map(res => res.json())
+//        .subscribe(val => this.name = val['name']);
         // .subscribe(val => console.log(val['name']));
   }
 }
