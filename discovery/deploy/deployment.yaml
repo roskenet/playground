@@ -2,15 +2,17 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: discovery
+  namespace: runtime-config
 spec:
   replicas: 1
-  template: # create pods using pod definition in this template
+  template: 
     metadata:
       labels:
         app: discovery
     spec:
       containers:
       - name: discovery
-        image: roskenet/discovery:1.5.2
+        image: roskenet/discovery:1.5.3
         ports:
-        - containerPort: 8761
+        - name: eureka
+          containerPort: 8761

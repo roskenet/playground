@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: discovery
+  namespace: runtime-config
   labels:
     run: dicovery
 spec:
@@ -9,4 +10,5 @@ spec:
     app: discovery
   ports:
   - port: 8761
+    targetPort: eureka
     protocol: TCP
