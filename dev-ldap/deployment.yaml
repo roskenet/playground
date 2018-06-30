@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: ldap
-  namespace: development
+  namespace: management
 spec:
   template: # create pods using pod definition in this template
     metadata:
@@ -12,7 +12,7 @@ spec:
       volumes:
       - name: data
         persistentVolumeClaim:
-          claimName: ldap-data
+          claimName: data
       containers:
       - name: ldap
         image: osixia/openldap:1.2.1
