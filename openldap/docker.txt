@@ -1,0 +1,12 @@
+docker run \
+  -p 389:389 \
+  -p 636:636 \
+  --name openldap \
+  -v $PWD/data/ldap:/var/lib/ldap \
+  -v $PWD/data/slapd.d:/etc/ldap/slapd.d \
+  --detach \
+  --env LDAP_ORGANISATION="roskenet" \
+  --env LDAP_DOMAIN="roskenet.de" \
+  --env LDAP_ADMIN_PASSWORD="password" \
+  osixia/openldap:1.2.1 --copy-service
+
