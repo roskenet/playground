@@ -2,7 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: ldap
-  namespace: development
+  namespace: management
 spec:
   storageClassName: manual
   accessModes:

@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: ldap
-  namespace: development
+  namespace: management
   labels:
     run: ldap
 spec:
@@ -10,4 +10,5 @@ spec:
     app: ldap
   ports:
   - port: 389 
-    protocol: TCP
+    nodePort: 30389
+  type: NodePort
