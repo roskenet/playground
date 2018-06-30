@@ -2,9 +2,10 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: configury
+  namespace: runtime-config
 spec:
   replicas: 1
-  template: # create pods using pod definition in this template
+  template: 
     metadata:
       labels:
         app: configury
@@ -13,4 +14,5 @@ spec:
       - name: configury
         image: roskenet/configury:1.2.1
         ports:
-        - containerPort: 8080
+        - name: service
+          containerPort: 8080

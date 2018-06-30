@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: greeter-app
-        image: roskenet/greeter-app:0.0.1
+        image: roskenet/greeter-app:2.0.0
         ports:
         - name: service
           containerPort: 80 
