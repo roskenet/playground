@@ -3,13 +3,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>de.roskenet.playground</groupId>
-  <artifactId>greeter</artifactId>
-  <version>0.0.2</version>
+  <groupId>de.roskenet.music-store</groupId>
+  <artifactId>catalog</artifactId>
+  <version>0.0.1</version>
   <packaging>jar</packaging>
 
-  <name>greeter</name>
-  <description>Demo project for Cloud</description>
+  <name>catalog</name>
+  <description>Music Store Catalog Service</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -22,6 +22,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>10</java.version>
+
     <docker.repo>roskenet</docker.repo>
   </properties>
 
@@ -58,25 +59,11 @@
                 <assembly>
                   <descriptorRef>artifact</descriptorRef>
                 </assembly>
-                <cmd>java -jar maven/${project.artifactId}-${project.version}.jar</cmd>
+                <cmd>java -jar maven/${project.build.finalName}.jar</cmd>
               </build>
-              <run>
-                <ports>
-                  <port>8080:8080</port>
-                </ports>
-              </run>
             </image>
           </images>
         </configuration>
-        <executions>
-          <execution>
-            <id>docker:start</id>
-            <phase>install</phase>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>

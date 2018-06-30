@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ldap
+  namespace: development
+spec:
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: ldap
+    spec:
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: ldap-data
+      containers:
+      - name: ldap
+        image: osixia/openldap:1.2.1
+        imagePullPolicy: "IfNotPresent"
+        env:
+        - name: LDAP_ORGANISATION
+          value: roskenet
+        - name: LDAP_DOMAIN
+          value: roskenet.de
+        - name: LDAP_ADMIN_PASSWORD
+          value: password
+        ports:
+        - name: ldap
+          containerPort: 389
+        volumeMounts:
+        - mountPath: /var/lib/ldap
+          name: data
