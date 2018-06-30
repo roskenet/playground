@@ -30,3 +30,7 @@ spec:
         volumeMounts:
         - mountPath: /var/lib/ldap
           name: data
+          subPath: ldap
+        - mountPath: /etc/ldap/slapd.d
+          name: data
+          subPath: slapd.d
