@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: postgresql
+  namespace: database
+spec:
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: postgresql
+    spec:
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: postgresql
+      containers:
+      - name: postgres
+        image: postgres:10.4
+        imagePullPolicy: "IfNotPresent"
+        ports:
+        - containerPort: 5432 
+        env:
+        - name: POSTGRES_PASSWORD
+          value: password
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: data
+          subPath: postgresql
