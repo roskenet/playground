@@ -1,6 +1,6 @@
-keycloak-client:
-  server-url: http://192.168.99.100:30111/auth
-  realm: Demo
+#keycloak-client:
+#  server-url: http://192.168.99.100:30111/auth
+#  realm: Demo
 
 spring:
   application:
@@ -21,6 +21,6 @@ security:
   oauth2:
     client:
       clientId: simple-service
-      clientSecret: "82561a8b-e4f7-4658-bcc5-ad6edc5ba5dc"
+      clientSecret: "c6f809ba-5196-44e2-8fad-cd7249abbe90"
     resource:
-      tokenInfoUri: http://192.168.99.100:30111/auth/realms/Demo/protocol/openid-connect/token/introspect
+      tokenInfoUri: http://192.168.99.100:30111/auth/realms/minikube/protocol/openid-connect/token/introspect
