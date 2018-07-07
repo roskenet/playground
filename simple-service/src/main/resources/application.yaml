@@ -1,21 +1,6 @@
-#keycloak-client:
-#  server-url: http://192.168.99.100:30111/auth
-#  realm: Demo
-
 spring:
   application:
     name: simple-service
-    
-#  security:
-#    oauth2:
-#      client:
-#        provider:
-#          keycloak:
-#            token-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/token
-#            authorization-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/auth
-#            user-info-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/userinfo
-#            jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
-#            user-name-attribute: preferred_username
 
 security:
   oauth2:
