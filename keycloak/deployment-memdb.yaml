@@ -1,16 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: keycloak
+  name: keycloak-memdb
+  namespace: keycloak
 spec:
   replicas: 1
   template: # create pods using pod definition in this template
     metadata:
       labels:
-        app: keycloak
+        app: keycloak-memdb
     spec:
       containers:
-      - name: keycloak
+      - name: keycloak-memdb
         image: jboss/keycloak
         env:
         - name: KEYCLOAK_USER
