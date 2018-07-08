@@ -2,10 +2,13 @@ spring:
   application:
     name: simple-service
 
+server:
+  port: 8082
+  
 security:
   oauth2:
     client:
       clientId: simple-service
-      clientSecret: "c6f809ba-5196-44e2-8fad-cd7249abbe90"
+      clientSecret: "3a626d59-1eed-411f-bc5e-e3dc3f625784"
     resource:
-      tokenInfoUri: http://192.168.99.100:30111/auth/realms/minikube/protocol/openid-connect/token/introspect
+      tokenInfoUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token/introspect
