@@ -1,14 +1,8 @@
 spring:
   application:
-    name: simple-service
+    name: "@project.artifactId@"
 
-server:
-  port: 8082
-  
 security:
   oauth2:
     client:
-      clientId: simple-service
-      clientSecret: "3a626d59-1eed-411f-bc5e-e3dc3f625784"
-    resource:
-      tokenInfoUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token/introspect
+      clientId: ${spring.application.name}

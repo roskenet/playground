@@ -25,12 +25,18 @@ services:
       - DB_USER=keycloak
       - DB_PASSWORD=keycloak
 
-#  simple-service:
-#    image: simple-service:0.0.1
-#    ports:
-#      - "8082:8082"
-#
-#  simple-client:
-#    image: simple-client:0.0.1
-#    ports:
-#      - "8081:8081"
+  simple-service:
+    image: simple-service:0.0.1
+    ports:
+      - "8082:8080"
+    environment:
+      - SECURITY_OAUTH2_CLIENT_CLIENTSECRET=3a626d59-1eed-411f-bc5e-e3dc3f625784
+      - SECURITY_OAUTH2_RESOURCE_TOKENINFOURI=http://auth-service:8080/auth/realms/demo/protocol/openid-connect/token/introspect
+
+  simple-client:
+    image: simple-client:0.0.1
+    ports:
+      - "8081:8080"
+    environment:
+      - SECURITY_OAUTH2_CLIENT_CLIENTSECRET=c0dba145-1cce-4775-be90-5909094bb361
+      - SECURITY_OAUTH2_CLIENT_ACCESSTOKENURI=http://auth-service:8080/auth/realms/demo/protocol/openid-connect/token
