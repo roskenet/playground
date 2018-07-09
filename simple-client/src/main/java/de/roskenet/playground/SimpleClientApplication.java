@@ -1,21 +1,20 @@
 package de.roskenet.playground;
 
+import java.util.Arrays;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.oauth2.client.DefaultOAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.token.grant.client.ClientCredentialsResourceDetails;
-import org.springframework.security.oauth2.client.token.grant.password.ResourceOwnerPasswordResourceDetails;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
-import static java.util.Arrays.asList;
 
 @SpringBootApplication
 //@EnableResourceServer
 @EnableOAuth2Client
+//@EnableOAuth2Sso
 public class SimpleClientApplication {
     
     @Bean
@@ -31,7 +30,7 @@ public class SimpleClientApplication {
         DefaultOAuth2ClientContext clientContext = new DefaultOAuth2ClientContext();
 
         OAuth2RestTemplate restTemplate = new OAuth2RestTemplate(resourceDetails, clientContext);
-        restTemplate.setMessageConverters(asList(new MappingJackson2HttpMessageConverter()));
+        restTemplate.setMessageConverters(Arrays.asList(new MappingJackson2HttpMessageConverter()));
         
         return restTemplate;
     }

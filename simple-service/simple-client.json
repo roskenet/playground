@@ -1,17 +1,17 @@
 {
-    "clientId": "simple-service",
+    "clientId": "simple-client",
     "surrogateAuthRequired": false,
     "enabled": true,
     "clientAuthenticatorType": "client-secret",
     "redirectUris": [],
     "webOrigins": [],
     "notBefore": 0,
-    "bearerOnly": true,
+    "bearerOnly": false,
     "consentRequired": false,
     "standardFlowEnabled": false,
     "implicitFlowEnabled": false,
     "directAccessGrantsEnabled": false,
-    "serviceAccountsEnabled": false,
+    "serviceAccountsEnabled": true,
     "publicClient": false,
     "frontchannelLogout": false,
     "protocol": "openid-connect",
@@ -35,15 +35,15 @@
     "nodeReRegistrationTimeout": -1,
     "protocolMappers": [
         {
-            "name": "Client Host",
+            "name": "Client IP Address",
             "protocol": "openid-connect",
             "protocolMapper": "oidc-usersessionmodel-note-mapper",
             "consentRequired": false,
             "config": {
-                "user.session.note": "clientHost",
+                "user.session.note": "clientAddress",
                 "id.token.claim": "true",
                 "access.token.claim": "true",
-                "claim.name": "clientHost",
+                "claim.name": "clientAddress",
                 "jsonType.label": "String"
             }
         },
@@ -61,15 +61,15 @@
             }
         },
         {
-            "name": "Client IP Address",
+            "name": "Client Host",
             "protocol": "openid-connect",
             "protocolMapper": "oidc-usersessionmodel-note-mapper",
             "consentRequired": false,
             "config": {
-                "user.session.note": "clientAddress",
+                "user.session.note": "clientHost",
                 "id.token.claim": "true",
                 "access.token.claim": "true",
-                "claim.name": "clientAddress",
+                "claim.name": "clientHost",
                 "jsonType.label": "String"
             }
         }

@@ -2,14 +2,13 @@ server:
   port: 8081
 
 security:
-  basic:
-    enabled: false
   oauth2:
     client:
       clientId: simple-client
       clientSecret: "c0dba145-1cce-4775-be90-5909094bb361"
       access-token-uri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token
     resource:
+      user-info-uri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/userinfo
       tokenInfoUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token/introspect
       
 
