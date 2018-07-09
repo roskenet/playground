@@ -20,7 +20,7 @@ public class SimpleClientApplication {
     @Bean
     public OAuth2RestTemplate restTemplate() {
         ClientCredentialsResourceDetails resourceDetails = new ClientCredentialsResourceDetails();
-        resourceDetails.setAccessTokenUri("http://localhost:8080/auth/realms/demo/protocol/openid-connect/token");
+        resourceDetails.setAccessTokenUri("http://auth-service:8080/auth/realms/demo/protocol/openid-connect/token");
         resourceDetails.setClientId("simple-client");
         resourceDetails.setClientSecret("c0dba145-1cce-4775-be90-5909094bb361");
         resourceDetails.setGrantType("client_credentials");

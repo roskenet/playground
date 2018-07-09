@@ -1,13 +1,9 @@
 version: "3"
-networks:
-  keycloak:
 
 services:
 
   database:
     image: postgres:10.4
-    networks:
-      - keycloak
     ports:
       - "5432"
     environment:
@@ -17,10 +13,8 @@ services:
     volumes:
       - ./data:/var/lib/postgresql/data
 
-  keycloak:
+  auth-service:
     image: jboss/keycloak:4.1.0.Final
-    networks:
-      - keycloak
     depends_on:
       - database
     ports:
@@ -33,11 +27,14 @@ services:
       - DB_USER=keycloak
       - DB_PASSWORD=keycloak
 
-#  simple-service:
-#    image: simple-service:0.0.1
-#    networks:
-#      - keycloak
-#    depends_on:
-#      - keycloak
-#    ports:
-#      - "8081:8080"
+  simple-service:
+    image: simple-service:0.0.1
+    depends_on:
+      - auth-service
+    ports:
+      - "8082:8082"
+
+  simple-client:
+    image: simple-client:0.0.1
+    ports:
+      - "8081:8081"

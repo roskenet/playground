@@ -28,7 +28,7 @@ public class SimpleClientController {
     @GetMapping("/")
     public String callSimpleService() {
 
-        ResponseEntity<Response> responseEntity = restTemplate.getForEntity("http://localhost:8082/", Response.class);
+        ResponseEntity<Response> responseEntity = restTemplate.getForEntity("http://simple-service:8082/", Response.class);
         
 //        System.out.println(responseEntity.getBody());
         
