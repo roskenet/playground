@@ -11,7 +11,7 @@ public class HelloService {
     @GetMapping("/")
     @PreAuthorize("isAuthenticated()")
     public String hello(Authentication auth) {
-//        String string = auth.toString();
+        String string = auth.toString();
         return "{ \"answer\": \"HALLO\"}";
     }
 }
