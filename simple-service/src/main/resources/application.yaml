@@ -1,11 +1,17 @@
+# Environment variables to be set:
+#
+# AUTHSERVER_CLIENTID: clientId
+# AUTHSERVER_BASEURL: keycloak base url (e.g. https://auth.mydomain.com)
+# AUTHSERVER_CLIENTSECRET: OIDC client_secret for this client
+
 spring:
   application:
-    name: "@project.artifactId@"
+    name: simple-service
 
 security:
   oauth2:
     client:
-      clientId: ${spring.application.name} 
-      clientSecret: "3a626d59-1eed-411f-bc5e-e3dc3f625784"
+      clientId: ${authserver.client-id} 
+      clientSecret: ${authserver.client-secret}
     resource:
-      tokenInfoUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token/introspect
+      tokenInfoUri: ${authserver.base-url}/auth/realms/demo/protocol/openid-connect/token/introspect

@@ -1,13 +1,20 @@
+# Environment variables to be set:
+#
+# AUTHSERVER_CLIENTID: clientId
+# AUTHSERVER_BASEURL: keycloak base url (e.g. https://auth.mydomain.com)
+# AUTHSERVER_CLIENTSECRET: OIDC client_secret for this client
+# SIMPLESERVICE_URL: Go figure! URL of simple-service
+
 spring:
   application:
-    name: "@project.artifactId@"
+    name: simple-client
 
 security:
   oauth2:
     client:
-      client-id: ${spring.application.name}
-      client-secret: "c0dba145-1cce-4775-be90-5909094bb361"
-      access-token-uri: http://auth-service:8080/auth/realms/demo/protocol/openid-connect/token
+      client-id: ${authserver.client-id}
+      client-secret: ${authserver.client-secret}
+      access-token-uri: ${authserver.base-url}/auth/realms/demo/protocol/openid-connect/token
       grant-type: client_credentials
       scope:
         - profile

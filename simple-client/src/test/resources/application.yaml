@@ -12,3 +12,6 @@ security:
       scope:
         - profile
         - offline_access
+
+simple-service:
+  url: http://localhost:8091
