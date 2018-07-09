@@ -4,14 +4,13 @@ server:
 security:
   oauth2:
     client:
-      clientId: simple-client
-      clientSecret: "c0dba145-1cce-4775-be90-5909094bb361"
+      client-id: simple-client
+      client-secret: "c0dba145-1cce-4775-be90-5909094bb361"
       access-token-uri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token
     resource:
       user-info-uri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/userinfo
-      tokenInfoUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token/introspect
+      token-info-uri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token/introspect
       
-
 #spring:  
 #  security:
 #    oauth2:
