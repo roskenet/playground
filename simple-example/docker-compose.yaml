@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+
+  database:
+    image: postgres:10.4
+    ports:
+      - "5432"
+    environment:
+      - POSTGRES_USER=keycloak
+      - POSTGRES_PASSWORD=keycloak
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+  auth-service:
+    image: jboss/keycloak:4.1.0.Final
+    ports:
+      - "8080:8080"
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+      - DB_VENDOR=postgres
+      - DB_ADDR=database
+      - DB_USER=keycloak
+      - DB_PASSWORD=keycloak
+
+  simple-service:
+    image: roskenet/simple-service:1.0.0
+    ports:
+      - "8082:8080"
+    environment:
+      - AUTHSERVER_CLIENTID=simple-service
+      - AUTHSERVER_CLIENTSECRET=bbaeebde-0013-4bc9-bd40-d99888c33965
+      - AUTHSERVER_BASEURL=http://auth-service:8080
+
+  simple-client:
+    image: roskenet/simple-client:1.0.0
+    ports:
+      - "8081:8080"
+    environment:
+      - AUTHSERVER_CLIENTID=simple-client
+      - AUTHSERVER_CLIENTSECRET=8937373f-d016-4cda-b554-8c3d59e8ac5d
+      - AUTHSERVER_BASEURL=http://auth-service:8080
+      - SIMPLESERVICE_URL=http://simple-service:8080
