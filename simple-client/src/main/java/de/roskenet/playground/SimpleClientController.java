@@ -11,8 +11,6 @@ public class SimpleClientController {
 
     @Autowired
     private RestTemplate restTemplate;
-//    private RestTemplate restTemplate;
-    
  
     static class Response {
         private String answer;
@@ -27,14 +25,12 @@ public class SimpleClientController {
         
     }
     
-    // Client needs to be authenticated by default
     @GetMapping("/")
-//    @PreAuthorize("permitAll()")
     public String callSimpleService() {
 
         ResponseEntity<Response> responseEntity = restTemplate.getForEntity("http://localhost:8082/", Response.class);
         
-        System.out.println(responseEntity.getBody());
+//        System.out.println(responseEntity.getBody());
         
         String answer = responseEntity.getBody().answer;
         

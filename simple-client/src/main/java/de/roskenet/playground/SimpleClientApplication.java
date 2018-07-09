@@ -24,7 +24,7 @@ public class SimpleClientApplication {
         resourceDetails.setClientId("simple-client");
         resourceDetails.setClientSecret("c0dba145-1cce-4775-be90-5909094bb361");
         resourceDetails.setGrantType("client_credentials");
-//        resourceDetails.setScope(asList("read", "write"));
+        resourceDetails.setScope(Arrays.asList("profile", "blubber"));
 
         
         DefaultOAuth2ClientContext clientContext = new DefaultOAuth2ClientContext();

@@ -1,7 +1,7 @@
 package de.roskenet.playground;
 
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,9 +9,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloService {
 
     @GetMapping("/")
-    @PreAuthorize("isAuthenticated()")
-    public String hello(Authentication auth) {
-        String string = auth.toString();
-        return "{ \"answer\": \"HALLO\"}";
+    @PreAuthorize("#oauth2.hasScope('profile')")
+    public String hello(OAuth2Authentication auth) {
+        
+       StringBuilder sb = new StringBuilder();
+       String answer = sb.append("\"")
+          .append("You are: ")
+          .append(auth.getPrincipal().toString())
+          .append(" Granted scopes: ")
+          .append(auth.getOAuth2Request().getScope())
+          .append("\"")
+          .toString();
+        
+        return "{ \"answer\": " + answer + "}";
     }
 }
