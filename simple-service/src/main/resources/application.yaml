@@ -11,4 +11,4 @@ security:
       clientId: simple-service
       clientSecret: "3a626d59-1eed-411f-bc5e-e3dc3f625784"
     resource:
-      tokenInfoUri: http://auth-service:8080/auth/realms/demo/protocol/openid-connect/token/introspect
+      tokenInfoUri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token/introspect

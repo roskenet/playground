@@ -25,12 +25,12 @@ services:
       - DB_USER=keycloak
       - DB_PASSWORD=keycloak
 
-  simple-service:
-    image: simple-service:0.0.1
-    ports:
-      - "8082:8082"
-
-  simple-client:
-    image: simple-client:0.0.1
-    ports:
-      - "8081:8081"
+#  simple-service:
+#    image: simple-service:0.0.1
+#    ports:
+#      - "8082:8082"
+#
+#  simple-client:
+#    image: simple-client:0.0.1
+#    ports:
+#      - "8081:8081"
