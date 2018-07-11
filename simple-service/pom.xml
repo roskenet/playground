@@ -67,7 +67,7 @@
               </build>
               <run>
                 <ports>
-                  <port>8082:8082</port>
+                  <port>8082:8080</port>
                 </ports>
               </run>
             </image>
