@@ -6,12 +6,14 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 
+/* You can now even start this class with:
+ * java VarExample.java
+ */
 public class VarExample {
 
     public static void main(String[] args) {
         VarExample.showHttpClientUsage();
     }
-    
     
     public static void showVarUsage() {
         var thisIsAVar = "This is a String";
