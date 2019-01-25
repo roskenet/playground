@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: actinium
+  namespace: actinium
+spec:
+  rules:
+    - host: actinium.minikube
+      http:
+        paths:
+          - backend:
+              serviceName: actinium
+              servicePort: 5000

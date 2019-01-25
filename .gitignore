@@ -2,4 +2,4 @@
 .pydevproject
 peng.egg-info/
 **/__pycache__/
-
+**/*.pyc

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: actinium
+  namespace: actinium
+  labels:
+    application: actinium 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      application: actinium
+  template:
+    metadata:
+      labels:
+        application: actinium
+    spec:
+      containers:
+      - name: actinium 
+        image: "roskenet/actinium:1.0.0"
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        ports:
+        - containerPort: 5000
+
