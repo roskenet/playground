@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloService {
 
-    @GetMapping("/")
+    @GetMapping("/api/contracts")
     @PreAuthorize("#oauth2.hasScope('profile')")
     public String hello(OAuth2Authentication auth) {
         
@@ -21,6 +21,6 @@ public class HelloService {
           .append("\"")
           .toString();
         
-        return "{ \"answer\": " + answer + "}";
+        return "{ \"name\": " + answer + "}";
     }
 }
