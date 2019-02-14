@@ -2,13 +2,12 @@ package de.roskenet;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -33,11 +32,9 @@ public class Contract {
 
 }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     @PreAuthorize("#oauth2.hasScope('profile')")
-    @ResponseBody
-//    @CrossOrigin
-    public List<Contract> getContracts(OAuth2Authentication auth) {
+    public List<Contract> getContracts(@AuthenticationPrincipal Jwt jwt) {
         
 //        System.out.println(auth.getPrincipal()); 
 //        SecurityContextHolder.getContext().getAuthentication().getName();
