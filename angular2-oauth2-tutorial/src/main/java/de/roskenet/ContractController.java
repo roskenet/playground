@@ -34,7 +34,7 @@ public class Contract {
 }
 
     @GetMapping
-    @PreAuthorize("#oauth2.hasScope('profile')")
+//    @PreAuthorize("#oauth2.hasScope('profile')")
     public List<Contract> getContracts(@AuthenticationPrincipal Jwt jwt) {
         
 //        System.out.println(auth.getPrincipal()); 
