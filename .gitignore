@@ -1,5 +1,12 @@
+**/target/
+**/.classpath
+**/.project
+**/.settings/
+
 .project
 .pydevproject
 peng.egg-info/
 **/__pycache__/
 **/*.pyc
+
+
