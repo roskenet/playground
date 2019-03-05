@@ -4,6 +4,7 @@ metadata:
   name: keycloak-database
   labels:
     type: local
+    context: keycloak
 spec:
   storageClassName: manual
   capacity:
@@ -11,4 +12,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/data/keycloak"
+    path: "/data/vol001"

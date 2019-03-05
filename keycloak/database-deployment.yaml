@@ -8,6 +8,7 @@ spec:
     metadata:
       labels:
         app: keycloak-database
+        context: keycloak
     spec:
       volumes:
       - name: database
@@ -15,7 +16,7 @@ spec:
           claimName: database
       containers:
       - name: postgres
-        image: postgres:10.4
+        image: postgres:11
         imagePullPolicy: "IfNotPresent"
         ports:
         - containerPort: 5432 

@@ -9,6 +9,7 @@ spec:
     metadata:
       labels:
         app: keycloak
+        context: keycloak
     spec:
       containers:
       - name: keycloak

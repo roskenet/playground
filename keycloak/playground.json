@@ -1,6 +1,6 @@
 {
-  "id": "Demo-Realm",
-  "realm": "Demo-Realm",
+  "id": "playground",
+  "realm": "playground",
   "notBefore": 0,
   "revokeRefreshToken": false,
   "refreshTokenMaxReuse": 0,
@@ -44,7 +44,7 @@
         "description": "${role_offline-access}",
         "composite": false,
         "clientRole": false,
-        "containerId": "Demo-Realm",
+        "containerId": "playground",
         "attributes": {}
       },
       {
@@ -52,7 +52,7 @@
         "name": "admin",
         "composite": false,
         "clientRole": false,
-        "containerId": "Demo-Realm",
+        "containerId": "playground",
         "attributes": {}
       },
       {
@@ -61,7 +61,7 @@
         "description": "${role_uma_authorization}",
         "composite": false,
         "clientRole": false,
-        "containerId": "Demo-Realm",
+        "containerId": "playground",
         "attributes": {}
       }
     ],
@@ -399,13 +399,13 @@
       "id": "134b9eef-dd4c-4b09-80f7-648560119f50",
       "clientId": "security-admin-console",
       "name": "${client_security-admin-console}",
-      "baseUrl": "/auth/admin/Demo-Realm/console/index.html",
+      "baseUrl": "/auth/admin/playground/console/index.html",
       "surrogateAuthRequired": false,
       "enabled": true,
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "/auth/admin/Demo-Realm/console/*"
+        "/auth/admin/playground/console/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -634,7 +634,7 @@
       "id": "788e630b-77a0-47dc-a74a-a0bab5889e69",
       "clientId": "account",
       "name": "${client_account}",
-      "baseUrl": "/auth/realms/Demo-Realm/account",
+      "baseUrl": "/auth/realms/playground/account",
       "surrogateAuthRequired": false,
       "enabled": true,
       "clientAuthenticatorType": "client-secret",
@@ -644,7 +644,7 @@
         "manage-account"
       ],
       "redirectUris": [
-        "/auth/realms/Demo-Realm/account/*"
+        "/auth/realms/playground/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,

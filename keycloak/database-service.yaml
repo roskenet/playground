@@ -4,7 +4,7 @@ metadata:
   name: database
   namespace: keycloak
   labels:
-    run: keycloak
+    context: keycloak
 spec:
   selector:
     app: keycloak-database
