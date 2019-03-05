@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import de.roskenet.vanadium.contract.domain.Contract;
-import de.slackspace.keycloaktutorial.security.domain.UserDetails;
+import de.roskenet.vanadium.security.domain.UserDetails;
 
 @RestController
 @RequestMapping(value = "/api/contracts")

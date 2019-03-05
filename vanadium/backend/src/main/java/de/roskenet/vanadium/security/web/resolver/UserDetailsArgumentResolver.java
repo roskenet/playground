@@ -9,8 +9,8 @@ import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
+import de.roskenet.vanadium.security.domain.UserDetails;
 
-import de.slackspace.keycloaktutorial.security.domain.UserDetails;
 
 public class UserDetailsArgumentResolver implements HandlerMethodArgumentResolver {
 
