@@ -7,3 +7,7 @@ This repo contains some opinionated solutions *How to do Things*.
 ## Oxygen
 
 The simplest Spring Boot Starter Application.
+
+## Vanadium
+
+A WebApp secured with keycloak.
