@@ -1,4 +1,4 @@
-package de.slackspace.keycloaktutorial.contract.domain;
+package de.roskenet.vanadium.contract.domain;
 
 public class Contract {
 

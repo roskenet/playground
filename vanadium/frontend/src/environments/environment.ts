@@ -5,8 +5,8 @@
 
 export const environment = {
   production: false,
-  KEYCLOAK_URL: 'http://192.168.99.100:30111/auth',
-  KEYCLOAK_REALM: 'vanadium',
+  KEYCLOAK_URL: 'http://playground:30111/auth',
+  KEYCLOAK_REALM: 'playground',
   KEYCLOAK_CLIENTID: 'vanadium-frontend',
   BACKEND_URL: 'http://localhost:8000/api'
 };

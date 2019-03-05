@@ -1,4 +1,4 @@
-package de.slackspace.keycloaktutorial.security.web.resolver;
+package de.roskenet.vanadium.security.web.resolver;
 
 import org.keycloak.KeycloakPrincipal;
 import org.keycloak.adapters.RefreshableKeycloakSecurityContext;

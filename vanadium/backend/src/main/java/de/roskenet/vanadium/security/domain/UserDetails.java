@@ -1,4 +1,4 @@
-package de.slackspace.keycloaktutorial.security.domain;
+package de.roskenet.vanadium.security.domain;
 
 import java.util.Set;
 

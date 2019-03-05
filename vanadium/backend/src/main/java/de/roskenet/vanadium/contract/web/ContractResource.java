@@ -1,14 +1,12 @@
-package de.slackspace.keycloaktutorial.contract.web;
+package de.roskenet.vanadium.contract.web;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import de.slackspace.keycloaktutorial.contract.domain.Contract;
+import de.roskenet.vanadium.contract.domain.Contract;
 import de.slackspace.keycloaktutorial.security.domain.UserDetails;
 
 @RestController
