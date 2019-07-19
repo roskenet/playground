@@ -48,7 +48,7 @@
                             <name>${docker.repo}/${project.artifactId}:${project.version}</name>
                             <alias>${project.name}</alias>
                             <build>
-                                <from>openjdk:11-jre-slim</from>
+                                <from>openjdk:12</from>
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
                                 </assembly>
