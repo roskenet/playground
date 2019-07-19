@@ -1,13 +1,5 @@
-# Felix' Programming Playground
+# Felix' Code Battlefield
 
-This repo contains some opinionated solutions *How to do Things*.
+This is how I do things.
 
-## Starting minikube
-
-## Oxygen
-
-The simplest Spring Boot Starter Application.
-
-## Vanadium
-
-A WebApp secured with keycloak.
+See the documentation in site.
