@@ -1,4 +1,4 @@
 # Add the host entry
 # /etc/hosts
-$(minikube -p playground ip) oxygen.playground
+cp /etc/hosts /etc/hosts.bck && echo "$(minikube -p playground ip) oxygen.playground" >> /etc/hosts
 
