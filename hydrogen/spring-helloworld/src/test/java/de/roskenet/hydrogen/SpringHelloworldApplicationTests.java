@@ -1,4 +1,4 @@
-package de.roskenet.helloworld;
+package de.roskenet.hydrogen;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
