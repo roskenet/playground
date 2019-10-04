@@ -9,4 +9,6 @@ peng.egg-info/
 __pycache__/
 *.pyc
 
-node_modules
+node_modules/
+
+.metadata/
