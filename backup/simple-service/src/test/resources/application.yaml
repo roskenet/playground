@@ -1,4 +1,0 @@
-authserver:
-  base-url: http://localhost:8080
-  client-id: simple-service
-  client-secret: "3a626d59-1eed-411f-bc5e-e3dc3f625784"
