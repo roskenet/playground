@@ -1,0 +1,31 @@
+#zuul.routes.keycloak.path=/keycloak/**
+#zuul.routes.keycloak.url=http://192.168.99.100:30111/
+#zuul.routes.auth.path=/auth/**
+#zuul.routes.auth.url=http://192.168.99.100:30111/auth/
+
+server:
+  port: 8080
+
+spring:
+  jmx:
+    enabled: false
+  cloud:
+    gateway:
+      routes:
+      - id: keycloak_main
+        uri: http://192.168.99.100:30111/
+        predicates:
+        - Host=keycloak:8080
+#      - id: keycloak_auth
+#        uri: http://192.168.99.100:30111/auth
+#        predicates:
+#        - Host=keycloak.minikube:8080/auth
+        
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
+#      - id: host_route
+#        uri: http://baeldung.com
+#        predicates:
+#        - Host=**.baeldung.com

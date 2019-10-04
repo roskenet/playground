@@ -1,11 +1,5 @@
-# Felix' Programming Playground
+# Felix' Code Battlefield
 
-`Java`, `Python`, `Spring Boot`, `Kubernetes`
+This is how I do things.
 
-This repo contains some opinionated solutions *How to do Things*.
-
-## Starting minikube
-
-## actinium
-
-A simple "Hello World!" flask service running on minikube.
+See the documentation in site.

@@ -1,9 +1,9 @@
 # Example of how a local configuration would look like
 # when using keycloak on localhost:8080
 authserver:
-  base-url: http://localhost:8080
-  client-id: simple-service
-  client-secret: "3a626d59-1eed-411f-bc5e-e3dc3f625784"
+  base-url: http://192.168.99.100:30111/
+  client-id: tutorial-backend
+  client-secret: "e41b649e-54d0-43b4-b01a-4df56247220d"
 
 server:
   port: 8091

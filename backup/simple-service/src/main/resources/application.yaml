@@ -3,7 +3,15 @@
 # AUTHSERVER_CLIENTID: clientId
 # AUTHSERVER_BASEURL: keycloak base url (e.g. https://auth.mydomain.com)
 # AUTHSERVER_CLIENTSECRET: OIDC client_secret for this client
+authserver:
+  base-url: http://192.168.99.100:30111/
+  client-id: tutorial-backend
+  client-secret: "e41b649e-54d0-43b4-b01a-4df56247220d"
 
+server:
+  port: 8000
+#  port: 8091
+  
 spring:
   application:
     name: simple-service
@@ -14,4 +22,4 @@ security:
       clientId: ${authserver.client-id} 
       clientSecret: ${authserver.client-secret}
     resource:
-      tokenInfoUri: ${authserver.base-url}/auth/realms/demo/protocol/openid-connect/token/introspect
+      tokenInfoUri: ${authserver.base-url}/auth/realms/Demo-Realm/protocol/openid-connect/token/introspect
