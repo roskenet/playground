@@ -1,0 +1,2 @@
+aws kms encrypt --key-id arn:aws:kms:eu-central-1:417264997059:key/f345fbbf-78a2-4609-8042-adc76b696d57 --plaintext "Hallo Welt!"
+
