@@ -57,3 +57,7 @@ build/
 .vscode/
 
 .metadata/
+.classpath
+.project
+.settings/
+target/
