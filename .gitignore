@@ -59,5 +59,6 @@ build/
 .metadata/
 .classpath
 .project
+.pydevproject
 .settings/
 target/
