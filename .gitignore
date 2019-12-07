@@ -68,3 +68,4 @@ bin/
 .idea/
 
 site/
+.vscode/
