@@ -63,9 +63,10 @@ build/
 .settings/
 target/
 
+site/
+cache/
 bin/
 *.iml
 .idea/
 
-site/
 .vscode/
