@@ -71,3 +71,5 @@ bin/
 
 .vscode/
 .attach_pid*
+*.swp
+stale_outputs_checked
