@@ -75,3 +75,4 @@ bin/
 *.swp
 .gradle/
 stale_outputs_checked
+.cproject
