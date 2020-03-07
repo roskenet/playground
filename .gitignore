@@ -1,4 +1,5 @@
 .idea/
 *.iml
 target/
-src/main/
+java-kata/src/main/
+kotlin-kata/src/main/
