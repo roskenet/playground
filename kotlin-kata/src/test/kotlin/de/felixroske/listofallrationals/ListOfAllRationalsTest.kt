@@ -4,6 +4,7 @@ import kotlin.test.assertEquals
 import org.junit.Test
 
 class TestKata {
+/*
     private val a = allRationals().asSequence().take(100001).toList()
 
     @Test
@@ -21,4 +22,5 @@ class TestKata {
         assertEquals(Pair(205, 162), a[10000])
         assertEquals(Pair(713, 586), a[100000])
     }
+*/
 }

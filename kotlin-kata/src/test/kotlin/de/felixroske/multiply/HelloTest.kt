@@ -4,6 +4,7 @@ import junit.framework.Assert.assertEquals
 import org.junit.Test
 
 internal class Multiplication_Test {
+/*
     @Test
     @Throws(Exception::class)
     fun test_Associativity_Of_Multiplication() {
@@ -20,5 +21,6 @@ internal class Multiplication_Test {
                 1E-14)
         }
     }
+*/
 }
 
