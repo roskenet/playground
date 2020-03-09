@@ -9,7 +9,9 @@ import kotlin.test.assertEquals
 The infamous 'RomanNumberKata'
 
 Your task is to write a function that returns the roman number representing
-an arbitrary integer in the range of 1 - 3000.
+an arbitrary integer in the range of 1 - 3999.
+
+See https://en.wikipedia.org/wiki/Roman_numerals
 */
 
 class TestKata {
