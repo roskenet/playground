@@ -15,11 +15,12 @@ See https://en.wikipedia.org/wiki/Roman_numerals
 */
 
 class TestKata {
+/*
     @Test
     fun testSimpleThings() {
         assertEquals("IV", toRomanString(4))
         assertEquals("CLVIII", toRomanString(158))
         assertEquals("MMXX", toRomanString(2020))
     }
-
+*/
 }
