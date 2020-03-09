@@ -1,5 +1,6 @@
 .idea/
 *.iml
+stale_outputs_checked
 target/
 java-kata/src/main/
 kotlin-kata/src/main/
