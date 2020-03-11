@@ -29,11 +29,6 @@ Beware: r must be without duplicates.
 Don't mutate the inputs.
 */
 
-fun inArray(array1: Array<String>, array2: Array<String>): Array<String> {
-    //...
-    return arrayOf("a", "b", "c")
-}
-
 class TestExample {
     @Test
     fun testFixed() {
