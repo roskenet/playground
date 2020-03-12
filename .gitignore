@@ -76,3 +76,8 @@ bin/
 .gradle/
 stale_outputs_checked
 .cproject
+*.o
+*.d
+*.log
+*.aux
+*.pdf
