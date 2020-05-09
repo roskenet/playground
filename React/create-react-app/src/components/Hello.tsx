@@ -22,7 +22,7 @@ export default class Hello extends React.Component {
         .catch(console.log)
 
 
-        console.log('DoSomething')
+        // console.log('DoSomething')
     };
 
     render() {

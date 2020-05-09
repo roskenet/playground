@@ -5,6 +5,7 @@ import org.springframework.boot.runApplication
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
+import java.net.http.HttpRequest
 
 @SpringBootApplication
 class NonesenseBackendApplication
@@ -16,7 +17,8 @@ class AnswerController {
 	@CrossOrigin(origins = ["*"])
 	@GetMapping("/answer")
 	fun getAnswer(): Answer {
-		return Answer("Love and Rock'n'Roll", 42);
+
+		return Answer("Love, Peace and Rock'n'Roll", 42);
 	}
 }
 
