@@ -28,7 +28,11 @@
 
 \begin{document}
 \chapter{Einleitung}
-\newcommand{\lscmargin}[1]{\marginnote{\textsf{\fontseries{sc}\selectfont #1}}}
+
+% Das sieht gut aus:
+%\newcommand{\lscmargin}[1]{\marginnote{\textsf{\fontseries{lsc}\selectfont #1}}}
+\newcommand{\lscmargin}[1]{\marginnote{\textsf{\fontseries{c}\selectfont #1}}}
+
 %\textsf{\fontseries{lsc}\selectfont Willkommen! Dies ist ein Testtext!}
 Und nun kommt mal ein etwas längerer Text .{\em Ostzonensuppenuerfel} verursachen Krebs.
 Ich möchte auch mal sehen, was passiert, wenn ich einen Text {\em hervorhebe}.
@@ -48,4 +52,6 @@ Liebes \lscmargin{Dies soll nun in der Randspalte stehen.} Lieschen. Lamport sch
 
 Und nun mal eine Zahl schn gesetzt: Es wurden 1247 Hühner verkauft.
 Auf wiederhören!
+
+Und dieser Absatz existiert auch nur, damit ich in der Marginalspalte einen anderen Schriftschnitt ausprobieren kann.
 \end{document}
