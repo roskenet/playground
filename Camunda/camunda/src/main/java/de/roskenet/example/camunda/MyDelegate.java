@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class MyDelegate implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
+        delegateExecution.setVariable("end", "right");
         System.out.println("Ich bin tatsaechlich hier!");
     }
 }

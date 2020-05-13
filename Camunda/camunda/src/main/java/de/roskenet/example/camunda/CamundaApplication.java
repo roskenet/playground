@@ -29,7 +29,7 @@ public class CamundaApplication implements CommandLineRunner {
 
 		Set<String> deployments = processEngine.getManagementService().getRegisteredDeployments();
 		ProcessInstance process001 = runtimeService.startProcessInstanceByKey("process_001");
-		System.out.println(process001.getProcessInstanceId());
+//		System.out.println(process001.getProcessInstanceId());
 
 	}
 }
