@@ -19,8 +19,9 @@ public class QuerydslApplication implements CommandLineRunner {
 
     @Bean
     public DataSource dataSource() throws IOException {
-        PGSimpleDataSource dataSource = (PGSimpleDataSource) EmbeddedPostgres.start().getPostgresDatabase();
-        return dataSource;
+//        PGSimpleDataSource dataSource = (PGSimpleDataSource)
+          return EmbeddedPostgres.start().getPostgresDatabase();
+//        return dataSource;
     }
 
     public static void main(String[] args) {
@@ -30,8 +31,6 @@ public class QuerydslApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("Hello World!");
-
         artistService.getFiltered().stream().map(Artist::getName).forEach(System.out::println);
-
     }
 }
