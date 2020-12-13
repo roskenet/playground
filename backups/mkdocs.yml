@@ -18,3 +18,17 @@ markdown_extensions:
   - footnotes
   - meta
   - attr_list
+
+nav:
+  - 'index.md'
+  - 'about.md'
+
+extra:
+  social:
+    - type: "github"
+      link: "https://github.com/roskenet"
+    - type: "twitter"
+      link: "https://twitter.com/felixroske"
+    - type: "facebook"
+      link: "https://www.facebook.com/felix.roske"
+
