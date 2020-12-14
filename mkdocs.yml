@@ -8,8 +8,8 @@ theme:
   palette:
     primary: "teal"
     accent: "teal"
-  feature:
-    tabs: true
+  features:
+    - navigation.tabs
 
 markdown_extensions:
   - admonition
