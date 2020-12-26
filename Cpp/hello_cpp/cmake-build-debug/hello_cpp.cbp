@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/felix/Workspaces/Playground/Cpp/hello_cpp/main.cpp">
+		<Unit filename="/home/felix/Workspaces/Playground/Cpp/hello_cpp/src/main.cpp">
 			<Option target="hello_cpp"/>
 		</Unit>
 		<Unit filename="/home/felix/Workspaces/Playground/Cpp/hello_cpp/CMakeLists.txt">

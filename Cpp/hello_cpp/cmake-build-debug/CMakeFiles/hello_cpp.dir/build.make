@@ -77,27 +77,27 @@ include CMakeFiles/hello_cpp.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/hello_cpp.dir/flags.make
 
-CMakeFiles/hello_cpp.dir/main.cpp.o: CMakeFiles/hello_cpp.dir/flags.make
-CMakeFiles/hello_cpp.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/felix/Workspaces/Playground/Cpp/hello_cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hello_cpp.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hello_cpp.dir/main.cpp.o -c /home/felix/Workspaces/Playground/Cpp/hello_cpp/main.cpp
+CMakeFiles/hello_cpp.dir/src/main.cpp.o: CMakeFiles/hello_cpp.dir/flags.make
+CMakeFiles/hello_cpp.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/felix/Workspaces/Playground/Cpp/hello_cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hello_cpp.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hello_cpp.dir/src/main.cpp.o -c /home/felix/Workspaces/Playground/Cpp/hello_cpp/src/main.cpp
 
-CMakeFiles/hello_cpp.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hello_cpp.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/felix/Workspaces/Playground/Cpp/hello_cpp/main.cpp > CMakeFiles/hello_cpp.dir/main.cpp.i
+CMakeFiles/hello_cpp.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hello_cpp.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/felix/Workspaces/Playground/Cpp/hello_cpp/src/main.cpp > CMakeFiles/hello_cpp.dir/src/main.cpp.i
 
-CMakeFiles/hello_cpp.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hello_cpp.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/felix/Workspaces/Playground/Cpp/hello_cpp/main.cpp -o CMakeFiles/hello_cpp.dir/main.cpp.s
+CMakeFiles/hello_cpp.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hello_cpp.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/felix/Workspaces/Playground/Cpp/hello_cpp/src/main.cpp -o CMakeFiles/hello_cpp.dir/src/main.cpp.s
 
 # Object files for target hello_cpp
 hello_cpp_OBJECTS = \
-"CMakeFiles/hello_cpp.dir/main.cpp.o"
+"CMakeFiles/hello_cpp.dir/src/main.cpp.o"
 
 # External object files for target hello_cpp
 hello_cpp_EXTERNAL_OBJECTS =
 
-hello_cpp: CMakeFiles/hello_cpp.dir/main.cpp.o
+hello_cpp: CMakeFiles/hello_cpp.dir/src/main.cpp.o
 hello_cpp: CMakeFiles/hello_cpp.dir/build.make
 hello_cpp: CMakeFiles/hello_cpp.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/felix/Workspaces/Playground/Cpp/hello_cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable hello_cpp"

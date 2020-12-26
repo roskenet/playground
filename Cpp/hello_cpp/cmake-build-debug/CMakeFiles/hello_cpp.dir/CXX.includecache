@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/felix/Workspaces/Playground/Cpp/hello_cpp/main.cpp
+/home/felix/Workspaces/Playground/Cpp/hello_cpp/src/main.cpp
 iostream
 -
 
