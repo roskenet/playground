@@ -24,6 +24,8 @@ int redValue;
 int greenValue;
 int blueValue;
 
+auto shine = true;
+
 // the loop function runs over and over again forever
 void loop() {
 #define delayTime 10 // fading time between colors
