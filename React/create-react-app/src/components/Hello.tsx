@@ -14,14 +14,12 @@ export default class Hello extends React.Component {
     };
 
     onDoSomething = (e: any) => {
-        fetch('http://localhost:8080/answer')
+        fetch('http://localhost:8080/hello/something')
         .then(res => res.json())
         .then((data) => {
-            this.setState({response: data.theAnswer})
+            this.setState({response: data.respText})
         })
         .catch(console.log)
-
-
         // console.log('DoSomething')
     };
 
