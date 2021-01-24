@@ -1,4 +1,4 @@
-package de.roskenet;
+package de.roskenet.challenges;
 
 public class Aufgabe1b {
 

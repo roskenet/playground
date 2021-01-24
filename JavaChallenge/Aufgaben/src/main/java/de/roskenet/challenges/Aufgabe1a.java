@@ -1,4 +1,4 @@
-package de.roskenet;
+package de.roskenet.challenges;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

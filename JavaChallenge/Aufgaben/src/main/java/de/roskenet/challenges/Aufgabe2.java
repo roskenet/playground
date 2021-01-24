@@ -1,4 +1,4 @@
-package de.roskenet;
+package de.roskenet.challenges;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 public class Aufgabe2 {
 
     static String numberAsText(final int number) {
-
         return accumulate(number, "").trim();
     }
 
@@ -54,5 +53,6 @@ class Aufgabe2Test {
     void testNumberAsText() throws Exception {
         assertThat(Aufgabe2.numberAsText(210), is("TWO ONE ZERO"));
     }
+
 }
 
