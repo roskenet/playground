@@ -3,12 +3,10 @@ package de.roskenet.christmastree;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class StringChristmasTreeNurseryTest
-{
+public class StringChristmasTreeNurseryTest {
 
     @Test
     void testTreeWithHeight4() {

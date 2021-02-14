@@ -4,18 +4,18 @@ public class StringChristmasTreeNursery implements ChristmasTreeNursery {
 
     @Override
     public String tree(int height) {
-        if(height < 4) {
+        if (height < 4) {
             throw new IllegalArgumentException(String.format("Height %d is too small."));
         }
 
         StringBuilder tree = new StringBuilder();
 
-        for (int x = 1; x <= height-1; x++) {
-            tree.append(drawTreeLine(height-1, x)).append("\n");
+        for (int x = 1; x <= height - 1; x++) {
+            tree.append(drawTreeLine(height - 1, x)).append("\n");
         }
 
         // Add the trunk:
-        tree.append(drawTreeLine(height-1,2));
+        tree.append(drawTreeLine(height - 1, 2));
         return tree.toString();
     }
 
