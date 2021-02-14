@@ -18,7 +18,7 @@ public class TreeCommand {
         this.nursery = nursery;
     }
 
-    @ShellMethod("Translate text from one language to another.")
+    @ShellMethod("Harvest a tree with the specified height")
     public String tree(int height) {
         return nursery.tree(height);
     }
