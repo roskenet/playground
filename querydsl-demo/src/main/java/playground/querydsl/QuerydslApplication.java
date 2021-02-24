@@ -19,9 +19,7 @@ public class QuerydslApplication implements CommandLineRunner {
 
     @Bean
     public DataSource dataSource() throws IOException {
-//        PGSimpleDataSource dataSource = (PGSimpleDataSource)
           return EmbeddedPostgres.start().getPostgresDatabase();
-//        return dataSource;
     }
 
     public static void main(String[] args) {
