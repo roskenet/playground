@@ -25,5 +25,7 @@ fun main() {
     val functionTypes = FunctionTypes()
 
     functionTypes.doSomethingElse()
+
+    functionTypes.action();
 }
 
