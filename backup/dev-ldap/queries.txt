@@ -1,4 +1,0 @@
-ldapsearch -x -H ldap://localhost \
--b dc=roskenet,dc=de \
--D "cn=admin,dc=roskenet,dc=de" \
--w password 
