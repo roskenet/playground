@@ -4,6 +4,8 @@ target/
 .project
 .settings/
 
+.idea/
+
 .project
 .pydevproject
 peng.egg-info/
