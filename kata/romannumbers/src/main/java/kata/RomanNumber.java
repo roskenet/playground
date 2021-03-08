@@ -1,7 +1,15 @@
 package kata;
 
 public class RomanNumber {
-    public static int fromRomanNumber(String number, int accu) {
+
+    private RomanNumber() {
+    }
+
+    public static int fromRomanNumber(String number) {
+        return fromRomanNumber(number, 0);
+    }
+
+    private static int fromRomanNumber(String number, int accu) {
         if (number.length() == 0)
                 return accu;
         if (number.startsWith("CM"))
