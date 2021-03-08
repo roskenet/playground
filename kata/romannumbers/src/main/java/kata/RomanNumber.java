@@ -1,8 +1,5 @@
 package kata;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class RomanNumber {
     public static int fromRomanNumber(String number, int accu) {
         if (number.length() == 0)
@@ -33,7 +30,6 @@ public class RomanNumber {
             return fromRomanNumber(number.substring(1, number.length()), accu += 5);
         if (number.startsWith("I"))
             return fromRomanNumber(number.substring(1, number.length()), accu += 1);
-        throw new IllegalArgumentException("Strange input: " + number);
+        throw new IllegalArgumentException("Illegal input: " + number);
     }
-
 }
