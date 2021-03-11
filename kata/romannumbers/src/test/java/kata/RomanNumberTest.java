@@ -1,6 +1,7 @@
 package kata;
 
 import static kata.RomanNumber.fromRomanNumber;
+import static kata.RomanNumber.toRomanNumber;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -28,4 +29,21 @@ class RomanNumberTest {
     void testIllegalArgument() {
         assertThrows(IllegalArgumentException.class, () -> fromRomanNumber("A"));
     }
+
+    @ParameterizedTest
+    @CsvSource({"1000,M",
+            "2000,MM",
+            "444,CDXLIV",
+            "1971,MCMLXXI",
+            "2021,MMXXI",
+            "521,DXXI",
+            "100,C",
+            "3,III",
+            "109,CIX",
+            "94,XCIV"
+            })
+    void testToRomanNumber(int input, String expected) {
+        assertThat(toRomanNumber(input, ""), is(expected));
+    }
+
 }
