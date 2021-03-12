@@ -43,7 +43,7 @@ class RomanNumberTest {
             "94,XCIV"
             })
     void testToRomanNumber(int input, String expected) {
-        assertThat(toRomanNumber(input, ""), is(expected));
+        assertThat(toRomanNumber(input), is(expected));
     }
 
 }

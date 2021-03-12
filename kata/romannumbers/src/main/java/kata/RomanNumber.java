@@ -5,35 +5,35 @@ public class RomanNumber {
     private RomanNumber() {
     }
 
-    public static String toRomanNumber(int value, String accu) {
+    public static String toRomanNumber(int value) {
         if (value == 0)
-            return accu;
+            return "";
         if (value - 1000 >= 0)
-            return toRomanNumber(value - 1000, accu + "M");
+            return "M" + toRomanNumber(value - 1000);
         if (value - 900 >= 0)
-            return toRomanNumber(value - 900, accu + "CM");
+            return "CM" + toRomanNumber(value - 900);
         if (value - 500 >= 0)
-            return toRomanNumber(value - 500, accu + "D");
+            return "D" + toRomanNumber(value - 500);
         if (value - 400 >= 0)
-            return toRomanNumber(value - 400, accu + "CD");
+            return "CD" + toRomanNumber(value - 400);
         if (value - 100 >= 0)
-            return toRomanNumber(value - 100, accu + "C");
+            return "C" + toRomanNumber(value - 100);
         if (value - 90 >= 0)
-            return toRomanNumber(value - 90, accu + "XC");
+            return "XC" + toRomanNumber(value - 90);
         if (value - 50 >= 0)
-            return toRomanNumber(value - 50, accu + "L");
+            return "L" + toRomanNumber(value - 50);
         if (value - 40 >= 0)
-            return toRomanNumber(value - 40, accu + "XL");
+            return "XL" + toRomanNumber(value - 40);
         if (value - 10 >= 0)
-            return toRomanNumber(value - 10, accu + "X");
+            return "X" + toRomanNumber(value - 10);
         if (value - 9 >= 0)
-            return toRomanNumber(value - 9, accu + "IX");
+            return "IX" + toRomanNumber(value - 9);
         if (value - 5 >= 0)
-            return toRomanNumber(value - 5, accu + "V");
+            return "V" + toRomanNumber(value - 5);
         if (value - 4 >= 0)
-            return toRomanNumber(value - 4, accu + "IV");
+            return "IV" + toRomanNumber(value - 4);
         if (value - 1 >= 0)
-            return toRomanNumber(value - 1, accu + "I");
+            return "I" + toRomanNumber(value - 1);
         return "";
     }
 
