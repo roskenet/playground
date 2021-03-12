@@ -6,38 +6,34 @@ public class RomanNumber {
     }
 
     public static int fromRomanNumber(String number) {
-        return fromRomanNumber(number, 0);
-    }
-
-    private static int fromRomanNumber(String number, int accu) {
         if (number.length() == 0)
-                return accu;
+                return 0;
         if (number.startsWith("CM"))
-            return fromRomanNumber(number.substring(2), accu + 900);
+            return 900 + fromRomanNumber(number.substring(2));
         if (number.startsWith("M"))
-           return fromRomanNumber(number.substring(1), accu + 1000);
+           return 1000 + fromRomanNumber(number.substring(1));
         if (number.startsWith("CD"))
-            return fromRomanNumber(number.substring(2), accu + 400);
+            return 400 + fromRomanNumber(number.substring(2));
         if (number.startsWith("D"))
-            return fromRomanNumber(number.substring(1), accu + 500);
+            return 500 + fromRomanNumber(number.substring(1));
         if (number.startsWith("XC"))
-            return fromRomanNumber(number.substring(2), accu + 90);
+            return 90 + fromRomanNumber(number.substring(2));
         if (number.startsWith("C"))
-            return fromRomanNumber(number.substring(1), accu + 100);
+            return 100 + fromRomanNumber(number.substring(1));
         if (number.startsWith("XL"))
-            return fromRomanNumber(number.substring(2), accu + 40);
+            return 40 + fromRomanNumber(number.substring(2));
         if (number.startsWith("L"))
-            return fromRomanNumber(number.substring(1), accu + 50);
+            return 50 + fromRomanNumber(number.substring(1));
         if (number.startsWith("IX"))
-            return fromRomanNumber(number.substring(2), accu + 9);
+            return 9 + fromRomanNumber(number.substring(2));
         if (number.startsWith("X"))
-            return fromRomanNumber(number.substring(1), accu + 10);
+            return 10 + fromRomanNumber(number.substring(1));
         if (number.startsWith("IV"))
-            return fromRomanNumber(number.substring(2), accu + 4);
+            return 4 + fromRomanNumber(number.substring(2));
         if (number.startsWith("V"))
-            return fromRomanNumber(number.substring(1), accu + 5);
+            return 5 + fromRomanNumber(number.substring(1));
         if (number.startsWith("I"))
-            return fromRomanNumber(number.substring(1), accu + 1);
+            return 1 + fromRomanNumber(number.substring(1));
         throw new IllegalArgumentException("Illegal input: " + number);
     }
 }
