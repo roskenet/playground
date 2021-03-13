@@ -14,13 +14,10 @@ public class EquityCalculator {
 	private long mSeed;
 	private long mMaxIterations;
 
-
-	public EquityCalculator() {
+	public EquityCalculator(long mMaxIterations) {
 		this.reset();
-
-		mMaxIterations = 200000;
+		this.mMaxIterations = mMaxIterations;
 	}
-
 
 	public EquityCalculator reset() {
 		mBoardCards = new ArrayList<Card>();

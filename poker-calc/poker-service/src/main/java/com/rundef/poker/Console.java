@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Console
 {
-	public static List<String> calculateOdd(String[] args) throws Exception
+	public static List<String> calculateOdd(String[] args, long maxIterations) throws Exception
 	{
 		boolean isBoard = false;
 		String board = "";
@@ -36,7 +36,7 @@ public class Console
 
 
 
-		EquityCalculator calculator = new EquityCalculator();
+		EquityCalculator calculator = new EquityCalculator(maxIterations);
 
 		if(!board.isEmpty()) {
 			calculator.setBoardFromString(board);
