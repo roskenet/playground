@@ -1,11 +1,12 @@
 package com.rundef.poker;
 
+import de.roskenet.poker.PokerHand;
+import de.roskenet.poker.PokerResponse;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Console
 {
-	public static List<String> calculateOdd(String[] args, long maxIterations) throws Exception
+	public static PokerResponse calculateOdd(String[] args, long maxIterations) throws Exception
 	{
 		boolean isBoard = false;
 		String board = "";
@@ -59,6 +60,13 @@ public class Console
 
 		var strings = new ArrayList<String>();
 
+		var pokerResponse = new PokerResponse();
+
+		if(!board.isEmpty()) {
+			pokerResponse.setBoard(board);
+		}
+		var handList = new ArrayList<PokerHand>();
+
 		for(int i = 0; i < hands.size(); i++) {
 			HandRanking hr = calculator.getHandRanking(i);
 			HandEquity he = calculator.getHandEquity(i);
@@ -69,15 +77,23 @@ public class Console
 
 //			System.out.println(String.format("Player %d: %s - %s --- %s%s", 1+i, hands.get(i), hr, preprend, he));
 
+			var pokerHand = new PokerHand();
+			pokerHand.setHand(hands.get(i).toString());
+			pokerHand.setProbability(he.getEquity());
+			pokerHand.setRating(hr.toString());
+			handList.add(pokerHand);
 		}
 
+		pokerResponse.setHands(handList);
 
 		if(calculator.boardIsEmpty()) {
 			float elapsedSeconds = elapsedTime / 1000.0f;
 			
 			System.out.println("");
 			System.out.println(String.format("Simulated %d random boards in %.1f seconds", calculator.getMaxIterations(), elapsedSeconds));
+//			pokerResponse.getHands().stream().map(h -> h.setAccurate(false));
+            pokerResponse.getHands().forEach(h -> h.setAccurate(false));
 		}
-		return strings;
+		return pokerResponse;
 	}
 }

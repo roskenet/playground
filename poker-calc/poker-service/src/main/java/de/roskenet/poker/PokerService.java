@@ -21,19 +21,8 @@ public class PokerService
         SpringApplication.run(PokerService.class, args);
     }
 
-    class PokerHand {
-        private String hand;
-        private int probability;
-        private boolean accurate;
-    }
-
-    class PokerResponse {
-        private String board;
-        private List<PokerHand> hands;
-    }
-
     @GetMapping("/poker")
-    public List<String> getSomething(@RequestParam(value="board", required = false) String board, @RequestParam("hands") String hands)
+    public PokerResponse getSomething(@RequestParam(value="board", required = false) String board, @RequestParam("hands") List<String> hands)
             throws Exception {
 //        var response = new PokerResponse();
 //        response.setBoard(board);
@@ -46,9 +35,9 @@ public class PokerService
             arrayList.add("-b");
             arrayList.add(board);
         }
-        String[] s = hands.split(" ");
+//        String[] s = hands.split(" ");
 
-        for (String str: s) {
+        for (String str: hands) {
             arrayList.add(str);
         }
 
