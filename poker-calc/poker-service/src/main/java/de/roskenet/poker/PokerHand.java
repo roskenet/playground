@@ -1,7 +1,5 @@
 package de.roskenet.poker;
 
-import com.rundef.poker.HandRanking;
-
 public class PokerHand {
 
     private String hand;
