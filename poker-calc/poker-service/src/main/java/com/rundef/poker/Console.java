@@ -80,7 +80,7 @@ public class Console
 			var pokerHand = new PokerHand();
 			pokerHand.setHand(hands.get(i).toString());
 			pokerHand.setProbability(he.getEquity());
-			pokerHand.setRating(hr.toString());
+			pokerHand.setHandRating(hr.toString());
 			handList.add(pokerHand);
 		}
 

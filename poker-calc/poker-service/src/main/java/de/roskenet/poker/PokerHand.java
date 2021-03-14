@@ -5,8 +5,6 @@ public class PokerHand {
     private String hand;
     private int probability;
     private boolean accurate = true;
-
-
     private String handRating;
 
     public String getHand() {
@@ -36,7 +34,7 @@ public class PokerHand {
         return handRating;
     }
 
-    public void setRating(String hr) {
+    public void setHandRating(String hr) {
         this.handRating = hr;
     }
 }
