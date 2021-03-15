@@ -1,8 +1,10 @@
-package com.rundef.poker;
+package de.roskenet.poker;
 
-import de.roskenet.poker.PokerHand;
-import de.roskenet.poker.PokerResponse;
 import java.util.ArrayList;
+import poker.EquityCalculator;
+import poker.Hand;
+import poker.HandEquity;
+import poker.HandRanking;
 
 public class Console
 {

@@ -1,4 +1,4 @@
-package com.rundef.poker;
+package poker;
 
 import java.util.ArrayList;
 

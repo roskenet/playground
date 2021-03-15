@@ -1,4 +1,4 @@
-package com.rundef.poker;
+package poker;
 
 public class CardRank implements Comparable<CardRank>  {
 	public final static int TWO 	= 2;

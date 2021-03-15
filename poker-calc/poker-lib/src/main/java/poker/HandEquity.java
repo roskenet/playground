@@ -1,4 +1,4 @@
-package com.rundef.poker;
+package poker;
 
 public class HandEquity  {
 	private int possibleHandsCount;

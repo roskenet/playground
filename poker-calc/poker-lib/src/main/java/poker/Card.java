@@ -1,4 +1,4 @@
-package com.rundef.poker;
+package poker;
 
 public class Card implements Comparable<Card>  {
 	public enum Suit {
