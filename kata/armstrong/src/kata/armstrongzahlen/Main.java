@@ -1,4 +1,4 @@
-package kata.kombinatorik;
+package kata.armstrongzahlen;
 
 public class Main {
 
