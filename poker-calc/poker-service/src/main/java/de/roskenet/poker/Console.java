@@ -83,7 +83,7 @@ public class Console
 			pokerHand.setHand(hands.get(i).toString());
 			pokerHand.setProbability(he.getEquity());
 			pokerHand.setHandRating(hr.toString());
-			handList.add(pokerHand);
+            handList.add(pokerHand);
 		}
 
 		pokerResponse.setHands(handList);

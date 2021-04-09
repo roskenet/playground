@@ -5,6 +5,7 @@ import java.util.List;
 public class PokerResponse {
 
     private String board;
+    private List<PokerHand> hands;
 
     public String getBoard() {
         return board;
@@ -22,5 +23,4 @@ public class PokerResponse {
         this.hands = hands;
     }
 
-    private List<PokerHand> hands;
 }
