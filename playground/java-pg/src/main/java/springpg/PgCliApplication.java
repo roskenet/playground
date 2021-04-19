@@ -1,14 +1,14 @@
-package javapg;
+package springpg;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JavaPgApplication implements CommandLineRunner {
+public class PgCliApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
-        SpringApplication.run(JavaPgApplication.class, args);
+        SpringApplication.run(PgCliApplication.class, args);
     }
 
     @Override
