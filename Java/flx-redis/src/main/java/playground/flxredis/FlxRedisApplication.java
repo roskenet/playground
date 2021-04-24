@@ -35,4 +35,8 @@ public class FlxRedisApplication implements CommandLineRunner {
         System.out.println(tomcat.orElse(null).getProtokoll());
         System.out.println(tomcat.orElse(null).getPort());
     }
+
+    public String doSomething() {
+        return "Nüscht!";
+    }
 }

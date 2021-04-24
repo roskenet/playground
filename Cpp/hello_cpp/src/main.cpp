@@ -5,10 +5,7 @@ void do_something(int &i) {
 }
 
 int main() {
-
-    auto i {42};
-
+    auto i{42};
     do_something(i);
-
     return 0;
 }
