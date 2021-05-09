@@ -18,11 +18,8 @@
 
     <properties>
         <java.version>11</java.version>
-<<<<<<< HEAD:oxygen/pom.xml
-=======
         <docker.from>openjdk:11</docker.from>
         <docker.maintainer>Felix Roske</docker.maintainer>
->>>>>>> backup:Oxygen/hello-service/pom.xml
         <docker.repo>roskenet</docker.repo>
     </properties>
 
@@ -59,14 +56,10 @@
                         <image>
                             <name>${docker.repo}/${project.name}:${project.version}</name>
                             <build>
-<<<<<<< HEAD:oxygen/pom.xml
-                                <from>openjdk:11</from>
-=======
                                 <from>${docker.from}</from>
                                 <labels>
                                     <maintainer>${docker.maintainer}</maintainer>
                                 </labels>
->>>>>>> backup:Oxygen/hello-service/pom.xml
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
                                 </assembly>

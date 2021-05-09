@@ -5,7 +5,6 @@ metadata:
   namespace: oxygen
 spec:
   rules:
-<<<<<<< HEAD:oxygen/deploy/ingress.yaml
     - host: "oxygen.192-168-49-2.nip.io"
       http:
         paths:
@@ -15,7 +14,7 @@ spec:
               service:
                 name: oxygen
                 port:
-                  number: 8080
+                  number: 80
 
 #apiVersion: extensions/v1beta1
 #kind: Ingress
@@ -48,11 +47,9 @@ spec:
 #                name: test
 #                port:
 #                  number: 80
-=======
-  - host: oxygen.minikube
-    http:
-      paths:
-        - backend:
-            serviceName: oxygen
-            servicePort: 80
->>>>>>> backup:Oxygen/hello-service/deploy/ingress.yaml
+#  - host: oxygen.minikube
+#    http:
+#      paths:
+#        - backend:
+#            serviceName: oxygen
+#            servicePort: 80
