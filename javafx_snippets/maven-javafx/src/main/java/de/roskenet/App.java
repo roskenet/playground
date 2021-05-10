@@ -6,17 +6,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class App extends Application
-{
+public class App extends Application {
+
     @Override
     public void start(Stage primaryStage) throws Exception {
-
         var props = AppProperties.readProperties("config.properties");
         var title = props.getProperty("application.title");
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/main.fxml"));
         primaryStage.setTitle(title);
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
