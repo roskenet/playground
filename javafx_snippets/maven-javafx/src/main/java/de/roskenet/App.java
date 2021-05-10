@@ -14,7 +14,7 @@ public class App extends Application
         var props = AppProperties.readProperties("config.properties");
         var title = props.getProperty("application.title");
 
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/main.fxml"));
         primaryStage.setTitle(title);
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();

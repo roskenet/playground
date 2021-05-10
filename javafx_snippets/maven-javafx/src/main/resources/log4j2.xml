@@ -9,7 +9,6 @@
     <Root level="error">
       <AppenderRef ref="Console"/>
     </Root>
-    <Logger name="de.roskenet.Controller" level="debug">
-    </Logger>
+    <Logger name="de.roskenet" level="debug" />
   </Loggers>
 </Configuration>
