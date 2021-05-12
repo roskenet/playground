@@ -1,4 +1,4 @@
-package roskenet;
+package de.roskenet.basicjava;
 
 public class JavaHelloWorld {
 
