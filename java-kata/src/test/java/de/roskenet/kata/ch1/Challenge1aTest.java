@@ -1,4 +1,4 @@
-package de.roskenet.kata;
+package de.roskenet.kata.ch1;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 public class Challenge1aTest {
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "#{index} - {0} * {1} / 2 % 7 should be {2}")
     @CsvSource({
             "6, 7,      0",
             "3, 4,      6",

@@ -1,4 +1,4 @@
-package de.roskenet.kata;
+package de.roskenet.kata.ch1;
 
 public class Challenge1a
 {
