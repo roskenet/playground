@@ -1,7 +1,7 @@
 site_name: "Felix' Basic Elements of Software Engineering"
 site_description: "This is how I do things"
 site_author: "Felix Roske"
-site_url: "https://github.com/roskenet/playground"
+site_url: "https://roskenet.github.io/"
 
 theme:
   name: "material"
