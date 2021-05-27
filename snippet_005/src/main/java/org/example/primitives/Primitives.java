@@ -1,6 +1,6 @@
-package org.example;
+package org.example.primitives;
 
-public class App {
+public class Primitives {
 
     public static void main(String[] args) {
         System.out.println("Java Basics");
