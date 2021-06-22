@@ -7,12 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ApiController {
 
-    @GetMapping("/api/{param}")
+    @GetMapping("/api/name/{param}")
     public HelloResponse getApi(@PathVariable("param") String param) {
         HelloResponse response = new HelloResponse();
-        
-        String upperCase = param.toUpperCase();
-        response.setValue(upperCase);
+
+        response.setValue(param.toUpperCase());
 
         return response;
     }
