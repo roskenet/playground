@@ -1,5 +1,6 @@
 package de.roskenet.hello;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApiController {
 
     @GetMapping("/api/name/{param}")
+    @CrossOrigin(origins = "*")
     public HelloResponse getApi(@PathVariable("param") String param) {
         HelloResponse response = new HelloResponse();
 

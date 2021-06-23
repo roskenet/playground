@@ -4,6 +4,12 @@ import {useState} from "react";
 
 const doSomething = () => {
     console.log("Ein Click!");
+
+    fetch('http://oxygen.192-168-49-2.nip.io/api/name/somebody')
+        .then(response => response.json())
+        .then(result => console.log(result))
+            .catch(error => console.error(error));
+
 }
 
 const App = () => {
