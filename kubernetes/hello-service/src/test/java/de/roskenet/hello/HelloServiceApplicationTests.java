@@ -23,7 +23,7 @@ public class HelloServiceApplicationTests {
     
     @Test
     public void testApiValue() throws Exception {
-        mvc.perform(get("/api/xyz"))
+        mvc.perform(get("/api/name/xyz"))
             .andDo(print())
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.value").value("XYZ"));
