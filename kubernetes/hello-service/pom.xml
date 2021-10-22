@@ -12,7 +12,7 @@
 
     <groupId>de.roskenet.elements</groupId>
     <artifactId>hello-service</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <name>hello-service</name>
     <description>Demo project for Spring Boot</description>
 

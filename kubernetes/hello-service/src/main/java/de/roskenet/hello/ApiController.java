@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class ApiController {
 
     @GetMapping("/api/name/{param}")
-    @CrossOrigin(origins = "*")
     public HelloResponse getApi(@PathVariable("param") String param) {
         HelloResponse response = new HelloResponse();
 
