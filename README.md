@@ -2,5 +2,5 @@
 
 ## [java-quickstart](./java-quickstart/)
 
-maven java 17
+mvnw java17 junit5
 
