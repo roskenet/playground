@@ -1,8 +1,6 @@
 # FelixHowTos
 
-## java-quickstart
+## [java-quickstart](./java-quickstart/)
 
 maven java 17
-
-[java-quickstart](./java-quickstart/)
 
