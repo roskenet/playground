@@ -4,3 +4,6 @@
 
 mvnw java17 junit5
 
+```bash
+mvn -N io.takari:maven:wrapper
+```
