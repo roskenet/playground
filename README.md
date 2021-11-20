@@ -9,6 +9,6 @@ mvn -N io.takari:maven:wrapper
 ```
 
 ```bash
-native-image -jar target/java-quickstart-1.0-SNAPSHOT.jar java-quickstart
+native-image -jar target/java-quickstart-1.0-SNAPSHOT.jar target/java-quickstart
 ```
 
