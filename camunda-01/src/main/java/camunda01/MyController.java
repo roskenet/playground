@@ -15,8 +15,8 @@ public class MyController {
     }
 
     public static class Process {
-        public String name;
-        public String id;
+        public String instanceId;
+        public String businessKey;
     }
 
     @GetMapping("/start")
@@ -24,8 +24,9 @@ public class MyController {
         ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("Process_1");
 
         Process process = new Process();
-        process.name = processInstance.getCaseInstanceId();
-
+//        process.name = processInstance.getCaseInstanceId();
+        process.instanceId = processInstance.getProcessInstanceId();
+        process.businessKey = processInstance.getBusinessKey();
         return process;
     }
 }

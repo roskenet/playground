@@ -15,7 +15,7 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <camunda.spring-boot.version>7.13.0</camunda.spring-boot.version>
+        <camunda.spring-boot.version>7.16.0</camunda.spring-boot.version>
         <java.version>11</java.version>
     </properties>
 
