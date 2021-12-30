@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: oxygen
+  name: camunda
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: oxygen
+      app: camunda
   template:
     metadata:
       labels:
-        app: oxygen
+        app: camunda
     spec:
       containers:
-      - name: oxygen
-        image: roskenet/hello-service:0.0.3
+      - name: camunda
+        image: roskenet/camunda-01:0.0.1
         ports:
         - name: api
           containerPort: 8080

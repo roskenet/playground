@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: oxygen
+  namespace: oxygen
 spec:
   rules:
     - host: "oxygen.192-168-49-2.nip.io"
