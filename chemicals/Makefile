@@ -1,18 +1,11 @@
-all: one two three
+all: _postgres _keycloak _camunda
 
-one:
-	touch one
-two:
-	touch two
-three:
-	touch three
-
-postgres:
+_postgres:
 	touch postgres_done
-keycloak:
+_keycloak:
 	touch keycloak_done
-camunda:
+_camunda:
 	touch camunda_done
 
 clean:
-	rm -rf one two three
+	rm -rf *_done
