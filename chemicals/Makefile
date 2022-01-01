@@ -1,11 +1,18 @@
-all: postgres keycloak camunda
+all: one two three
+
+one:
+	touch one
+two:
+	touch two
+three:
+	touch three
 
 postgres:
-	echo "Here we deploy postgres on minikube"
+	touch postgres_done
 keycloak:
-	echo "Here we deploy keycloak on minikube"
+	touch keycloak_done
 camunda:
-	echo "Here we deploy camunda on minikube"
+	touch camunda_done
 
 clean:
-	echo "Here we clean up if needed"
+	rm -rf one two three
