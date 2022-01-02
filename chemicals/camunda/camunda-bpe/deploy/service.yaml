@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: camunda-bpe
+  name: camunda
 spec:
   selector:
     app: camunda-bpe
