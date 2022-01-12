@@ -5,17 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.felixroske</groupId>
-    <artifactId>hello-java</artifactId>
+    <artifactId>aluminium</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>hello-java</name>
-    <!-- FIXME change it to the project's website -->
+    <name>aluminium</name>
     <url>http://www.example.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <main.class>de.felixroske.AluminiumApp</main.class>
     </properties>
 
     <dependencies>
@@ -57,6 +57,13 @@
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.0.2</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <mainClass>${main.class}</mainClass>
+                            </manifest>
+                        </archive>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
