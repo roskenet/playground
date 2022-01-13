@@ -50,3 +50,7 @@ A simple microservice.
 curl -X GET http://oxygen.192-168-49-2.nip.io/api/name/This%20Is%20Something
 ```
 
+## Hydrogen
+
+A react frontend served by a spring boot backend.
+
