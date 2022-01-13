@@ -11,20 +11,20 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 
 //@ComponentScan
 //@EnableAutoConfiguration
-//@Configuration
+@Configuration
 //@EnableWebSecurity
 //@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);
 
-//        http.authorizeRequests().antMatchers("/openforall").permitAll();
-//        http.authorizeRequests().anyRequest().hasAuthority("SCOPE_email");
+        http.authorizeRequests().antMatchers("/openforall").permitAll();
+        http.authorizeRequests().anyRequest().hasAuthority("SCOPE_email");
 //                .and()
 //                .csrf().disable()
 //                .authorizeRequests().anyRequest().hasRole("USER").and()
 //                .httpBasic();
-//    }
+    }
 }

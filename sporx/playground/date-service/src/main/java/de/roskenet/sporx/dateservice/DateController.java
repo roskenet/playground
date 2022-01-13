@@ -23,6 +23,7 @@ public class DateController {
 
     @GetMapping("/authenticated")
     public String getTest() {
+        var context = SecurityContextHolder.getContext();
         return "{\"content\": \"test\"}";
     }
 
