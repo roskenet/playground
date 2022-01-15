@@ -1,11 +1,11 @@
-package camunda01;
+package de.roskenet.camunda;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Camunda01Application {
+public class CamundaCockpitApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Camunda01Application.class, args);
+        SpringApplication.run(CamundaCockpitApplication.class, args);
     }
 }
