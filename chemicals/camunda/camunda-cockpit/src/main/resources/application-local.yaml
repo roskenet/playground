@@ -9,8 +9,8 @@ camunda.bpm:
 
 spring:
   datasource:
-    url: jdbc:localhost://postgres/camunda
+    url: jdbc:postgresql://localhost/camunda
     username: camunda
     password: camunda
   profiles:
-    active: ${ENVIRONMENT:local}
+    active: ${ENVIRONEMENT:local}
