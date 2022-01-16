@@ -2,9 +2,7 @@ import './App.css';
 import {Button} from "antd";
 import {useState} from "react";
 
-
-
-const App = () => {
+const Fetch = () => {
     const [theState, setTheState] = useState({"name": "Unknown"});
 
 const doSomething = () => {
@@ -30,4 +28,4 @@ const doSomething = () => {
     );
 }
 
-export default App;
+export default Fetch;
