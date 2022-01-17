@@ -14,7 +14,7 @@
   <name>arsenic</name>
   <description>arsenic</description>
   <properties>
-    <java.version>11</java.version>
+    <java.version>17</java.version>
     <opentable.postgres.version>0.13.4</opentable.postgres.version>
   </properties>
   <dependencies>

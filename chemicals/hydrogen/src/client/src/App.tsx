@@ -5,6 +5,7 @@ import About from "./About/About";
 import Counter from "./Counter/Counter";
 import Landing from "./Landing/Landing";
 import Fetch from "./Fetch/Fetch";
+import FormExample from "./Form/FormExample";
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
           <Route path='/about' element={<About/>}></Route>
           <Route path='/counter' element={<Counter/>}></Route>
           <Route path='/fetch' element={<Fetch/>}></Route>
+          <Route path={'/form'} element={<FormExample/>}></Route>
         </Routes>
       </div>
-  )
+  );
 }
 
 export default App;
