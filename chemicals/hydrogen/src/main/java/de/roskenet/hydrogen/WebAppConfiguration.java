@@ -15,6 +15,9 @@ public class WebAppConfiguration implements WebMvcConfigurer {
 
     private static final String APPLICATION_VIEW_NAME = "forward:/index.html";
 
+    // A better solution might be here:
+    // https://stackoverflow.com/questions/39331929/spring-catch-all-route-for-index-html
+
     /**
      * Ensure client-side paths redirect to index.html because client handles routing. NOTE: Do NOT use @EnableWebMvc or it will break this.
      * <p>
