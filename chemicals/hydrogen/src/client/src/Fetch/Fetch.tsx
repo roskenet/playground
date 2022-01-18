@@ -1,7 +1,6 @@
-import {Button, Form} from "antd";
+import {Button} from "antd";
 import {useState} from "react";
-
-
+import NavigationLinks from "../Elements/NavigationLinks";
 
 const Fetch = () => {
   const [theState, setTheState] = useState({"name": "Unknown"});
@@ -23,6 +22,7 @@ const Fetch = () => {
           <p>Dies is a real Killer App!</p>
           <Button onClick={doSomething}>Click me!</Button>
           <p>The State is: {theState.name}</p>
+          <NavigationLinks/>
       </div>
   );
 }

@@ -1,5 +1,5 @@
-import { Layout } from "antd";
-import {Link} from "react-router-dom";
+import NavigationLinks from "../Elements/NavigationLinks";
+import {Layout} from "antd";
 
 const { Content } = Layout;
 
@@ -11,13 +11,7 @@ function Landing() {
           <Content style={{margin: '24px 16px 0'}}>
             <h1> Hello World! </h1>
             <p>Dies ist die Landing Page der Anwendung!</p>
-            <div>
-              <Link to={"/"}>Home</Link> |{" "}
-              <Link to={"counter"}>Counter</Link> |{" "}
-              <Link to={"fetch"}>Fetch Example</Link> |{" "}
-              <Link to={"form"}>Form Example</Link> |{" "}
-              <Link to={"about"}>About</Link>
-            </div>
+            <NavigationLinks />
           </Content>
         </Layout>
       </div>

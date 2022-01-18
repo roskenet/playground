@@ -1,5 +1,6 @@
 import {Button, Checkbox, Form, Input} from "antd";
 import {useState} from "react";
+import NavigationLinks from "../Elements/NavigationLinks";
 
 const FormExample = () => {
   const [something, setSomething] = useState({"name": "Unknown", "number": 42});
@@ -49,6 +50,7 @@ const FormExample = () => {
           </Button>
         </Form.Item>
       </Form>
+        <NavigationLinks/>
       </div>
   );
 }
