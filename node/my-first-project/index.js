@@ -1,8 +1,8 @@
 const CountStream = require('./countstream');
-const countStream = new CountStream('ross');
+const countStream = new CountStream('Willkommen');
 const http = require('http');
 
-http.get('http://en.wikipedia.org', function(res) {
+http.get('http://felix-roske.de', function(res) {
     res.pipe(countStream);
 });
 

@@ -20,7 +20,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
 
-        testChoiceBox.setValue("SOMETHING");
+//        testChoiceBox.setValue("SOMETHING");
     }
 
     public static void main(String[] args) {
