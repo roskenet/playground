@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @AutoConfigureWireMock(port = 30123)
-//@TestPropertySource(properties = {"hydrogen.url=http://localhost:${wiremock.server.port}/api/"})
+@TestPropertySource(properties = {"hydrogen.url=http://localhost:${wiremock.server.port}/api/"})
 //instead of @SpringBootTest to avoid running the CommandLineRunners:
 @ContextConfiguration(classes = HydrogenClientApplication.class, 
     initializers = ConfigFileApplicationContextInitializer.class) 
@@ -30,7 +30,7 @@ public class HydrogenWireMockTest {
     
     @Test
     public void testGetValue() throws Exception {
-        String result = webServiceClient.getValue("Felix");
-        assertThat(result, is("Felix"));
+        String result = webServiceClient.getValue("FelixZumZweiten");
+        assertThat(result, is("Felix2"));
     }
 }

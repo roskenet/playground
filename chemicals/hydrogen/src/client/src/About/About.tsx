@@ -1,23 +1,28 @@
-import { Layout } from "antd";
+import {Layout, Row, Col} from "antd";
 import NavigationLinks from "../Elements/NavigationLinks";
 import {useEffect} from "react";
 
-const { Content } = Layout;
+const {Content, Header, Footer} = Layout;
 
 function About() {
 
   useEffect(() => {
-    return () => { console.log('Leaving the About Page!'); }
-  }, [ ])
+    return () => {
+      console.log('Leaving the About Page!');
+    }
+  }, [])
 
   return (
       <div>
         <Layout>
-          <Content style={{margin: '24px 16px 0'}}>
-            <h1> Hello World! </h1>
-            <p>Dies ist die About Seite!</p>
-            <NavigationLinks/>
-          </Content>
+          <Header style={{color: '#ffffff'}}>Willkommen auf dieser tollen Seite!</Header>
+            <Content style={{margin: '24px 48px 0'}}>
+              <Row>
+                <Col span={12}><h1>Hello World!</h1></Col>
+                <Col span={12}><p>Another col.</p></Col>
+              </Row>
+            </Content>
+          <Footer><NavigationLinks/></Footer>
         </Layout>
       </div>
   );
