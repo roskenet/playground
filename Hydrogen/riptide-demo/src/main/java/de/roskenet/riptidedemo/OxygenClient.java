@@ -1,21 +1,21 @@
 package de.roskenet.riptidedemo;
 
 import static org.springframework.http.HttpStatus.Series.CLIENT_ERROR;
+import static org.springframework.http.HttpStatus.Series.SERVER_ERROR;
 import static org.springframework.http.HttpStatus.Series.SUCCESSFUL;
+import static org.zalando.riptide.Bindings.anySeries;
 import static org.zalando.riptide.Bindings.anyStatus;
 import static org.zalando.riptide.Bindings.on;
 import static org.zalando.riptide.Navigators.series;
 import static org.zalando.riptide.Navigators.status;
 
-import java.io.IOException;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
+import java.util.concurrent.CompletionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
-import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.zalando.riptide.Http;
+import org.zalando.riptide.capture.Capture;
 
 @Component
 public class OxygenClient {
@@ -24,17 +24,32 @@ public class OxygenClient {
     @Qualifier("oxygen")
     private Http http;
 
-    public String getSomething(String name) throws Exception{
-        var completableFuture = http.get("/api/name/{name}", name)
-                .dispatch(series(),
-                        on(SUCCESSFUL).call(OxygenResponse.class, (response) -> {
-                            System.out.println(response.getValue());
-                        }),
-                        on(CLIENT_ERROR).dispatch(status(),
-                                anyStatus().call(() -> {
-                                    System.out.println("client error");
-                                }))).join();
-
-        return completableFuture.getBody().toString();
+    public OxygenResponse getSomething(String input) {
+        Capture<OxygenResponse> capture = Capture.empty();
+        try {
+            return http.get("/api/name/{input}", input)
+                    .dispatch(series(),
+                            on(SUCCESSFUL).call(OxygenResponse.class, capture),
+                            on(CLIENT_ERROR).dispatch(
+                                    status(),
+                                        on(HttpStatus.NOT_FOUND).call((e) -> {
+                                            throw new OxygenClientException(e.getRawStatusCode(), "Not found Error: " + input);
+                                        }),
+                                        anyStatus().call((e) -> {
+                                            throw new OxygenClientException(e.getRawStatusCode(), "General Client Error " + input);
+                                        })),
+                            on(SERVER_ERROR).dispatch(
+                                    status(),
+                                        anyStatus().call((e) -> {
+                                            throw new OxygenClientException(e.getRawStatusCode(), "General Server Error " + input);
+                                        })),
+                            anySeries().call((e) -> {
+                                    throw new OxygenClientException(e.getRawStatusCode(), "General Error " + input);
+                                }))
+                    .thenApply(capture)
+                    .join();
+        } catch (CompletionException ce) {
+            throw (OxygenClientException) ce.getCause();
+        }
     }
 }

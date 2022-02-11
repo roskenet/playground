@@ -17,8 +17,6 @@ public class RiptideDemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-//		System.out.println("Hello World!");
-		var result = client.getSomething("Hello World");
-		System.out.println(result);
+		System.out.println("This is RiptideDemoApplication!");
 	}
 }

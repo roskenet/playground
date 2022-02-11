@@ -2,8 +2,8 @@ riptide.clients:
   oxygen:
     base-url: http://oxygen.192-168-49-2.nip.io/
     connections:
-      connect-timeout: 150 milliseconds
-      socket-timeout: 100 milliseconds
+      connect-timeout: 250 milliseconds
+      socket-timeout: 150 milliseconds
       time-to-live: 30 seconds
       max-per-route: 16
 #    retry:
