@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/felix/Workspaces/playground/Cpp/CppKillerApp/cmake-build-debug",
-		"source" : "/home/felix/Workspaces/playground/Cpp/CppKillerApp"
+		"build" : "/home/zalando/Workspaces/playground/Cpp/CppKillerApp/cmake-build-debug",
+		"source" : "/home/zalando/Workspaces/playground/Cpp/CppKillerApp"
 	},
 	"version" : 
 	{

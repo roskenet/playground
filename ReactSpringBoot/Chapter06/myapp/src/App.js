@@ -12,16 +12,17 @@ const doSomething = () => {
         .then(response => response.json())
         .then(result => setTheState({"name": result.value}))
         .catch(error => console.error(error));
-        // .then(result => console.log(result))
-        //     .catch(error => console.error(error));
-
 }
 
+    const doSomethingElse = () => {
+        setTheState({"name": "Do something else"})
+    }
     return (
         <div className="App">
             <header className="App-header">
                 <p>Dies is a real Killer App!</p>
                 <Button onClick={doSomething}>Click me!</Button>
+                <Button onClick={doSomethingElse}>Set something else!</Button>
                 <p>The State is: {theState.name}</p>
             </header>
         </div>

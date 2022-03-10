@@ -42,7 +42,7 @@ rule CXX_EXECUTABLE_LINKER__CppKillerApp_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/felix/Packages/JetBrains/apps/CLion/ch-0/213.6461.75/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/felix/Workspaces/playground/Cpp/CppKillerApp -B/home/felix/Workspaces/playground/Cpp/CppKillerApp/cmake-build-debug
+  command = /home/zalando/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/zalando/Workspaces/playground/Cpp/CppKillerApp -B/home/zalando/Workspaces/playground/Cpp/CppKillerApp/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 
@@ -51,7 +51,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = /home/felix/Packages/JetBrains/apps/CLion/ch-0/213.6461.75/bin/ninja/linux/ninja $FILE_ARG -t clean $TARGETS
+  command = /home/zalando/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/ninja/linux/ninja $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -59,6 +59,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = /home/felix/Packages/JetBrains/apps/CLion/ch-0/213.6461.75/bin/ninja/linux/ninja -t targets
+  command = /home/zalando/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/ninja/linux/ninja -t targets
   description = All primary targets available:
 
