@@ -19,7 +19,7 @@ function About() {
             <Content style={{margin: '24px 48px 0'}}>
               <Row>
                 <Col span={12}><h1>Hello World!</h1></Col>
-                <Col span={12}><p>Another col.</p></Col>
+                <Col span={12}><p>Another column.</p></Col>
               </Row>
             </Content>
           <Footer><NavigationLinks/></Footer>
