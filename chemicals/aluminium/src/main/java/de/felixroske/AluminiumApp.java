@@ -6,6 +6,7 @@ package de.felixroske;
 public class AluminiumApp {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        var standardGreeter = new StandardGreeter();
+        System.out.println(standardGreeter.greetMe("World"));
     }
 }
