@@ -1,5 +1,8 @@
 fun main(args: Array<String>) {
+    val arrayOf = arrayOf("Oxygen", "Hydrogen", "Arsenic")
+
     val s = "World"
+
     println("Hello ${s}!")
 
     // Try adding program arguments via Run/Debug configuration.
