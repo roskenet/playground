@@ -7,4 +7,3 @@
 
 (defn -main [& args]
   (doSomething "Folks"))
-
