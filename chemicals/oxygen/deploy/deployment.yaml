@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: oxygen
-        image: roskenet/oxygen:0.0.4
+        image: roskenet/oxygen:0.0.5
         ports:
         - name: api
           containerPort: 8080
