@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: postgres:14
+          image: roskenet/postgres:14.0.0
           imagePullPolicy: "IfNotPresent"
           ports:
             - containerPort: 5432
