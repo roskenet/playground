@@ -9,7 +9,8 @@ const FormExample = () => {
     // e.preventDefault()
     console.log("Ein Click!");
 
-    fetch('http://hydrogen.192-168-49-2.nip.io/api/something', {
+    // fetch('http://hydrogen.192-168-49-2.nip.io/api/something', {
+    fetch('http://localhost:8080/api/something', {
       method: 'POST',
       body: JSON.stringify(something),
       headers: {'Content-Type': 'application/json'},
