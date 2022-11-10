@@ -406,3 +406,6 @@ TSWLatexianTemp*
 
 remote-profile/
 cmake-build-debug/
+
+# epub
+*.epub
