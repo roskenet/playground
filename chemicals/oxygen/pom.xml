@@ -6,19 +6,19 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.2</version>
+        <version>3.0.0</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>de.roskenet.elements</groupId>
     <artifactId>oxygen</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.7</version>
     <name>oxygen</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <java.version>18</java.version>
-        <docker.from>openjdk:18</docker.from>
+        <java.version>17</java.version>
+        <docker.from>eclipse-temurin:17-jre-alpine</docker.from>
         <docker.maintainer>Felix Roske</docker.maintainer>
         <docker.repo>roskenet</docker.repo>
     </properties>
