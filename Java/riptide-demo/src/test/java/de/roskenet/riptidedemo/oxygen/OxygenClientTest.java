@@ -1,26 +1,24 @@
-package de.roskenet.riptidedemo;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.fail;
+package de.roskenet.riptidedemo.oxygen;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 
-@SpringBootTest
+@SpringBootTest()
 @WireMockTest(httpPort = 30123)
 @TestPropertySource(properties = { "riptide.clients.oxygen.base-url=http://localhost:30123/"})
 public class OxygenClientTest {
 
     @Autowired
-    private OxygenClientTwo client;
+    private OxygenClient client;
 
     @Test
     public void testGetSomething_200() {
         var response = client.getSomething("OK");
-        assertThat(response.getValue()).isEqualTo("Hello World");
+        Assertions.assertThat(response.value()).isEqualTo("Hello World");
     }
 
     @Test
@@ -28,7 +26,7 @@ public class OxygenClientTest {
         try {
             var response = client.getSomething("UNKNOWN");
         } catch (OxygenClientException oce) {
-            assertThat(oce.getHttpStatus()).isEqualTo(404);
+            Assertions.assertThat(oce.getHttpStatus()).isEqualTo(404);
         }
     }
 
@@ -37,7 +35,7 @@ public class OxygenClientTest {
         try {
             var response = client.getSomething("NOT_ALLOWED");
         } catch (OxygenClientException oce) {
-            assertThat(oce.getHttpStatus()).isEqualTo(405);
+            Assertions.assertThat(oce.getHttpStatus()).isEqualTo(405);
         }
     }
 
@@ -47,9 +45,9 @@ public class OxygenClientTest {
             var response = client.getSomething("DELAYED");
         } catch (OxygenClientException oce) {
 //            oce.printStackTrace();
-            assertThat(oce.getMessage()).isEqualTo("Error: Unknown");
+            Assertions.assertThat(oce.getMessage()).isEqualTo("Error: Unknown");
             return;
         }
-        fail("We should not get here!");
+        Assertions.fail("We should not get here!");
     }
 }
