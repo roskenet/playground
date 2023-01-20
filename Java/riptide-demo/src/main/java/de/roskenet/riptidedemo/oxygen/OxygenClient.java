@@ -1,4 +1,4 @@
-package de.roskenet.riptidedemo;
+package de.roskenet.riptidedemo.oxygen;
 
 import static org.springframework.http.HttpStatus.Series.SUCCESSFUL;
 import static org.zalando.riptide.Bindings.anySeries;
@@ -8,19 +8,16 @@ import static org.zalando.riptide.Navigators.series;
 import java.io.IOException;
 import java.util.concurrent.CompletionException;
 import java.util.function.Supplier;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.client.ClientHttpResponse;
-import org.springframework.stereotype.Component;
 import org.zalando.riptide.Http;
 import org.zalando.riptide.capture.Capture;
 
-@Component
-public class OxygenClientTwo {
-
-    @Autowired
-    @Qualifier("oxygen")
+public class OxygenClient {
     private Http http;
+
+    public OxygenClient(Http http) {
+        this.http = http;
+    }
 
     public OxygenResponse getSomething(String input) {
 
@@ -28,8 +25,8 @@ public class OxygenClientTwo {
         return httpCall(() -> http.get("/api/name/{input}", input)
                 .dispatch(series(),
                         on(SUCCESSFUL).call(OxygenResponse.class, capture),
-//                        on(CLIENT_ERROR).call(OxygenClientTwo::handleError),
-//                        on(SERVER_ERROR).call(OxygenClientTwo::handleError),
+//                        on(CLIENT_ERROR).call(OxygenClient::handleError),
+//                        on(SERVER_ERROR).call(OxygenClient::handleError),
                         anySeries().call((e) -> handleError(e, "Error: ", input))
                 ).thenApply(capture)
                 .join());
@@ -50,8 +47,5 @@ public class OxygenClientTwo {
             }
         }
     }
-//    public static <T> T httpCallSomething(Producer<T> function, ) {
-//        return
-//    }
 
 }

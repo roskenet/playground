@@ -1,4 +1,4 @@
-package de.roskenet.riptidedemo;
+package de.roskenet.riptidedemo.oxygen;
 
 public class OxygenClientException extends RuntimeException {
 
