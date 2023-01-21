@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 
-@SpringBootTest()
+@SpringBootTest
 @WireMockTest(httpPort = 30123)
 @TestPropertySource(properties = { "riptide.clients.oxygen.base-url=http://localhost:30123/"})
 public class OxygenClientTest {

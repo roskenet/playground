@@ -6,6 +6,7 @@ import static org.zalando.riptide.Bindings.on;
 import static org.zalando.riptide.Navigators.series;
 
 import java.io.IOException;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 import java.util.function.Supplier;
 import org.springframework.http.client.ClientHttpResponse;
@@ -20,16 +21,20 @@ public class OxygenClient {
     }
 
     public OxygenResponse getSomething(String input) {
-
         Capture<OxygenResponse> capture = Capture.empty();
-        return httpCall(() -> http.get("/api/name/{input}", input)
+        http.get("/api/name/{input}", input)
                 .dispatch(series(),
-                        on(SUCCESSFUL).call(OxygenResponse.class, capture),
-//                        on(CLIENT_ERROR).call(OxygenClient::handleError),
-//                        on(SERVER_ERROR).call(OxygenClient::handleError),
-                        anySeries().call((e) -> handleError(e, "Error: ", input))
-                ).thenApply(capture)
-                .join());
+                        on(SUCCESSFUL).call(
+                                OxygenResponse.class, capture
+                        )).thenApply(capture);
+        return capture.retrieve();
+//        Capture<OxygenResponse> capture = Capture.empty();
+//        return httpCall(() -> http.get("/api/name/{input}", input)
+//                .dispatch(series(),
+//                        on(SUCCESSFUL).call(OxygenResponse.class, capture),
+//                        anySeries().call((e) -> handleError(e, "Error: ", input))
+//                ).thenApply(capture)
+//                .join());
     }
 
     public static void handleError(ClientHttpResponse resp, String fmtString, Object... obj) throws IOException {
