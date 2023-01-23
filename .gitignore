@@ -409,3 +409,7 @@ cmake-build-debug/
 
 # epub
 *.epub
+
+# jupyter
+
+.ipynb_checkpoints/
