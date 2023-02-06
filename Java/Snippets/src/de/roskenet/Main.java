@@ -3,6 +3,7 @@ package de.roskenet;
 public class Main {
 
     public static class TheNestedClass {
+
         public static void doSomething() {
             System.out.println("Hello World");
         }
@@ -13,9 +14,12 @@ public class Main {
 
         doSomething(myArray);
         TheNestedClass.doSomething();
+        
     }
 
     private static void doSomething(String[] myArray) {
-
+        for (String s : myArray) {
+            System.out.println(s);
+        }
     }
 }
