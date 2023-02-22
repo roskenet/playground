@@ -1,7 +1,5 @@
 package applications.example_C;
 
-import applications.commons.ShoppingItemRepository;
-import applications.example_B.ServiceB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

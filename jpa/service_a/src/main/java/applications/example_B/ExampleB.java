@@ -23,7 +23,9 @@ public class ExampleB implements CommandLineRunner {
     public void run(String... args) {
 
         try {
+
             service.doSomething();
+
         } catch (Exception e) {
             System.out.println("We recovered here!");
         }

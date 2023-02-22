@@ -3,9 +3,6 @@ package applications.example_B;
 import applications.commons.ShoppingItem;
 import applications.commons.ShoppingItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.Import;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,18 +14,31 @@ public class ServiceB {
     @Transactional
     public void doSomething() {
 
-        persistSomething();
-        doOtherThings();
+        // Doing something with something
+
+        persistThings();
 
     }
 
-    public void persistSomething() {
+    public void persistThings() {
+        persistBlueShirt();
+        persistRedShirt();
+
+        doOtherThings();
+    }
+
+
+    public void persistBlueShirt() {
 
         ShoppingItem blueShirt = new ShoppingItem(1, "BlueShirt");
-        repository.saveAndFlush(blueShirt);
+        repository.save(blueShirt);
+
+    }
+
+    public void persistRedShirt() {
 
         ShoppingItem redShirt = new ShoppingItem(2, "RedShirt");
-        repository.saveAndFlush(redShirt);
+        repository.save(redShirt);
 
     }
 
