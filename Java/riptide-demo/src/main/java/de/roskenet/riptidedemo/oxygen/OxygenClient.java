@@ -22,19 +22,12 @@ public class OxygenClient {
 
     public OxygenResponse getSomething(String input) {
         Capture<OxygenResponse> capture = Capture.empty();
-        http.get("/api/name/{input}", input)
+
+        return httpCall(http.get("/api/name/{input}", input)
                 .dispatch(series(),
-                        on(SUCCESSFUL).call(
-                                OxygenResponse.class, capture
-                        )).thenApply(capture);
-        return capture.retrieve();
-//        Capture<OxygenResponse> capture = Capture.empty();
-//        return httpCall(() -> http.get("/api/name/{input}", input)
-//                .dispatch(series(),
-//                        on(SUCCESSFUL).call(OxygenResponse.class, capture),
-//                        anySeries().call((e) -> handleError(e, "Error: ", input))
-//                ).thenApply(capture)
-//                .join());
+                        on(SUCCESSFUL).call(OxygenResponse.class, capture),
+                        anySeries().call((e) -> handleError(e, "Error: ", input))
+                ).thenApply(capture)::join);
     }
 
     public static void handleError(ClientHttpResponse resp, String fmtString, Object... obj) throws IOException {
@@ -45,11 +38,9 @@ public class OxygenClient {
         try {
             return function.get();
         } catch (CompletionException ce) {
-            if (ce.getCause() instanceof OxygenClientException) {
-                throw (OxygenClientException) ce.getCause();
-            } else {
-                throw new OxygenClientException(0, "Error: Unknown", ce.getCause());
-            }
+            throw ce.getCause() instanceof OxygenClientException ?
+                    (OxygenClientException) ce.getCause() :
+                    new OxygenClientException(0, "Error: Unknown", ce.getCause());
         }
     }
 
