@@ -9,7 +9,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
+public static void main(String[] args) {
         String[] myArray = {"eins", "zwei", "drei"};
 
         doSomething(myArray);
