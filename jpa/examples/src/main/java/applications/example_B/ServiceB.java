@@ -14,17 +14,14 @@ public class ServiceB {
     @Transactional
     public void doSomething() {
 
-        // Doing something with something
-
         persistThings();
+        doOtherThings();
 
     }
 
     public void persistThings() {
         persistBlueShirt();
         persistRedShirt();
-
-        doOtherThings();
     }
 
 
@@ -44,6 +41,6 @@ public class ServiceB {
 
     public void doOtherThings() {
         // Here we do very complex business logic
-        throw new RuntimeException();
+//        throw new RuntimeException();
     }
 }
