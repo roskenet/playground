@@ -1,28 +1,27 @@
 package org.example;
 
-import static com.sun.crypto.provider.AESCrypt.log;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
-public class App 
+public class App
 {
     public static void main( String[] args ) {
         var app = new App();
-    }
-
-    public String doSomething(String myString) {
 
         try {
-            return doSomething(weirdObject);
-        } catch (Exception e) {
-            log.error(e);
-            throw e;
+            app.doSomething();
+        }
+//        catch (MySubException mse) {
+//            System.out.println("CATCH in MSE");
+//            mse.echo();
+//        }
+        catch (MyException me) {
+            System.out.println("CATCH in ME");
+            me.echo();
         }
 
     }
 
-    public String convertString(String myString) {
-       throw new UnsupportedOperationException();
+    public void doSomething() {
+        // Here we do some things
+        throw new MySubException("Fehler");
     }
 }
