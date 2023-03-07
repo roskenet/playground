@@ -1,3 +1,0 @@
-/home/zalando/Workspaces/playground/Cpp/CppKillerApp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/zalando/Workspaces/playground/Cpp/CppKillerApp/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/zalando/Workspaces/playground/Cpp/CppKillerApp/cmake-build-debug/CMakeFiles/CppKillerApp.dir

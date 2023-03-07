@@ -1,3 +1,0 @@
-/home/zalando/Workspaces/playground/cpp/my_cpp_project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/zalando/Workspaces/playground/cpp/my_cpp_project/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/zalando/Workspaces/playground/cpp/my_cpp_project/cmake-build-debug/CMakeFiles/my_cpp_project.dir
