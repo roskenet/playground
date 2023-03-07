@@ -34,4 +34,20 @@ class PlaygroundJacksonApplicationTests {
                 """);
     }
 
+    @Test
+    void testObjectMapping_readIn() throws JsonProcessingException {
+        var serializedMichael = """
+                {\"id\": \"b49fadba-6a8a-4173-b280-60c28b07136c\",
+                 \"birthday\": \"1958-08-29",
+                 \"name\": \"Michael Jackson\",
+                 \"some_field\": \"Some data\"
+                }
+                """;
+
+        var michael = objectMapper.readValue(serializedMichael, Artist.class);
+
+        System.out.println(michael);
+
+    }
+
 }
