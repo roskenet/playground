@@ -3,5 +3,7 @@ spring:
     property-naming-strategy: SNAKE_CASE
     date-format: com.fasterxml.jackson.databind.util.ISO8601DateFormat
     default-property-inclusion: non_null
-    deserialization:
-      fail-on-unknown-properties: true
+    mapper:
+      accept-case-insensitive-enums: true
+#    deserialization:
+#      fail-on-unknown-properties: true

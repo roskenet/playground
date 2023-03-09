@@ -1,38 +1,37 @@
 package de.roskenet.pgjackson;
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.UUID;
 
 public class Artist {
 
-    private UUID id;
-    private String name;
-    private LocalDate birthday;
+    private final UUID id;
+    private final String name;
+    private final LocalDate birthday;
+    private final Genre genre;
+
+    public Artist(UUID id, String name, LocalDate birthday, Genre genre) {
+        this.id = id;
+        this.name = name;
+        this.birthday = birthday;
+        this.genre = genre;
+    }
 
     public UUID getId() {
         return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
+    public Genre getGenre() {
+        return genre;
     }
 
     @Override
@@ -45,12 +44,12 @@ public class Artist {
         }
         Artist artist = (Artist) o;
         return Objects.equals(id, artist.id) && Objects.equals(name, artist.name)
-                && Objects.equals(birthday, artist.birthday);
+                && Objects.equals(birthday, artist.birthday) && genre == artist.genre;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, birthday);
+        return Objects.hash(id, name, birthday, genre);
     }
 
     @Override
@@ -59,6 +58,7 @@ public class Artist {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", birthday=" + birthday +
+                ", genre=" + genre +
                 '}';
     }
 }

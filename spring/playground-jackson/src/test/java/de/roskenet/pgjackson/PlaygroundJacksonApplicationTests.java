@@ -4,7 +4,6 @@ import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.UUID;
 import org.junit.jupiter.api.Test;
@@ -19,17 +18,18 @@ class PlaygroundJacksonApplicationTests {
 
     @Test
     void testObjectMapping_writeOut() throws JsonProcessingException {
-        var artist = new Artist();
-        artist.setId(UUID.fromString("b49fadba-6a8a-4173-b280-60c28b07136c"));
-        artist.setName("Michael Jackson");
-        artist.setBirthday(LocalDate.of(1958, 8, 29));
+        var artist = new Artist(UUID.fromString("b49fadba-6a8a-4173-b280-60c28b07136c"),
+                "Michael Jackson",
+                LocalDate.of(1958, 8, 29),
+                Genre.POP);
 
         var s = objectMapper.writeValueAsString(artist);
 
         assertThatJson(s).isEqualTo("""
                 {\"id\": \"b49fadba-6a8a-4173-b280-60c28b07136c\",
                  \"birthday\": \"1958-08-29",
-                 \"name\": \"Michael Jackson\"
+                 \"name\": \"Michael Jackson\",
+                 \"genre\": \"POP\"
                 }
                 """);
     }
@@ -40,6 +40,7 @@ class PlaygroundJacksonApplicationTests {
                 {\"id\": \"b49fadba-6a8a-4173-b280-60c28b07136c\",
                  \"birthday\": \"1958-08-29",
                  \"name\": \"Michael Jackson\",
+                 \"genre\": \"pop\",
                  \"some_field\": \"Some data\"
                 }
                 """;
