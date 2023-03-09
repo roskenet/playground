@@ -1,6 +1,6 @@
 package de.roskenet.pgjackson;
 
-import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -8,10 +8,10 @@ public class Artist {
 
     private final UUID id;
     private final String name;
-    private final LocalDate birthday;
+    private final ZonedDateTime birthday;
     private final Genre genre;
 
-    public Artist(UUID id, String name, LocalDate birthday, Genre genre) {
+    public Artist(UUID id, String name, ZonedDateTime birthday, Genre genre) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -26,7 +26,7 @@ public class Artist {
         return name;
     }
 
-    public LocalDate getBirthday() {
+    public ZonedDateTime getBirthday() {
         return birthday;
     }
 
