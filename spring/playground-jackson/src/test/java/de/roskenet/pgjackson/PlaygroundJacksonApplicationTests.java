@@ -27,25 +27,26 @@ class PlaygroundJacksonApplicationTests {
                 Genre.POP);
 
         var s = objectMapper.writeValueAsString(artist);
-        System.out.println(s);
 
-//        assertThatJson(s).isEqualTo("""
-//                {\"id\": \"b49fadba-6a8a-4173-b280-60c28b07136c\",
-//                 \"birthday\": \"1958-08-29",
-//                 \"name\": \"Michael Jackson\",
-//                 \"genre\": \"POP\"
-//                }
-//                """);
+        assertThatJson(s).isEqualTo("""
+                {"id": "b49fadba-6a8a-4173-b280-60c28b07136c",
+                 "birthday": "1956-08-29T17:20:23.000001234Z",
+                 "name": "Michael Jackson",
+                 "genre": "POP"
+                }
+                """);
     }
 
     @Test
     void testObjectMapping_readIn() throws JsonProcessingException {
+        // Might or might not work depending on the
+        // fail-on-unknown-properties: true setting
         var serializedMichael = """
-                {\"id\": \"b49fadba-6a8a-4173-b280-60c28b07136c\",
-                 \"birthday\": \"1958-08-29T17:15:34",
-                 \"name\": \"Michael Jackson\",
-                 \"genre\": \"pop\",
-                 \"some_field\": \"Some data\"
+                {"id": "b49fadba-6a8a-4173-b280-60c28b07136c",
+                 "birthday": "1958-08-29T17:15:34.12345Z",
+                 "name": "Michael Jackson",
+                 "genre": "pop",
+                 "some_field": "Some data"
                 }
                 """;
 
