@@ -1,1 +1,0 @@
-web: java $JVM_OPTS -cp target/hello-clojurescript.jar clojure.main -m hello-clojurescript.application

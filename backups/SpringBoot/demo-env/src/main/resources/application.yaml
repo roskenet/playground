@@ -1,4 +1,0 @@
-# Global application config
-demo:
-  myapp:
-    somestring: "Standard CONFIG"
