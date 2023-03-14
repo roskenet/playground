@@ -7,6 +7,10 @@ public class ExceptionStuff {
     }
 
     public void caller() {
-        doSomething();
+        try {
+            doSomething();
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
     }
 }
