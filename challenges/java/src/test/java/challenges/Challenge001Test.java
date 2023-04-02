@@ -2,7 +2,6 @@ package challenges;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-import java.util.Map;
 import org.junit.jupiter.api.Test;
 
 // Java Coding Problems:
