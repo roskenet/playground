@@ -10,12 +10,14 @@ public class Artist {
     private final String name;
     private final ZonedDateTime birthday;
     private final Genre genre;
+    private final boolean skipRetouchQA;
 
-    public Artist(UUID id, String name, ZonedDateTime birthday, Genre genre) {
+    public Artist(UUID id, String name, ZonedDateTime birthday, Genre genre, boolean skipRetouchQA) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
         this.genre = genre;
+        this.skipRetouchQA = skipRetouchQA;
     }
 
     public UUID getId() {
@@ -60,5 +62,9 @@ public class Artist {
                 ", birthday=" + birthday +
                 ", genre=" + genre +
                 '}';
+    }
+
+    public boolean isSkipRetouchQA() {
+        return skipRetouchQA;
     }
 }

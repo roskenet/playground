@@ -24,9 +24,10 @@ class PlaygroundJacksonApplicationTests {
                 "Michael Jackson",
                 ZonedDateTime.of(1956, 8, 29,
                         17, 20, 23, 1234, ZoneId.of("UTC")),
-                Genre.POP);
+                Genre.POP, true);
 
         var s = objectMapper.writeValueAsString(artist);
+        System.out.println(s);
 
         assertThatJson(s).isEqualTo("""
                 {"id": "b49fadba-6a8a-4173-b280-60c28b07136c",
