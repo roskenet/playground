@@ -11,9 +11,7 @@ public class ApiController {
 
     @GetMapping("/api/name/{param}")
     public HelloResponse getApi(@PathVariable("param") String param) {
-        HelloResponse response = new HelloResponse();
-
-        response.setValue(param.toUpperCase());
+        var response = new HelloResponse(param.toUpperCase());
 
         return response;
     }
