@@ -1,4 +1,4 @@
-package misc;
+package language;
 
 public class DeadCode {
 

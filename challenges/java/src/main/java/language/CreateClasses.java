@@ -1,4 +1,4 @@
-package misc;
+package language;
 
 public class CreateClasses {
 
@@ -8,7 +8,7 @@ public class CreateClasses {
     protected String something;
 
     public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-        CreateClasses myClass = (CreateClasses) Class.forName("misc.CreateClasses").newInstance();
+        CreateClasses myClass = (CreateClasses) Class.forName("language.CreateClasses").newInstance();
         myClass.something = "Hackbraten";
 
         System.out.println(myClass.something);

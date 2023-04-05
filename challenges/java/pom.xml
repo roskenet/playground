@@ -9,8 +9,7 @@
   <version>1.0.0</version>
 
   <name>counting-duplicate-character</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>https://www.catpictures.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,4 +33,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-</project> -la
+</project>
