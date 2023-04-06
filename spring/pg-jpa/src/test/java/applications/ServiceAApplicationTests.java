@@ -1,10 +1,10 @@
-package de.roskenet.pgjpa;
+package applications;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PlaygroundJpaApplicationTests {
+class ServiceAApplicationTests {
 
     @Test
     void contextLoads() {
