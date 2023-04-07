@@ -23,8 +23,8 @@ public class ExampleC implements CommandLineRunner {
         persistMichaelJackson();
 
         addAlbumBadToMichael();
-        addAlbumThrillerToMichael();
-        addAlbumJamToMichael();
+//        addAlbumThrillerToMichael();
+//        addAlbumJamToMichael();
 
     }
 
