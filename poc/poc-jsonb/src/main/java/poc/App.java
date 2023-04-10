@@ -1,5 +1,7 @@
 package poc;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,19 +15,28 @@ public class App implements CommandLineRunner {
 
     @Autowired
     private JsonvalsRepository repository;
+
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         System.out.println("Hello World!");
 
-//        repository.deleteAll();
-//        saveCoolValue();
+        saveCoolValue();
+
         var all = repository.findAll();
+        all.forEach(jsonvals -> readCoolValue(jsonvals.getItem()));
 
-        all.forEach(System.out::println);
+    }
 
-//        saveCoolValue();
+    private void readCoolValue(String someJsonVal) {
+        var om = new ObjectMapper();
 
-
+        MyStringProperty myStringProperty;
+        try {
+            myStringProperty = om.readValue(someJsonVal, MyStringProperty.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(myStringProperty);
     }
 
     private void saveCoolValue() {

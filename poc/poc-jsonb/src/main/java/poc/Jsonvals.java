@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import org.hibernate.annotations.Type;
 
@@ -11,10 +13,12 @@ import org.hibernate.annotations.Type;
 public class Jsonvals {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-//    @Column(columnDefinition = "jsonb")
     private String item;
-    @Enumerated(EnumType.STRING) // ordinal is good as well
+
+    // Java enums work out of the box:
+    @Enumerated(EnumType.STRING) // I prefer String
     private Status status;
 
     public int getId() {
@@ -39,5 +43,14 @@ public class Jsonvals {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Jsonvals{" +
+                "id=" + id +
+                ", item='" + item + '\'' +
+                ", status=" + status +
+                '}';
     }
 }
