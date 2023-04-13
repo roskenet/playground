@@ -1,6 +1,6 @@
 // Collatz Conjecture
 //
-// Will return with 1 eventually.
+// Will return 1 eventually.
 // Still not solved yet.
 
 fun main(args: Array<String>) {
