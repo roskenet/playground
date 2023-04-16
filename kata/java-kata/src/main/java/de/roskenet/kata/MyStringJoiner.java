@@ -3,7 +3,6 @@ package de.roskenet.kata;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import java.util.List;
-import java.util.StringJoiner;
 
 import org.junit.jupiter.api.Test;
 
