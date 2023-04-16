@@ -12,7 +12,9 @@ public class HelloSpringApplication implements CommandLineRunner {
     private String message;
 
     public static void main(String... args) {
-        SpringApplication.run(HelloSpringApplication.class, args);
+        var applicationContext = SpringApplication.run(HelloSpringApplication.class, args);
+        var displayName = applicationContext.getDisplayName();
+        System.out.println(displayName);
     }
 
     @Override
