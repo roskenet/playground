@@ -3,9 +3,10 @@ fun main() {
 
     println("Result is: ${result}")
 }
+
 fun fibonacci(idx: Int): Int {
    if (idx < 2)
       return idx
    else
-       return fibonacci(idx - 1) + fibonacci(idx - 2)
+      return fibonacci(idx - 1) + fibonacci(idx - 2)
 }
