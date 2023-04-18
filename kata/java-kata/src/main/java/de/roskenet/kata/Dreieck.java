@@ -11,29 +11,20 @@ public class Dreieck {
 
         var base = 13;
 
-        for(int x = 0; x < base; x++) {
-            System.out.print('*');
-        }
-        System.out.print('\n');
+        System.out.println("*".repeat(base));
 
         for(int line=1; line < base/2; line++) {
            StringBuilder sb = new StringBuilder();
             var length = base - line * 2;
 
-            for (int x=0; x < line; x++) {
-                sb.append(' ');
-            }
+            sb.append(" ".repeat(line));
             sb.append('*');
-            for (int x=0; x < length-2; x++) {
-                sb.append(' ');
-            }
+            sb.append(" ".repeat(length - 2));
             sb.append('*');
             System.out.println(sb);
         }
 
-        for (int x=0; x < base/2; x++) {
-            System.out.print(' ');
-        }
+        System.out.print(" ".repeat(base / 2));
         System.out.println('*');
     }
 }
