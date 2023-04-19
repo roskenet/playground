@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Debug Me
 
-Running start in debug mode in the npm window and Shift-Ctrl-Click on localhost:3000 did the trick for me.
+Running start in debug mode in the npm window and Shift-Ctrl-Click on localhost:3000 in the Process Console did the trick for me.
 
 ## Available Scripts
 
