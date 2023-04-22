@@ -15,7 +15,7 @@ function About() {
   return (
       <div>
         <Layout>
-          <Header style={{color: '#ffffff'}}>Willkommen auf dieser tollen Seite!</Header>
+          <Header style={{color: '#ffffff'}}>Willkommen auf dieser grossartigen Seite!</Header>
             <Content style={{margin: '24px 48px 0'}}>
               <Row>
                 <Col span={12}><h1>Hello World!</h1></Col>

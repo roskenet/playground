@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: keycloak
-  template: # create pods using pod definition in this template
+  template: 
     metadata:
       labels:
         app: keycloak
@@ -16,7 +16,7 @@ spec:
       containers:
       - name: keycloak
         image: quay.io/keycloak/keycloak:21.0.2
-        args: ["start-dev", "--db-url jdbc:postgresql://postgres:5432/keycloak", "--db postgres", "--db-username keycloak", "--db-password keycloak"]
+        args: ["start-dev", "--db-url jdbc:postgresql://$DB_ADDR:$DB_PORT/$DB_DATABASE", "--db $DB_VENDOR", "--db-username $DB_USER", "--db-password $DB_PASSWORD"]
         env:
         - name: KEYCLOAK_ADMIN
           value: admin

@@ -23,7 +23,8 @@ const FormExample = () => {
   }
 
   return (
-      <div>
+      <>
+          <h1>Playing with Forms:</h1>
         <Form
         name="basic"
         labelCol={{ span: 8 }}
@@ -52,7 +53,7 @@ const FormExample = () => {
         </Form.Item>
       </Form>
         <NavigationLinks/>
-      </div>
+      </>
   );
 }
 

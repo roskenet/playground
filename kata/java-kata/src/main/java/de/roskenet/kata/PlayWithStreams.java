@@ -5,6 +5,9 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
+
 public class PlayWithStreams {
 
     public static void main(String[] args) {
@@ -19,8 +22,8 @@ public class PlayWithStreams {
                         Collectors.groupingByConcurrent(b -> b, Collectors.counting())
                 );
 
-        System.out.println(String.format("Wahr: %d", resultMap.get(Boolean.TRUE)));
-        System.out.println(String.format("Unwahr: %d", resultMap.get(Boolean.FALSE)));
+        System.out.println(String.format("Wahr: %d", resultMap.get(TRUE)));
+        System.out.println(String.format("Unwahr: %d", resultMap.get(FALSE)));
     }
 
 }
