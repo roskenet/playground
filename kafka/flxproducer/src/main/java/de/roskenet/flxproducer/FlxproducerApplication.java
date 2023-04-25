@@ -7,39 +7,44 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 
 @SpringBootApplication
 public class FlxproducerApplication implements CommandLineRunner {
 
+    static class MyObject implements Sendable {
+
+        public String name;
+        public LocalDate birthday;
+
+        @Override
+        public String serialised() {
+            return(String.format(
+                    """
+                        {"name": "%s",
+                         "birthday": "%s"}
+                    """, name, birthday.format(DateTimeFormatter.ISO_DATE)
+            ));
+        }
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(FlxproducerApplication.class, args);
+
+        var myObject = new MyObject();
+        myObject.name = "Anna Konda";
+        myObject.birthday = LocalDate.of(1974, 8, 22);
+
+        FlxKafkaClient.syncronousSend(myObject);
     }
 
     @Override
     public void run(String... args) throws Exception {
         System.out.println("Hello World!");
 
-        Properties kafkaProps = new Properties();
-        kafkaProps.put("bootstrap.servers", "localhost:9092");
-
-        kafkaProps.put("key.serializer",
-                "org.apache.kafka.common.serialization.StringSerializer");
-        kafkaProps.put("value.serializer",
-                "org.apache.kafka.common.serialization.StringSerializer");
-
-        Producer producer = new KafkaProducer<String, String>(kafkaProps);
-
-        ProducerRecord<String, String> record =
-                new ProducerRecord<>("test",
-                        "SomeImportantMessage",
-                        "Awesome message! \uD83D\uDC95");
-        try {
-            var response = producer.send(record).get();
-            System.out.println(response);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
     }
+
 }
