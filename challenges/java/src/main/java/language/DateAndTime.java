@@ -1,17 +1,38 @@
 package language;
 
-import java.time.LocalDateTime;
+import java.time.Duration;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.Set;
 
 public class DateAndTime {
 
     public static void main(String[] args) {
-        var parsedDateTime = ZonedDateTime.parse("2023-04-01T23:35:04.123456+00:00");
-        var londonDateTime = parsedDateTime.withZoneSameInstant(ZoneId.of("Europe/London"));
-        var berlinDateTime = parsedDateTime.withZoneSameInstant(ZoneId.of("Europe/Berlin"));
 
-        System.out.println(String.format("In Berlin ist es dann: %s.", berlinDateTime));
-        System.out.println(String.format("In London ist es dann: %s.", londonDateTime));
+//        printAllZones();
+
+        var parsedDateTime = ZonedDateTime.parse("2023-04-01T19:46:04.123456+02:00");
+
+        System.out.println(String.format("UTC: %s", getLocalTimeIn(parsedDateTime, ZoneId.of("UTC"))));
+        System.out.println(String.format("In Berlin ist es dann: %s.", getLocalTimeIn(parsedDateTime, ZoneId.of("Europe/Berlin"))));
+        System.out.println(String.format("In London ist es dann: %s.", getLocalTimeIn(parsedDateTime, ZoneId.of("Europe/London"))));
+        System.out.println(String.format("In New York ist es dann: %s.", getLocalTimeIn(parsedDateTime, ZoneId.of("America/New_York"))));
+        System.out.println(String.format("In San Francisco ist es dann: %s.", getLocalTimeIn(parsedDateTime, ZoneId.of("America/Los_Angeles"))));
+    }
+
+    static void printAllZones() {
+        Set<String> zoneIds= ZoneId.getAvailableZoneIds();
+
+        for (String zone : zoneIds) {
+            System.out.println(zone);
+        }
+    }
+
+    static String getLocalTimeIn(ZonedDateTime zdt, ZoneId id) {
+        return zdt.withZoneSameInstant(id).toString();
+    }
+
+    public static void playWithDuration() {
+        Duration duration = Duration.ofSeconds(5);
     }
 }
