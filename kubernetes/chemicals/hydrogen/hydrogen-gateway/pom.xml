@@ -9,10 +9,9 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>de.roskenet</groupId>
-  <artifactId>hydrogen</artifactId>
+  <artifactId>hydrogen-gateway</artifactId>
   <version>1.0.0</version>
   <name>hydrogen</name>
-  <packaging>pom</packaging>
   <description>hydrogen</description>
   <properties>
     <java.version>20</java.version>
@@ -20,10 +19,25 @@
     <docker.maintainer>Felix Roske</docker.maintainer>
     <docker.repo>roskenet</docker.repo>
   </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
-  <modules>
-      <module>hydrogen-gateway</module>
-      <module>hydrogen-ui</module>
-  </modules>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
