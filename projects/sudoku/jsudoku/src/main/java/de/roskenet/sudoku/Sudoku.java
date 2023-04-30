@@ -1,6 +1,7 @@
 package de.roskenet.sudoku;
 
 import java.time.Instant;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,12 +11,14 @@ import java.util.Set;
 public class Sudoku {
 
     private Field[][] puzzle = new Field[9][9];
+    private Sudoku() {}
 
-    public static Sudoku of(int[][] puzzle) {
-        var sudoku = new Sudoku();
+    public static Sudoku of(int[][] input) {
+        var sudoku = Sudoku.empty();
+
         for (int y = 0; y < 9; y++) {
             for(int x = 0; x < 9; x++) {
-                sudoku.puzzle[y][x] = new Field(y, x, puzzle[y][x]);
+                sudoku = sudoku.setFieldValue(y, x, input[y][x]);
             }
         }
         return sudoku;
@@ -31,7 +34,37 @@ public class Sudoku {
         return sudoku;
     }
 
-    private Sudoku() {}
+    private Sudoku setFieldValue(int row, int column, int value) {
+        assertArguments(row, column, value);
+
+        setValue(row, column, value);
+
+        return this;
+    }
+
+    private void setValue(int row, int column, int value) {
+        puzzle[row][column].setValue(value);
+        removeAllMarksFromRow(row, value);
+        removeAllMarksFromColumn(column, value);
+    }
+
+    private void removeAllMarksFromRow(int row, int value) {
+       for (Field field : puzzle[row]) {
+           var result = field.strikeMark(value);
+           if(result != 0) {
+              setValue(field.getRow(), field.getColumn(), field.getValue());
+           }
+       }
+    }
+
+   private void removeAllMarksFromColumn(int column, int value) {
+       for(int row=0; row < 9 ; row++) {
+           var result = puzzle[row][column].strikeMark(value);
+           if (result != 0) {
+               setValue(row, column, value);
+           }
+       }
+   }
 
     public int solve() {
         var start = Instant.now();
@@ -40,22 +73,14 @@ public class Sudoku {
         return end.getNano()-start.getNano();
     }
 
-    public boolean setField(int row, int column, int value) {
-        assertArguments(row, column, value);
-
-//        puzzle[row][column] = value;
-
-        return isSolved();
-    }
-
     private void assertArguments(int x, int y, int value) {
-        if(x < 0 || x > 0) {
+        if(x < 0 || x > 9) {
             throw new IllegalArgumentException(String.format("x is [%d]", x));
         }
-        if(y < 0 || y > 0) {
+        if(y < 0 || y > 9) {
             throw new IllegalArgumentException(String.format("y is [%d]", y));
         }
-        if(value < 0 || value > 0) {
+        if(value < 0 || value > 9) {
             throw new IllegalArgumentException(String.format("value is [%d]", value));
         }
     }
@@ -98,5 +123,17 @@ public class Sudoku {
         else {
             return true;
         }
+    }
+
+    @Override
+    public String toString() {
+        var strBuilder = new StringBuilder();
+        for (int y=0; y < 9; y++) {
+            for (int x=0; x < 9; x++) {
+                strBuilder.append(puzzle[y][x]);
+            }
+            strBuilder.append('\n');
+        }
+        return strBuilder.toString();
     }
 }

@@ -1,6 +1,7 @@
 package de.roskenet.sudoku;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 public class Field {
@@ -13,11 +14,14 @@ public class Field {
     public Field(int row, int column) {
         this.row = row;
         this.column = column;
+        for (int x=1; x < 10; x++) {
+            pencilmarks.add(x);
+        }
     }
 
     public Field(int row, int column, int value) {
         this(row, column);
-        this.value = value;
+        setValue(value);
     }
 
     public int getValue() {
@@ -25,6 +29,33 @@ public class Field {
     }
 
     public void setValue(int value) {
-        this.value = value;
+        if(value != 0) {
+            this.value = value;
+            pencilmarks.removeAll(Set.of(1, 2, 3, 4, 5, 6, 7, 8, 9));
+        }
+    }
+    
+    public int strikeMark(int mark) {
+       pencilmarks.remove(Integer.valueOf(mark));
+
+       if(pencilmarks.size() == 1) {
+           int value = pencilmarks.stream().findFirst().get();
+           setValue(value);
+       }
+
+       return 0;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public int getColumn() {
+        return column;
     }
 }

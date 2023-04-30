@@ -8,6 +8,9 @@ public class SudokuTest {
 
     @Test
     void testSomething() {
+        Sudoku theSudoku = Sudoku.of(unfinishedSudoku);
+        System.out.println(theSudoku);
+
         assertThat(true).isTrue();
     }
 
