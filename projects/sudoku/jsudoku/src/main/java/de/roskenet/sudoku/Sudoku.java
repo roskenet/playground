@@ -9,14 +9,23 @@ import java.util.Set;
  */
 public class Sudoku {
 
-    private final int[][] puzzle;
+    private Field[][] puzzle = new Field[9][9];
 
     public Sudoku() {
-        puzzle = new int[9][9];
+//        puzzle = new Field[9][9];
+        for (int y = 0; y < 9; y++) {
+            for(int x = 0; x < 9; x++) {
+               puzzle[y][x] = new Field(y, x);
+            }
+        }
     }
 
     public Sudoku(int[][] puzzle) {
-        this.puzzle = puzzle;
+        for (int y = 0; y < 9; y++) {
+            for(int x = 0; x < 9; x++) {
+                this.puzzle[y][x] = new Field(y, x, puzzle[y][x]);
+            }
+        }
     }
 
     public int solve() {
@@ -26,18 +35,37 @@ public class Sudoku {
         return end.getNano()-start.getNano();
     }
 
+    public boolean setField(int row, int column, int value) {
+        assertArguments(row, column, value);
+
+//        puzzle[row][column] = value;
+
+        return isSolved();
+    }
+
+    private void assertArguments(int x, int y, int value) {
+        if(x < 0 || x > 0) {
+            throw new IllegalArgumentException(String.format("x is [%d]", x));
+        }
+        if(y < 0 || y > 0) {
+            throw new IllegalArgumentException(String.format("y is [%d]", y));
+        }
+        if(value < 0 || value > 0) {
+            throw new IllegalArgumentException(String.format("value is [%d]", value));
+        }
+    }
 
     public boolean isSolved() {
-        for (int[] horizRow: puzzle) {
+        for (Field[] horizRow: puzzle) {
             if(!isRowComplete(horizRow)) {
                 return false;
             }
         }
 
         for(int x = 0; x < 9; x++) {
-            int[] vertRow = new int[9];
+            Field[] vertRow = new Field[9];
             for (int y = 0; y < 9; y++) {
-                vertRow[y]= puzzle[y][x];
+                vertRow[y] = new Field(y, x, puzzle[x][y].getValue());
             }
             if(!isRowComplete(vertRow)) {
                 return false;
@@ -47,16 +75,16 @@ public class Sudoku {
         return true;
     }
 
-    private static boolean isRowComplete(int[] row) {
+    private static boolean isRowComplete(Field[] row) {
         Set<Integer> set = new HashSet<>();
-        for (int i : row) {
-            if(i == 0) {
+        for (Field f : row) {
+            if(f.getValue() == 0) {
                 return false;
             }
-            if(i < 0 || i > 9) {
+            if(f.getValue() < 0 || f.getValue() > 9) {
                 throw new IllegalStateException("The puzzle is in a incorrect state.");
             }
-            set.add(i);
+            set.add(f.getValue());
         }
 
         if (set.stream().count() != 9) {
