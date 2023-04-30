@@ -1,11 +1,14 @@
 package de.roskenet.sudoku;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Field {
     private final int row;
     private final int column;
 
     private int value = 0;
-    private int[] pencilmarks = new int[] {1,2,3,4,5,6,7,8,9};
+    private Set<Integer> pencilmarks = new HashSet<>(9);
 
     public Field(int row, int column) {
         this.row = row;

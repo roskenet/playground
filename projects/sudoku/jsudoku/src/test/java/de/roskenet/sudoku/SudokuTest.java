@@ -13,20 +13,20 @@ public class SudokuTest {
 
     @Test
     void testIsSolved() {
-       Sudoku theSudoku = new Sudoku(solvedSudoku);
+       Sudoku theSudoku = Sudoku.of(solvedSudoku);
        boolean result = theSudoku.isSolved();
        assertThat(result).isTrue();
     }
 
     @Test
     void testIsUnsolved() {
-        Sudoku theSudoku = new Sudoku(unsolvedSudoku);
+        Sudoku theSudoku = Sudoku.of(unsolvedSudoku);
         boolean result = theSudoku.isSolved();
         assertThat(result).isFalse();
     }
     @Test
     void testIsUnfinished() {
-        Sudoku theSudoku = new Sudoku(unfinishedSudoku);
+        Sudoku theSudoku = Sudoku.of(unfinishedSudoku);
         boolean result = theSudoku.isSolved();
         assertThat(result).isFalse();
     }

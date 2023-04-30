@@ -11,22 +11,27 @@ public class Sudoku {
 
     private Field[][] puzzle = new Field[9][9];
 
-    public Sudoku() {
-//        puzzle = new Field[9][9];
+    public static Sudoku of(int[][] puzzle) {
+        var sudoku = new Sudoku();
         for (int y = 0; y < 9; y++) {
             for(int x = 0; x < 9; x++) {
-               puzzle[y][x] = new Field(y, x);
+                sudoku.puzzle[y][x] = new Field(y, x, puzzle[y][x]);
             }
         }
+        return sudoku;
     }
 
-    public Sudoku(int[][] puzzle) {
+    public static Sudoku empty() {
+        var sudoku = new Sudoku();
         for (int y = 0; y < 9; y++) {
             for(int x = 0; x < 9; x++) {
-                this.puzzle[y][x] = new Field(y, x, puzzle[y][x]);
+                sudoku.puzzle[y][x] = new Field(y, x, 0);
             }
         }
+        return sudoku;
     }
+
+    private Sudoku() {}
 
     public int solve() {
         var start = Instant.now();
@@ -65,7 +70,7 @@ public class Sudoku {
         for(int x = 0; x < 9; x++) {
             Field[] vertRow = new Field[9];
             for (int y = 0; y < 9; y++) {
-                vertRow[y] = new Field(y, x, puzzle[x][y].getValue());
+                vertRow[y] = new Field(y, x, puzzle[y][x].getValue());
             }
             if(!isRowComplete(vertRow)) {
                 return false;
