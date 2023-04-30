@@ -1,7 +1,6 @@
 package de.roskenet.sudoku;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 public class Field {
@@ -9,6 +8,7 @@ public class Field {
     private final int column;
 
     private int value = 0;
+
     private Set<Integer> pencilmarks = new HashSet<>(9);
 
     public Field(int row, int column) {
