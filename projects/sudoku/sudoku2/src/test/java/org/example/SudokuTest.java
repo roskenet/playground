@@ -1,7 +1,8 @@
 package org.example;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SudokuTest {
 
