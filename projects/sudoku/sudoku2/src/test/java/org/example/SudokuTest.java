@@ -22,13 +22,14 @@ public class SudokuTest {
     }
     @Test
     void testIsUnfinished() {
+        // Can be finished!
         Sudoku theSudoku = new Sudoku(unfinishedSudoku);
 //        theSudoku.setField(0,7,1);
 
         boolean result = theSudoku.isSolved();
 
         System.out.println(theSudoku);
-        assertThat(result).isFalse();
+        assertThat(result).isTrue();
     }
 
     int [][] solvedSudoku = new int[][] {

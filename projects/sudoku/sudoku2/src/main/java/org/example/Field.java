@@ -34,9 +34,8 @@ public final class Field implements Updateable {
         }
     }
 
-    private void checkForOnlyOnePossibleValueHere() {
+    private void checkForOnlyOnePossibleValueInBox(Field[] box) {
         if (marks.size() > 1) {
-            var box = puzzle.getBox(row, column);
 
             Optional<Integer> onlyInThisMarksList = Optional.empty();
 
@@ -68,7 +67,15 @@ public final class Field implements Updateable {
         if (marks.size() == 1) {
             setValue(marks.stream().findFirst().get());
         }
-        checkForOnlyOnePossibleValueHere();
+        var boxFields = puzzle.getBox(row, column);
+        checkForOnlyOnePossibleValueInBox(boxFields);
+
+        var rowFields = puzzle.getRow(row);
+        checkForOnlyOnePossibleValueInBox(rowFields);
+
+        var columnFields = puzzle.getColumn(column);
+        checkForOnlyOnePossibleValueInBox(columnFields);
+
     }
 
     private void updateFriends(int mark) {
