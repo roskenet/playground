@@ -9,12 +9,21 @@ public final class Field implements Updateable {
     private Set<Integer> marks;
 
     private int value;
+    private int row;
+    private int column;
 
-    private List<Updateable> friends = new ArrayList<>();
+    private Sudoku puzzle;
 
-    public Field() {
+    public Field(int row, int column, Sudoku puzzle) {
         value = 0;
         marks = new HashSet<>(List.of(1,2,3,4,5,6,7,8,9));
+        this.row = row;
+        this.column = column;
+        this.puzzle = puzzle;
+    }
+
+    public int getValue() {
+        return value;
     }
 
     public void setValue(int value) {
@@ -32,8 +41,9 @@ public final class Field implements Updateable {
     }
 
     private void updateFriends(int mark) {
-        for (Updateable friend : friends) {
-            friend.removeMark(mark);
+        for (Updateable friend : puzzle.getFriendsFor(row, column)) {
+            if (friend != this)
+                friend.removeMark(mark);
         }
     }
 }
