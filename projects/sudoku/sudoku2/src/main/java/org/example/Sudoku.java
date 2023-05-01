@@ -51,11 +51,11 @@ public class Sudoku {
         return updateables;
     }
 
-    private Field[] getRow(int idx) {
+    public Field[] getRow(int idx) {
         return puzzle[idx];
     }
 
-    private Field[] getColumn(int idx) {
+    public Field[] getColumn(int idx) {
         var updateables = new Field[9];
         for(int row=0; row < 9 ; row++) {
             updateables[row] = puzzle[row][idx];
@@ -63,7 +63,7 @@ public class Sudoku {
         return updateables;
     }
 
-    private Field[] getBox(int row, int column) {
+    public Field[] getBox(int row, int column) {
        int centerColumn;
        int centerRow;
 
