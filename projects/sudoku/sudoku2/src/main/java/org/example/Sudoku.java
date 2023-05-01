@@ -30,11 +30,18 @@ public class Sudoku {
        if (isSolved())
            return true;
 
-       return false;
-    }
+       for(int r=0;  r < 9; r++) {
+           for(int c=0; c < 9; c++) {
+               if(puzzle[r][c].getValue() == 0) {
+                  puzzle[r][c].checkForOnlyOnePossibleValueInBox(getBox(r, c));
+                  puzzle[r][c].checkForOnlyOnePossibleValueInBox(getRow(r));
+                  puzzle[r][c].checkForOnlyOnePossibleValueInBox(getColumn(c));
+               }
+           }
+       }
 
-    public int getFieldValue(int row, int column) {
-        return puzzle[row][column].getValue();
+
+       return false;
     }
 
     public Field[] getFriendsFor(int row, int column) {

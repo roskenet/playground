@@ -22,6 +22,10 @@ public final class Field implements Updateable {
         this.puzzle = puzzle;
     }
 
+    public Set<Integer> getMarks() {
+        return marks;
+    }
+
     public int getValue() {
         return value;
     }
@@ -34,7 +38,7 @@ public final class Field implements Updateable {
         }
     }
 
-    private void checkForOnlyOnePossibleValueInBox(Field[] box) {
+    public void checkForOnlyOnePossibleValueInBox(Field[] box) {
         if (marks.size() > 1) {
 
             Optional<Integer> onlyInThisMarksList = Optional.empty();

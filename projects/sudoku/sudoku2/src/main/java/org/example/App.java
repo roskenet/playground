@@ -4,19 +4,21 @@ public class App {
     public static void main( String[] args ) {
         System.out.println( "Hello Sudoku Lover!" );
 
-        Sudoku thePuzzle = new Sudoku();
-        thePuzzle.setField(0, 0, 4);
-        thePuzzle.setField(0, 1, 9);
-        thePuzzle.setField(0, 2, 3);
+        Sudoku thePuzzle = new Sudoku(puzzle);
 
-        thePuzzle.setField(1, 0, 1);
-        thePuzzle.setField(1, 1, 8);
-        thePuzzle.setField(1, 2, 6);
-
-        thePuzzle.setField(2, 0, 2);
-        thePuzzle.setField(2, 1, 5);
-
-        var fieldValue = thePuzzle.getFieldValue(2, 2);
-        System.out.println(fieldValue);
+        System.out.println(thePuzzle);
     }
+
+    private static int [][] puzzle = new int[][] {
+            {0,0,5,0,0,9,0,0,0},
+            {0,7,0,0,6,0,3,0,0},
+            {0,0,4,1,2,0,7,5,0},
+            {8,1,9,0,7,0,4,6,0},
+            {0,0,0,0,0,0,0,0,0},
+            {0,5,3,0,9,0,8,1,7},
+            {0,4,1,0,5,2,6,0,0},
+            {0,0,7,0,3,0,0,4,0},
+            {0,0,0,4,0,0,9,0,0}
+    };
+
 }
