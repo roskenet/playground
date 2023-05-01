@@ -1,9 +1,7 @@
 package org.example;
 
-import org.assertj.core.api.AssertionsForClassTypes;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class SudokuTest {
 
@@ -12,23 +10,24 @@ public class SudokuTest {
     void testIsSolved() {
         Sudoku theSudoku = new Sudoku(solvedSudoku);
         boolean result = theSudoku.isSolved();
-        AssertionsForClassTypes.assertThat(result).isTrue();
+        assertThat(result).isTrue();
     }
 
     @Test
     void testIsUnsolved() {
         Sudoku theSudoku = new Sudoku(unsolvedSudoku);
         boolean result = theSudoku.isSolved();
-        AssertionsForClassTypes.assertThat(result).isFalse();
+        assertThat(result).isFalse();
     }
     @Test
     void testIsUnfinished() {
         Sudoku theSudoku = new Sudoku(unfinishedSudoku);
+//        theSudoku.setField(0,7,1);
+
         boolean result = theSudoku.isSolved();
 
         System.out.println(theSudoku);
-
-        AssertionsForClassTypes.assertThat(result).isFalse();
+        assertThat(result).isFalse();
     }
 
     int [][] solvedSudoku = new int[][] {

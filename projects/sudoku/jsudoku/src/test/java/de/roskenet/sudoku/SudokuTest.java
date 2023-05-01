@@ -2,7 +2,7 @@ package de.roskenet.sudoku;
 
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assert.assertThat;
 
 public class SudokuTest {
 
