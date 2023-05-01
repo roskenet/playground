@@ -27,9 +27,11 @@ public final class Field implements Updateable {
     }
 
     public void setValue(int value) {
-        this.value = value;
-        marks.removeAll(List.of(1,2,3,4,5,6,7,8,9));
-        updateFriends(value);
+        if(value != 0) {
+            this.value = value;
+            marks.removeAll(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9));
+            updateFriends(value);
+        }
     }
 
     @Override

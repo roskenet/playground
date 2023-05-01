@@ -15,6 +15,16 @@ public class Sudoku {
         }
     }
 
+    public Sudoku(int[][] initial) {
+       this();
+
+        for (int y = 0; y < 9; y++) {
+            for(int x = 0; x < 9; x++) {
+                setField(y, x, initial[y][x]);
+            }
+        }
+    }
+
     public boolean setField(int row, int column, int value) {
        puzzle[row][column].setValue(value);
        if (isSolved())
@@ -132,7 +142,7 @@ public class Sudoku {
         var strBuilder = new StringBuilder();
         for (int y=0; y < 9; y++) {
             for (int x=0; x < 9; x++) {
-                strBuilder.append(puzzle[y][x]);
+                strBuilder.append(puzzle[y][x].getValue());
             }
             strBuilder.append('\n');
         }
