@@ -1,18 +1,17 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public final class Field implements Updateable {
-    private Set<Integer> marks;
+    private final Set<Integer> marks;
 
     private int value;
-    private int row;
-    private int column;
+    private final int row;
+    private final int column;
 
-    private Sudoku puzzle;
+    private final Sudoku puzzle;
 
     public Field(int row, int column, Sudoku puzzle) {
         value = 0;
@@ -29,14 +28,14 @@ public final class Field implements Updateable {
     public void setValue(int value) {
         if(value != 0) {
             this.value = value;
-            marks.removeAll(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9));
+            List.of(1, 2, 3, 4, 5, 6, 7, 8, 9).forEach(marks::remove);
             updateFriends(value);
         }
     }
 
     @Override
     public void removeMark(int mark) {
-       marks.remove(Integer.valueOf(mark));
+       marks.remove(mark);
        if(marks.size() == 1) {
            setValue(marks.stream().findFirst().get());
        }

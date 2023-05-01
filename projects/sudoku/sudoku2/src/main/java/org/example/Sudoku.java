@@ -37,8 +37,8 @@ public class Sudoku {
         return puzzle[row][column].getValue();
     }
 
-    public Updateable[] getFriendsFor(int row, int column) {
-        Updateable[] updateables = new Updateable[27];
+    public Field[] getFriendsFor(int row, int column) {
+        Field[] updateables = new Field[27];
         for(int idx=0; idx < 9; idx++) {
             updateables[idx] = getRow(row)[idx];
         }
@@ -51,26 +51,26 @@ public class Sudoku {
         return updateables;
     }
 
-    private Updateable[] getRow(int idx) {
+    private Field[] getRow(int idx) {
         return puzzle[idx];
     }
 
-    private Updateable[] getColumn(int idx) {
-        var updateables = new Updateable[9];
+    private Field[] getColumn(int idx) {
+        var updateables = new Field[9];
         for(int row=0; row < 9 ; row++) {
             updateables[row] = puzzle[row][idx];
         }
         return updateables;
     }
 
-    private Updateable[] getBox(int row, int column) {
+    private Field[] getBox(int row, int column) {
        int centerColumn;
        int centerRow;
 
        centerColumn = findMiddleField(column);
        centerRow = findMiddleField(row);
 
-        var updateables = new Updateable[9];
+        var updateables = new Field[9];
         updateables[0] = puzzle[centerRow-1][centerColumn-1];
         updateables[1] = puzzle[centerRow-1][centerColumn];
         updateables[2] = puzzle[centerRow-1][centerColumn+1];
