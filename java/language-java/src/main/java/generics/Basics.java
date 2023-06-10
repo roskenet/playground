@@ -16,7 +16,7 @@ public class Basics {
 
         // But this doesn't...
         List<Integer> integerList = new ArrayList<>(List.of(1, 2, 3));
-        List<Number> numberList = integerList;
+//        List<Number> numberList = integerList;
 
         // Why? ;-)
     }
