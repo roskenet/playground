@@ -19,3 +19,12 @@ The result is that you should throw exceptions only in truly “exceptional” c
 ---
 
 Strive for failure atomicity.
+
+Bloch, Item 69:
+Exceptions are, as their name implies, to be used only for exceptional conditions; they should never be used for ordinary control flow.
+
+A well-designed API must not force its clients to use exceptions for ordinary control flow.
+
+Bloch, Item 70: Use checked exceptions for recoverable conditions and runtime exceptions for programming errors
+
+---
