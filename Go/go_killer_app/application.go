@@ -1,10 +1,9 @@
 package main
 
-import "net/http"
-
 func main() {
-	println("Hello World!")
+	println("Hello World! ", thisIsTheUltimateFunctionName(18))
+}
 
-	http.Client
-
+func thisIsTheUltimateFunctionName(theBetterVariableName int8) int8 {
+	return theBetterVariableName
 }
