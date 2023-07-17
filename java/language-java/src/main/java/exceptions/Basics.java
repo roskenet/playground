@@ -19,6 +19,7 @@ public class Basics {
     }
 
     private static void doSomething() {
+//        throw new ("Hello");
 //        throw new NullPointerException();
     }
 
