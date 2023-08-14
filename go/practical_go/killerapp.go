@@ -15,7 +15,7 @@ func (t myCoolType) doSomething(another_string string) {
 	fmt.Print(another_string)
 }
 
-func main() {
+func anothermain() {
 	fmt.Print("Hello World!")
 
 	something := myCoolType{
