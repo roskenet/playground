@@ -1,10 +1,9 @@
 package classes;
 
-import classes.ClassesBasics.InnerClass;
-
 public class TestApp {
 
     public static void main(String[] args) {
-        InnerClass innerClass = new InnerClass();
+//        InnerClass innerClass = new InnerClass();
+        System.out.println("Hello World!");
     }
 }
