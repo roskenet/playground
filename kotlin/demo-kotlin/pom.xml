@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.0.5</version>
+    <version>3.1.3</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>de.roskenet</groupId>
@@ -15,7 +15,7 @@
   <description>demo-kotlin</description>
   <properties>
     <java.version>17</java.version>
-    <kotlin.version>1.7.22</kotlin.version>
+    <kotlin.version>1.9.10</kotlin.version>
   </properties>
   <dependencies>
     <dependency>
@@ -34,7 +34,11 @@
       <groupId>org.jetbrains.kotlin</groupId>
       <artifactId>kotlin-stdlib-jdk8</artifactId>
     </dependency>
-
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <optional>true</optional>
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
