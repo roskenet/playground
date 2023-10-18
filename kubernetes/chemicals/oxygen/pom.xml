@@ -12,7 +12,7 @@
 
     <groupId>de.roskenet.elements</groupId>
     <artifactId>oxygen</artifactId>
-    <version>0.0.8</version>
+    <version>0.3.0</version>
     <name>oxygen</name>
     <description>Demo project for Spring Boot</description>
 
