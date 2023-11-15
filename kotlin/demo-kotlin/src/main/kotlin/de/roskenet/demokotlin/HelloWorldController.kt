@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 import other.AnotherReturn
+import other.doSomething
 import java.time.LocalDateTime
 import java.time.ZoneId
 import java.time.ZonedDateTime
