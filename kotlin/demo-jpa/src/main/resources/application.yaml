@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/demojpa
+    password: postgres
+    username: postgres
