@@ -7,12 +7,12 @@ import org.springframework.context.annotation.Configuration;
 public class HelloWorldConfig {
 
     @Bean
-    public KillerService killerService() {
-        return new HelloWorldService();
+    public Performer juggler() {
+        return new Juggler();
     }
 
     @Bean
-    public KillerApplication killerApplication(KillerService killerService) {
-        return new KillerApplicationImpl(killerService);
+    public KillerApplication killerApplication(Performer performer) {
+        return new KillerApplicationImpl(performer);
     }
 }

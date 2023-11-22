@@ -2,13 +2,13 @@ package workshop.spring.beans;
 
 public class KillerApplicationImpl implements KillerApplication {
 
-    private KillerService killerService;
-    public KillerApplicationImpl(KillerService killerService) {
-        this.killerService = killerService;
+    private Performer performer;
+    public KillerApplicationImpl(Performer performer) {
+        this.performer = performer;
     }
 
     @Override
     public void start() {
-        System.out.println(killerService.greeting());
+        performer.doSomething();
     }
 }

@@ -5,14 +5,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class KillerApplicationImpl implements KillerApplication {
 
-    private KillerService killerService;
+    private Performer performer;
 
-    public KillerApplicationImpl(KillerService killerService) {
-        this.killerService = killerService;
+    public KillerApplicationImpl(Performer performer) {
+        this.performer = performer;
     }
 
     @Override
     public void start() {
-        System.out.println(killerService.greeting());
+        performer.doSomething();
     }
 }
