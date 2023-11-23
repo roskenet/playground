@@ -2,7 +2,7 @@ package workshop.spring.beans;
 
 public class Juggler implements Performer {
     @Override
-    public void doSomething() {
-        System.out.println("I am juggling with three swords!");
+    public String doSomething() {
+        return "I am juggling with three swords!";
     }
 }

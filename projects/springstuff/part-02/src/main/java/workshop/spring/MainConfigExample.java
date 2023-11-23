@@ -10,6 +10,8 @@ public class MainConfigExample {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(PartyConfig.class);
         Party party = context.getBean(Party.class);
-        party.start();
+
+        String performance = party.start();
+        System.out.println(performance);
     }
 }
