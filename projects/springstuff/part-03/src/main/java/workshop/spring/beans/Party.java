@@ -1,6 +1,6 @@
 package workshop.spring.beans;
 
-public interface KillerApplication {
+public interface Party {
 
     void start();
 

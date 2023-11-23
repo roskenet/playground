@@ -2,15 +2,14 @@ package workshop.spring;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import workshop.spring.beans.HelloWorldConfig;
-import workshop.spring.beans.KillerApplication;
+import workshop.spring.beans.PartyConfig;
+import workshop.spring.beans.Party;
 
 public class MainConfigExample {
 
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(HelloWorldConfig.class);
-        KillerApplication killerApplication = context.getBean(KillerApplication.class);
-        killerApplication.start();
+        ApplicationContext context = new AnnotationConfigApplicationContext(PartyConfig.class);
+        Party party = context.getBean(Party.class);
+        party.start();
     }
 }

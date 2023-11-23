@@ -1,9 +1,13 @@
 package workshop.spring.beans;
 
-public class KillerApplicationImpl implements KillerApplication {
+import org.springframework.stereotype.Component;
+
+@Component
+public class SummerParty implements Party {
 
     private Performer performer;
-    public KillerApplicationImpl(Performer performer) {
+
+    public SummerParty(Performer performer) {
         this.performer = performer;
     }
 

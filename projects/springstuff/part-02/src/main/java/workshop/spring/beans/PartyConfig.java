@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class HelloWorldConfig {
+public class PartyConfig {
 
     @Bean
     public Performer juggler() {
@@ -12,7 +12,7 @@ public class HelloWorldConfig {
     }
 
     @Bean
-    public KillerApplication killerApplication(Performer performer) {
-        return new KillerApplicationImpl(performer);
+    public Party summerParty(Performer performer) {
+        return new SummerParty(performer);
     }
 }
