@@ -9,6 +9,8 @@ public class MainXMLExample {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application-context.xml");
         Party party = context.getBean(Party.class);
-        party.start();
+
+        var result = party.start();
+        System.out.println(result);
     }
 }

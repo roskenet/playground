@@ -9,7 +9,7 @@ public class SummerParty implements Party {
     }
 
     @Override
-    public void start() {
-        performer.doSomething();
+    public String start() {
+        return performer.doSomething();
     }
 }
