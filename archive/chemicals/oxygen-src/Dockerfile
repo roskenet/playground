@@ -1,4 +1,4 @@
-FROM openjdk:17
+FROM docker.io/openjdk:17
 
 COPY ./target/hello-service-0.0.3.jar /
 

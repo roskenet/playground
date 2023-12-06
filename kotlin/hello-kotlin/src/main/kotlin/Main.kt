@@ -7,3 +7,8 @@ fun main(args: Array<String>) {
 
     println("Capitals with B: ${capitals.joinToString()}")
 }
+
+val capitalsWithB = mutableListOf("Berlin", "Kairo", "Washington")
+fun doSomethingElse() {
+    println("Hello World")
+}
