@@ -63,19 +63,21 @@
                                 </labels>
                                 <assemblies>
                                     <assembly>
-                                        <name>application</name>
+                                        <name>work</name>
                                         <descriptorRef>artifact</descriptorRef>
-                                        <targetDir>/work</targetDir>
+<!--                                        <targetDir>/work</targetDir>-->
                                     </assembly>
                                     <assembly>
                                         <name>zalando-api</name>
+<!--                                        <name>specification</name>-->
+                                        <targetDir>/zalando-api</targetDir>
                                         <mode>dir</mode>
 <!--                                        <inline xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">-->
                                         <inline>
                                             <files>
                                                 <file>
                                                     <source>${project.basedir}/httpcalls/Insomnia_Client.json</source>
-                                                    <outputDirectory>.</outputDirectory>
+<!--                                                    <outputDirectory>.</outputDirectory>-->
                                                     <destName>api.yaml</destName>
                                                 </file>
                                             </files>
@@ -90,14 +92,14 @@
                                 </assemblies>
                                 <cmd>java -jar $JAVA_OPTS /work/${project.build.finalName}.jar</cmd>
                             </build>
-                            <copy>
-                               <entries>
-                                  <entry>
-                                     <containerPath>something</containerPath>
-                                     <hostDirectory>/maven</hostDirectory>
-                                  </entry>
-                               </entries>
-                            </copy>
+<!--                            <copy>-->
+<!--                               <entries>-->
+<!--                                  <entry>-->
+<!--                                     <containerPath>something</containerPath>-->
+<!--                                     <hostDirectory>/maven</hostDirectory>-->
+<!--                                  </entry>-->
+<!--                               </entries>-->
+<!--                            </copy>-->
                         </image>
 <!--                        <copy>-->
 <!--                            <entries>-->
