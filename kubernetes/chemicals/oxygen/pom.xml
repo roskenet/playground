@@ -49,8 +49,9 @@
             </plugin>
             <plugin>
                 <groupId>io.fabric8</groupId>
+<!--                <groupId>org.jolokia</groupId>-->
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.31.0</version>
+                <version>0.43.4</version>
                 <configuration>
                     <images>
                         <image>
@@ -65,7 +66,23 @@
                                 </assembly>
                                 <cmd>java -jar $JAVA_OPTS maven/${project.build.finalName}.jar</cmd>
                             </build>
+                            <copy>
+                               <entries>
+                                  <entry>
+                                     <containerPath>something</containerPath>
+                                     <hostDirectory>/maven</hostDirectory>
+                                  </entry>
+                               </entries>
+                            </copy>
                         </image>
+<!--                        <copy>-->
+<!--                            <entries>-->
+<!--                                <entry>-->
+<!--                                    <containerPath></containerPath>-->
+<!--                                    <hostDirectory></hostDirectory>-->
+<!--                                </entry>-->
+<!--                            </entries>-->
+<!--                        </copy>-->
                     </images>
                 </configuration>
             </plugin>
