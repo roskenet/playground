@@ -6,13 +6,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.5</version>
+        <version>3.2.0</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>de.roskenet.elements</groupId>
     <artifactId>oxygen</artifactId>
-    <version>0.3.0</version>
+    <version>0.4.0</version>
     <name>oxygen</name>
     <description>Demo project for Spring Boot</description>
 
@@ -61,10 +61,34 @@
                                 <labels>
                                     <maintainer>${docker.maintainer}</maintainer>
                                 </labels>
-                                <assembly>
-                                    <descriptorRef>artifact</descriptorRef>
-                                </assembly>
-                                <cmd>java -jar $JAVA_OPTS maven/${project.build.finalName}.jar</cmd>
+                                <assemblies>
+                                    <assembly>
+                                        <name>application</name>
+                                        <descriptorRef>artifact</descriptorRef>
+                                        <targetDir>/work</targetDir>
+                                    </assembly>
+                                    <assembly>
+                                        <name>zalando-api</name>
+                                        <mode>dir</mode>
+<!--                                        <inline xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">-->
+                                        <inline>
+                                            <files>
+                                                <file>
+                                                    <source>${project.basedir}/httpcalls/Insomnia_Client.json</source>
+                                                    <outputDirectory>.</outputDirectory>
+                                                    <destName>api.yaml</destName>
+                                                </file>
+                                            </files>
+                                        </inline>
+<!--                                        </inline>-->
+                                    </assembly>
+<!--                                    <assembly>-->
+<!--                                        <files>-->
+<!--                                            <file>httpcalls/Insomnia_Client.json</file>-->
+<!--                                        </files>-->
+<!--                                    </assembly>-->
+                                </assemblies>
+                                <cmd>java -jar $JAVA_OPTS /work/${project.build.finalName}.jar</cmd>
                             </build>
                             <copy>
                                <entries>
