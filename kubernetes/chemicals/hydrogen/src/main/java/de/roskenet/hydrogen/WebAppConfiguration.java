@@ -3,7 +3,6 @@ package de.roskenet.hydrogen;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.context.annotation.Configuration;
-//        import uk.co.caprica.sfa.security.SecurityConfig;
 
 /**
  * Additional web-application configuration.
