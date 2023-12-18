@@ -9,6 +9,7 @@ fun main(args: Array<String>) {
 }
 
 val capitalsWithB = mutableListOf("Berlin", "Kairo", "Washington")
-fun doSomethingElse() {
+
+fun doSomethingElse(input: String) {
     println("Hello World")
 }
