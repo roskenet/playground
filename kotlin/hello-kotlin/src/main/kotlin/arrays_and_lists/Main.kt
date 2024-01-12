@@ -3,13 +3,18 @@ package arrays_and_lists
 fun main() {
     println("Hello World!")
 
-    val juggler = Juggler()
-    checkPerformer(juggler)
+//    val juggler = Juggler()
+//    checkPerformer(juggler)
 
 
 //    doSomethingWithArrays()
-//    val listOfCities = listOf("New York", "Rio", "Tokyo")
-//    listOfCities.forEach { println(it) }
+    val listOfCities = listOf("New York", "Rio", "Tokyo")
+    listOfCities.filter {
+        !it.startsWith('R')
+    }.forEach {
+        println(it)
+    }
+
 //
 //    val capitals = mutableListOf("Berlin", "Bern", "Beijing")
 //    println("Cities with B: ${capitals.joinToString()}")
