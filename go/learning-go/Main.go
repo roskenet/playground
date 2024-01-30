@@ -1,15 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"myapp.roskenet.de/subdir"
+)
 
 func main() {
 
-	var x = -3
-	var isOdd = x%2 == 1
+	elvis := new(subdir.Singer)
+	//elvis.Name = "Elvis Presley"
+	elvis.Song = "Jailhouse Rock"
 
-	fmt.Println("isOdd ist: ", isOdd)
+	fmt.Printf("%s sings %s", elvis.Name, elvis.Song)
 
-	// The % operator is defined as:
-	// A a elem Z, A b elem N
-	// (a / b) * b + (a % b) == a
 }
