@@ -6,11 +6,13 @@ fun main() {
 //    val juggler = Juggler()
 //    checkPerformer(juggler)
 
+    fun myFilterFunction(arg: String): Boolean =
+        arg.startsWith('R')
 
 //    doSomethingWithArrays()
     val listOfCities = listOf("New York", "Rio", "Tokyo")
     listOfCities.filter {
-        !it.startsWith('R')
+        myFilterFunction(it)
     }.forEach {
         println(it)
     }
