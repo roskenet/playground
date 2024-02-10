@@ -16,7 +16,7 @@ fahrschein:
     oauth:
       enabled: false
       credentials-directory: /meta/credentials
-    record-metrics: true
+#    record-metrics: true
     http:
       content-encoding: gzip
 #    backoff:
