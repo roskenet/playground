@@ -41,8 +41,8 @@ services:
   zookeeper:
     image: zookeeper:3.6
     volumes:
-    - "./zoo/data:/var/lib/zookeeper/data"
-    - "./zoo/log:/var/lib/zookeeper/log"
+    - "./zoo/data:/data"
+    - "./zoo/datalog:/datalog"
 
   kafka:
     image: bitnami/kafka:3.6
