@@ -1,0 +1,1 @@
+rootProject.name = "nakadi-demo"
