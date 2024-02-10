@@ -17,7 +17,7 @@ spec:
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: zookeeper-pv-volume
+  name: zookeeper-pv-volume-1
   labels:
     type: local
     app: zookeeper
@@ -28,12 +28,28 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: "/data/zookeeper"
+    path: "/data/zookeeper_1"
 ---
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: kafka-pv-volume
+  name: zookeeper-pv-volume-2
+  labels:
+    type: local
+    app: zookeeper
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/data/zookeeper_2"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: kafka-pv-volume-1
   labels:
     type: local
     app: kafka
@@ -44,7 +60,23 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: "/data/kafka"
+    path: "/data/kafka_1"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: kafka-pv-volume-2
+  labels:
+    type: local
+    app: kafka
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/data/kafka_2"
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -54,6 +86,7 @@ metadata:
     app: postgres
 spec:
   storageClassName: manual
+  volumeName: postgres-pv-volume
   accessModes:
     - ReadWriteMany
   resources:
@@ -63,11 +96,12 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: zookeeper-pv-claim
+  name: zookeeper-pv-claim-1
   labels:
     app: zookeeper
 spec:
   storageClassName: manual
+  volumeName: zookeeper-pv-volume-1
   accessModes:
     - ReadWriteMany
   resources:
@@ -77,11 +111,42 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: kafka-pv-claim
+  name: zookeeper-pv-claim-2
+  labels:
+    app: zookeeper
+spec:
+  storageClassName: manual
+  volumeName: zookeeper-pv-volume-2
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: kafka-pv-claim-1
   labels:
     app: kafka
 spec:
   storageClassName: manual
+  volumeName: kafka-pv-volume-1
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: kafka-pv-claim-2
+  labels:
+    app: kafka
+spec:
+  storageClassName: manual
+  volumeName: kafka-pv-volume-2
   accessModes:
     - ReadWriteMany
   resources:

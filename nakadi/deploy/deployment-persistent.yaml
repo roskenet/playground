@@ -18,12 +18,18 @@ spec:
       - name: postgres
         persistentVolumeClaim:
           claimName: postgres-pv-claim
-      - name: zookeeper
+      - name: zookeeper-1
         persistentVolumeClaim:
-          claimName: zookeeper-pv-claim
-      - name: kafka
+          claimName: zookeeper-pv-claim-1
+      - name: zookeeper-2
         persistentVolumeClaim:
-          claimName: kafka-pv-claim
+          claimName: zookeeper-pv-claim-2
+      - name: kafka-1
+        persistentVolumeClaim:
+          claimName: kafka-pv-claim-1
+      - name: kafka-2
+        persistentVolumeClaim:
+          claimName: kafka-pv-claim-2
       containers:
       - name: postgres
         image: roskenet/nakadidb:1.0.0
@@ -35,7 +41,7 @@ spec:
         - name: POSTGRES_DB
           value: local_nakadi_db
         volumeMounts:
-        - mountPath: /var/lib/postgresql
+        - mountPath: /var/lib/postgresql/data
           name: postgres
       - name: zookeeper
         image: zookeeper:3.6
@@ -44,9 +50,9 @@ spec:
           value: "false"
         volumeMounts:
         - mountPath: /data
-          name: zookeeper
+          name: zookeeper-1
         - mountPath: /datalog
-          name: zookeeper
+          name: zookeeper-2
       - name: kafka
         image: bitnami/kafka:3.6
         env:
@@ -80,9 +86,9 @@ spec:
           value: "INTERNAL"
         volumeMounts:
         - mountPath: /var/lib/kafka/data
-          name: kafka
+          name: kafka-1
         - mountPath: /etc/kafka/secrets
-          name: kafka
+          name: kafka-2
       - name: nakadi
         image: roskenet/nakadi:1.0.0
         env:
