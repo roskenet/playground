@@ -6,8 +6,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 
 @SpringBootApplication
-//@EnableGlobalMethodSecurity(prePostEnabled = true)
-//@EnableWebSecurity
 class DemoResourceApplication
 
 fun main(args: Array<String>) {

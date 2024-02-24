@@ -14,27 +14,4 @@ import org.springframework.security.oauth2.server.resource.introspection.SpringO
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true)
-class SecurityConfig {
-
-	@Bean
-	fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
-		http {
-			authorizeHttpRequests {
-				authorize(anyRequest, authenticated)
-			}
-			oauth2ResourceServer {
-				opaqueToken { }
-			}
-		}
-
-		return http.build()
-	}
-
-	@Bean
-	fun opaqueTokenIntrospector(): OpaqueTokenIntrospector {
-		return SpringOpaqueTokenIntrospector(
-			"http://keycloak.192-168-49-2.nip.io/realms/chemicals/protocol/openid-connect/token/introspect", "oxygen", "U74inMN8xWQxgOBv5emkh62EGJZabikh"
-		)
-	}
-
-}
+class SecurityConfig
