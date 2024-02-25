@@ -19,39 +19,23 @@ import java.util.Map;
 public class ShowController {
 
     @Autowired
-    private OAuth2AuthorizedClientService clientService;
-
-    @Autowired
-    private DefaultClientCredentialsTokenResponseClient client;
-
-    @Autowired
     private WebClient webClient;
 
     @GetMapping("/show")
     public Map<String, String> showSomething() {
 
-
-        var oAuth2AuthorizedClient = clientService
-                .loadAuthorizedClient("hydrogen", "hydrogen");
-
         var block = webClient.get()
                 .uri("http://localhost:9191/myresource")
-//				.attributes(clientRegistrationId("my-oauth2-client"))
                 .attributes(
-
                         ServerOAuth2AuthorizedClientExchangeFilterFunction
-      .clientRegistrationId("hydrogen")
-
-
+                                .clientRegistrationId("hydrogen")
                 )
                 .retrieve()
                 .toEntityList(String.class)
                 .block();
 
-
-
         var responseMap = new HashMap<String, String>();
-        responseMap.put("key", "value");
+        responseMap.put("myresource", block.toString());
         return responseMap;
     }
 }
