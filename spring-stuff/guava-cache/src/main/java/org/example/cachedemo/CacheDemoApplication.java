@@ -22,10 +22,6 @@ public class CacheDemoApplication implements CommandLineRunner {
     @Autowired
     private SomethingCache cache;
 
-    @Autowired
-    private Cache theCache;
-
-
     @Override
     public void run(String... strings) throws Exception {
         System.out.println("Hello World");
