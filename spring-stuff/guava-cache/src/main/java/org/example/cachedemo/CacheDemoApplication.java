@@ -1,15 +1,10 @@
 package org.example.cachedemo;
 
-import com.google.common.cache.CacheBuilder;
-import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.Cache;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.context.annotation.Bean;
-import org.springframework.cache.guava.GuavaCache;
 
 @SpringBootApplication
 @EnableCaching
