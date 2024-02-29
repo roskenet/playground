@@ -34,7 +34,6 @@ class HelloWorldController: HelloWorldAPI {
 
         var y: Long = 21 * 2
 
-        // Those are primitives...
         val res = x === y
 
         val newMap = artists.map { it.uppercase() }
