@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class SomethingCache {
     private static final Logger logger = LoggerFactory.getLogger(SomethingCache.class);
 
-    @Cacheable("transformCache")
+    @Cacheable(CacheConfig.CACHE_NAME)
     public String transformMe(String param) {
         logger.info("No cache hit for {}", param);
         return param.toUpperCase();
