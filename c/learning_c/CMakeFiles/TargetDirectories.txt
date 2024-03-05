@@ -1,3 +1,0 @@
-/home/felix/Workspaces/playground/c/learning_c/CMakeFiles/learning_c.dir
-/home/felix/Workspaces/playground/c/learning_c/CMakeFiles/edit_cache.dir
-/home/felix/Workspaces/playground/c/learning_c/CMakeFiles/rebuild_cache.dir
