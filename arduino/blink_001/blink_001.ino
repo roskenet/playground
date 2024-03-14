@@ -22,8 +22,6 @@
   http://www.arduino.cc/en/Tutorial/Blink
 */
 
-// Fuer den Ardiono Nano:
-//const int LED = PINB2;
 const int LED = 13;
 
 // the setup function runs once when you press reset or power the board

@@ -22,8 +22,6 @@
   http://www.arduino.cc/en/Tutorial/Blink
 */
 
-// Fuer den Ardiono Nano:
-//const int LED = PINB2;
 const int LED = 13;
 
 // the setup function runs once when you press reset or power the board
@@ -35,7 +33,7 @@ void setup() {
 // the loop function runs over and over again forever
 void loop() {
   digitalWrite(LED, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
+  delay(100);                       // wait for a second
   digitalWrite(LED, LOW);    // turn the LED off by making the voltage LOW
   delay(1000);                       // wait for a second
 }
