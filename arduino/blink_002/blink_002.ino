@@ -23,6 +23,7 @@
 */
 
 const int LED = 13;
+//const int LED = 8;
 
 // the setup function runs once when you press reset or power the board
 void setup() {
@@ -32,8 +33,24 @@ void setup() {
 
 // the loop function runs over and over again forever
 void loop() {
-  digitalWrite(LED, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(100);                       // wait for a second
-  digitalWrite(LED, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);                       // wait for a second
+  digitalWrite(LED, HIGH);
+  delay(100);
+  digitalWrite(LED, LOW);
+  delay(10);
+  digitalWrite(LED, HIGH);
+  delay(10);
+  digitalWrite(LED, LOW);
+  delay(10);
+  digitalWrite(LED, HIGH);
+  delay(10);
+  digitalWrite(LED, LOW);
+  delay(10);
+  digitalWrite(LED, HIGH);
+  delay(5);
+  digitalWrite(LED, LOW);
+  delay(5);
+  digitalWrite(LED, HIGH);
+  delay(5);
+  digitalWrite(LED, LOW);
+  delay(5);
 }

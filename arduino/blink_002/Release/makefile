@@ -97,19 +97,19 @@ all: blink_002
 blink_002: $(HEX)
 	@echo 'Building target: $@'
 	@echo 'Printing size:'
-	"/home/felix/Packages/Sloeber/arduinoPlugin/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7/bin/avr-size" -A "/home/felix/Workspaces/playground/arduino/blink_002/Release/blink_002.elf"
+	"/bin/avr-size" -A "/home/felix/Workspaces/playground/arduino/blink_002/Release/blink_002.elf"
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 /home/felix/Workspaces/playground/arduino/blink_002/Release/arduino.ar: $(AR_OBJ)
 	@echo 'Starting archiver'
-	"/home/felix/Packages/Sloeber/arduinoPlugin/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7/bin/avr-gcc-ar" rcs  "/home/felix/Workspaces/playground/arduino/blink_002/Release/arduino.ar" $(AR_OBJ)
+	"/bin/avr-gcc-ar" rcs  "/home/felix/Workspaces/playground/arduino/blink_002/Release/arduino.ar" $(AR_OBJ)
 	@echo 'Finished building: $@'
 	@echo ' '
 
 blink_002.elf: $(LINK_OBJ) $(AR)
 	@echo 'Starting combiner'
-	"/home/felix/Packages/Sloeber/arduinoPlugin/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7/bin/avr-gcc" -w -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega328p   -o "/home/felix/Workspaces/playground/arduino/blink_002/Release/blink_002.elf"  $(LINK_OBJ)  $(AR) "-L/home/felix/Workspaces/playground/arduino/blink_002/Release" -lm
+	"/bin/avr-gcc" -w -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=attiny461  -o "/home/felix/Workspaces/playground/arduino/blink_002/Release/blink_002.elf"  $(LINK_OBJ) $(AR) "-L/home/felix/Workspaces/playground/arduino/blink_002/Release" -lm
 	@echo 'Finished building: $@'
 	@echo ' '
 

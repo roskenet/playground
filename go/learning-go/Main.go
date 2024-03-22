@@ -20,7 +20,7 @@ func main() {
 	elvis.Name = "Elvis Presley"
 	elvis.Song = "Jailhouse Rock"
 
-	madonna := subdir.Singer{
+	madonna := subdir.Singer {
 		Name: "Madonna",
 		Song: "Like a Virgin",
 	}
