@@ -45,10 +45,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /home/felix/Packages/JetBrains/clion/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /home/felix/Packages/JetBrains/clion/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -57,13 +57,13 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/felix/Workspaces/playground/cmake/first_build
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/felix/Workspaces/playground/cmake/first_build/release
+CMAKE_BINARY_DIR = /home/felix/Workspaces/playground/cmake/first_build/build-release
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Hello.dir/all
+all: CMakeFiles/hello.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Hello.dir/clean
+clean: CMakeFiles/hello.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Hello.dir
+# Target rules for target CMakeFiles/hello.dir
 
 # All Build rule for target.
-CMakeFiles/Hello.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hello.dir/build.make CMakeFiles/Hello.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hello.dir/build.make CMakeFiles/Hello.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/felix/Workspaces/playground/cmake/first_build/release/CMakeFiles --progress-num=1,2 "Built target Hello"
-.PHONY : CMakeFiles/Hello.dir/all
+CMakeFiles/hello.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/felix/Workspaces/playground/cmake/first_build/build-release/CMakeFiles --progress-num=1,2 "Built target hello"
+.PHONY : CMakeFiles/hello.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Hello.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/felix/Workspaces/playground/cmake/first_build/release/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Hello.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/felix/Workspaces/playground/cmake/first_build/release/CMakeFiles 0
-.PHONY : CMakeFiles/Hello.dir/rule
+CMakeFiles/hello.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/felix/Workspaces/playground/cmake/first_build/build-release/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hello.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/felix/Workspaces/playground/cmake/first_build/build-release/CMakeFiles 0
+.PHONY : CMakeFiles/hello.dir/rule
 
 # Convenience name for target.
-Hello: CMakeFiles/Hello.dir/rule
-.PHONY : Hello
+hello: CMakeFiles/hello.dir/rule
+.PHONY : hello
 
 # clean rule for target.
-CMakeFiles/Hello.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hello.dir/build.make CMakeFiles/Hello.dir/clean
-.PHONY : CMakeFiles/Hello.dir/clean
+CMakeFiles/hello.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/clean
+.PHONY : CMakeFiles/hello.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

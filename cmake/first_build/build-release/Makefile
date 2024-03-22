@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /home/felix/Packages/JetBrains/clion/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /home/felix/Packages/JetBrains/clion/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/felix/Workspaces/playground/cmake/first_build
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/felix/Workspaces/playground/cmake/first_build/release
+CMAKE_BINARY_DIR = /home/felix/Workspaces/playground/cmake/first_build/build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/felix/Workspaces/playground/cmake/first_build/release
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/felix/Packages/JetBrains/clion/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/felix/Packages/JetBrains/clion/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/felix/Workspaces/playground/cmake/first_build/release/CMakeFiles /home/felix/Workspaces/playground/cmake/first_build/release//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/felix/Workspaces/playground/cmake/first_build/build-release/CMakeFiles /home/felix/Workspaces/playground/cmake/first_build/build-release//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/felix/Workspaces/playground/cmake/first_build/release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/felix/Workspaces/playground/cmake/first_build/build-release/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Hello
+# Target rules for targets named hello
 
 # Build rule for target.
-Hello: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Hello
-.PHONY : Hello
+hello: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello
+.PHONY : hello
 
 # fast build rule for target.
-Hello/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hello.dir/build.make CMakeFiles/Hello.dir/build
-.PHONY : Hello/fast
+hello/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
+.PHONY : hello/fast
 
-src/hello.o: src/hello.cpp.o
-.PHONY : src/hello.o
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/hello.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hello.dir/build.make CMakeFiles/Hello.dir/src/hello.cpp.o
-.PHONY : src/hello.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/hello.i: src/hello.cpp.i
-.PHONY : src/hello.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/hello.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hello.dir/build.make CMakeFiles/Hello.dir/src/hello.cpp.i
-.PHONY : src/hello.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/hello.s: src/hello.cpp.s
-.PHONY : src/hello.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/hello.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hello.dir/build.make CMakeFiles/Hello.dir/src/hello.cpp.s
-.PHONY : src/hello.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Hello"
-	@echo "... src/hello.o"
-	@echo "... src/hello.i"
-	@echo "... src/hello.s"
+	@echo "... hello"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

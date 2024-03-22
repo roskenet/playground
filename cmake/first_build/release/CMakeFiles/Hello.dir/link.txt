@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/Hello.dir/src/hello.cpp.o -o Hello 

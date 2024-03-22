@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(Hello)
+project(
+    "hello"
+    VERSION 1.0
+    DESCRIPTION "Hello World using CMake"
+    LANGUAGES CXX)
 
-add_executable(Hello src/hello.cpp)
+add_executable(hello)
+
+target_sources(hello PRIVATE src/main.cpp)
