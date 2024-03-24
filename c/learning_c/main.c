@@ -1,18 +1,25 @@
-#include <stdio.h>
-
-int do_something(char *);
+#include<stdio.h>
+#include<stdlib.h>
 
 int main() {
     printf("Hello, World!\n");
 
-    char *my_string = "Maschendrahtzaun";
+    typedef struct {
+        char c[10];
+        int i;
+        double d;
+    } widget;
 
-    int result = do_something(my_string);
+    void *memory = malloc(sizeof(widget));
 
-    printf("Result ist: %d", result);
+    widget *w = memory;
+
+    w->i = 42;
+    w->d = 3.14;
+
+    free(w);
+    w = NULL;
+
     return 0;
 }
 
-int do_something(char *somwthing) {
-    return printf("Sonething is: %s!", somwthing);
-}

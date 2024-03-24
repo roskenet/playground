@@ -26,7 +26,7 @@ int main() {
 
     std::cout << "Sticky settings: " << myFloat << std::endl;
 
-    const Manufacturer myCamera{Manufacturer::Samsung};
+    constexpr Manufacturer myCamera{Manufacturer::Samsung};
 
     if(myCamera == Manufacturer::Leica) {
         std::cout << "I don't own a Leica!";
