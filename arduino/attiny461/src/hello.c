@@ -1,18 +1,44 @@
-#include <avr/io.h>
-#include <util/delay.h>
+#include<avr/io.h>
+#include<avr/interrupt.h>
+#include<util/delay.h>
 
+void doSomething() {
+    for (int x = 0; x < 5; x++) {
+        PORTB = 0b00100000;
+        _delay_ms(100);
+
+        PORTB = 0b00000000;
+        _delay_ms(100);
+    }
+}
+
+ISR(PCINT_vect) {
+    doSomething();
+}
 
 int main(void) {
-  DDRB |= 0b11111111;
+    DDRB = 0b00100000;
+    DDRA = 0b00000000;
 
-  while (1) {
+    PORTA = 0b00010000;
 
-    PORTB = 0b11111111;
-    _delay_ms(1000);
+//  GIMSK |= 0b00110000;  // General Interrupt Mask Register, / Bit 5 – PCIE: Pin Change Interrupt Enable / When the PCIE bit is set (one) and the I-bit in the Status Register (SREG) is set (one), pin change interrupt is enabled. Any change on any enabled PCINT[5:0] pin will cause an interrupt. The corresponding interrupt of Pin Change Interrupt Request is executed from the PCI Interrupt Vector. PCINT[5:0] pins are enabled individually by the PCMSK0 Register. / see https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet.pdf
+  cli();
+  GIMSK |= (1 << 5);
+  PCMSK0 = 0b00100000;  // Pin-change interrupt for PB0, PB1, PB2
+  PCMSK1 = 0b00000000;  // Pin-change interrupt for PB0, PB1, PB2
+  sei();
 
-    PORTB = 0b00000000;
-    _delay_ms(1000);
+    while (1) {
+        if (~(PINA) & (1 << PINA4)) {
+            PORTB = 0b00100000;
+        } else {
+            PORTB = 0b00100000;
+            _delay_ms(1000);
 
-  }
-  return 0;
+            PORTB = 0b00000000;
+            _delay_ms(1000);
+        }
+    }
+    return 0;
 }
