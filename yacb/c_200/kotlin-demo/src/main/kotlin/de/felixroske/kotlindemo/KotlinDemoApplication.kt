@@ -9,7 +9,6 @@ class KotlinDemoApplication: CommandLineRunner {
     override fun run(vararg args: String?) {
         println("Hello World!")
     }
-
 }
 
 fun main(args: Array<String>) {
