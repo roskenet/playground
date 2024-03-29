@@ -27,3 +27,15 @@ avr-gcc -mmcu=atmega32 -I. -gdwarf-2   -Os -funsigned-char
 -Wl,-Map=main.map,--cref    -lm
 
 
+Sloeber-IDE uses the following compiler flags:
+"/bin/avr-g++" -c -g -Os -w 
+-std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD -flto 
+-mmcu=attiny461 -DF_CPU=1000000L -DCLOCK_SOURCE=0 -DARDUINO=10812 -DARDUINO_AVR_ATTINYX61 
+-DARDUINO_ARCH_AVR    
+-DNEOPIXELPORT=PORTA 
+-I"/home/felix/Workspaces/Forks/ATTinyCore/avr/cores/tiny" 
+-I"/home/felix/Workspaces/Forks/ATTinyCore/avr/variants/tinyX61" 
+-I"/home/felix/Workspaces/Forks/ATTinyCore/avr/libraries/SPI" 
+-MMD -MP -MF"sloeber.ino.cpp.d" -MT"sloeber.ino.cpp.o" 
+-D__IN_ECLIPSE__=1 "../sloeber.ino.cpp" -o "sloeber.ino.cpp.o"
+
