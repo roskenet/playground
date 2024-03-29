@@ -24,12 +24,9 @@ void buttonInterrupt(void) {
 
 int main(void) {
     DDRB |= (1 << 5);
-    DDRA |= 0b00000000;
+    DDRA = 0b00000000;
 
     PORTA |= 0xFF;
-
-//  GIMSK |= 0b00110000;  // General Interrupt Mask Register, / Bit 5 – PCIE: Pin Change Interrupt Enable / When the PCIE bit is set (one) and the I-bit in the Status Register (SREG) is set (one), pin change interrupt is enabled. Any change on any enabled PCINT[5:0] pin will cause an interrupt. The corresponding interrupt of Pin Change Interrupt Request is executed from the PCI Interrupt Vector. PCINT[5:0] pins are enabled individually by the PCMSK0 Register. / see https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet.pdf
-//    cli();
 
     GIMSK |= (1 << 5);
 //    PCMSK0 = 0b00010000;  // Pin-change interrupt for PB0, PB1, PB2
@@ -46,7 +43,7 @@ int main(void) {
                 PORTB = 0b00100000;
                 _delay_ms(50);
                 PORTB = 0b00000000;
-                _delay_ms(50);
+                _delay_ms(250);
             }
         } else {
 //            PORTB = 0b00100000;
