@@ -154,7 +154,7 @@
 					"value" : "CXX compiler"
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/usr/bin/c++"
 		},
 		{

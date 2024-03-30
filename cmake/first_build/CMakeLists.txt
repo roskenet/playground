@@ -9,3 +9,7 @@ project(
 add_executable(hello)
 
 target_sources(hello PRIVATE src/main.cpp)
+
+#set(MY_VARIABLE "Hello World!")
+
+message("This is a message! ${MY_VARIABLE}")
