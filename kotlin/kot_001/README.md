@@ -1,10 +1,10 @@
 # Five Ways to say Hello Kotlin
 
-0. Use the kotlin playground
+## Use the kotlin playground
 
 Point your browser to https://play.kotlinlang.org.
 
-0. Use the REPL
+## Use the REPL
 
 ```shell
 ❯ kotlin
@@ -15,13 +15,13 @@ Hello World!
 >>> :quit
 ```
 
-0. Run Kotlin as script
+## Run Kotlin as script
 
 ```shell
 kotlin HelloWorld.kts
 ```
 
-0. Compile to Java Bytecode
+## Compile to Java Bytecode
 
 ```shell
 kotlinc HelloWorld.kt
@@ -29,7 +29,7 @@ kotlinc HelloWorld.kt
 kotlin HelloWorldkt
 ```
 
-0. Compile a runnable jar
+## Compile a runnable jar
 
 ```shell
 kotlinc HelloWorld.kt -include-runtime -d HelloWorld.jar
