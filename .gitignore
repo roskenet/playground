@@ -78,6 +78,7 @@ stale_outputs_checked
 .cproject
 *.o
 *.d
+!README.d
 *.log
 *.aux
 *.pdf
