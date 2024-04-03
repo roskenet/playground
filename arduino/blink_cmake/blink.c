@@ -2,39 +2,40 @@
 #include<util/delay.h>
 #include<avr/interrupt.h>
 
-uint8_t myFlag = 0;
+volatile uint8_t myFlag = 0;
 
 ISR(PCINT_vect) {
-    if (myFlag == 0) {
-        myFlag = 1;
-    } else {
-        myFlag = 0;
+    if(~PORTB & 00100000) {
+        if (myFlag == 0) {
+            myFlag = 1;
+        } else {
+            myFlag = 0;
+        }
     }
 }
 
+void initInterrupt() {
+    GIMSK |= (1 << PCIE1);
+    PCMSK0 |= (1 << 4);
+}
+
 int main(void) {
+    // PINOUT:
     DDRB |= (1 << 5);
 
-    DDRA = 0b00000000;
-    PORTA |= 0xFF;
+//    PORTA |= (1 << 5);
+//    PORTB |= (1 << 4);
 
+    initInterrupt();
 
-    GIMSK |= (1 << PCIE0);
-    GIMSK |= (1 << PCIE1);
-
-    PCMSK0 |= (1 << 4);
-    PCMSK1 |= (1 << 4);
     sei();
 
     while (1) {
-
         if (myFlag == 0) {
-            for (int i = 0; i < 10; ++i) {
-                PORTB |= 0b00100000;
-                _delay_ms(10);
-                PORTB &= ~(0b00100000);
-                _delay_ms(990);
-            }
+            PORTB = 0b00100000;
+            _delay_ms(100);
+            PORTB = 0b00000000;
+            _delay_ms(100);
         } else {
             PORTB = 0b00100000;
             _delay_ms(1000);
