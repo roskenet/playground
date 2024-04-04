@@ -5,7 +5,7 @@ fun main() {
     println("Calculating the 10001 Prime Number")
     var numsFound: UInt = 6u;
 
-    var counter: Long = 13;
+    var counter: ULong = 13UL;
 
     while(numsFound < 10001u) {
         if (isPrime(++counter)) {
@@ -15,10 +15,11 @@ fun main() {
 
     println("The 10001st Prime Number is: ${counter}")
 }
-
-fun isPrime(number: Long): Boolean {
-
-    for (x: Long in 2..number) {
-
+// A very naive and easy implementation that runs fast enough on my machine!
+fun isPrime(number: ULong): Boolean {
+    for (x: ULong in 2UL..number/2UL ) {
+        if(number % x == 0UL)
+            return false;
     }
+    return true;
 }
