@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: oxygen
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+hello:
+  greeting: ${GREETING:Servus, %s!}
