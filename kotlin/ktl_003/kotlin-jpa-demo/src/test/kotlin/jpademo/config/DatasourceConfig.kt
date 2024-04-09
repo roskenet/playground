@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import javax.sql.DataSource
 
+// If you want to persist your data in a "real" PostgreSQL DB
+// just disable this Configuration.
 @Configuration
 class DatasourceConfig {
     @Bean
