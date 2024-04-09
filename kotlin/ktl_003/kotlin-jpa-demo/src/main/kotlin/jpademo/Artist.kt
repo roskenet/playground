@@ -22,7 +22,7 @@ data class Artist (
     var name: String = "",
 
     @OneToMany(cascade = [CascadeType.ALL], mappedBy = "artist")
-    var songs: List<Song> = mutableListOf(),
+    var songs: MutableList<Song> = mutableListOf(),
 
     @CreatedDate
     var createdAt: Instant? = null,
@@ -31,6 +31,6 @@ data class Artist (
 ) {
     fun addSong(song: Song) {
         song.artist = this
-        this.songs.addLast(song)
+        this.songs.add(song)
     }
 }
