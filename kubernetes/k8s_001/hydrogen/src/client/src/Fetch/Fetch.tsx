@@ -8,7 +8,7 @@ const Fetch = () => {
   const doSomething = () => {
     console.log("Ein Click!");
 
-    fetch('http://oxygen.192-168-49-2.nip.io/api/name/some%20body')
+    fetch('http://oxygen.192-168-39-53.nip.io/api/name/some%20body')
     .then(response => response.json())
     .then(result => setTheState({"name": result.value}))
     .catch(error => console.error(error));
@@ -19,6 +19,7 @@ const Fetch = () => {
 
   return (
       <div>
+          <h1>Let's call the Oxygen!</h1>
           <p>Dies is a real Killer App!</p>
           <Button onClick={doSomething}>Click me!</Button>
           <p>The State is: {theState.name}</p>
