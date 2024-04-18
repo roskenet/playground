@@ -17,26 +17,36 @@ spec:
       volumes:
       - name: zookeeper-data
         hostPath:
-          path: /data/zookeeper-data
+          path: /data/nakadi/zookeeper-data
           type: Directory 
       - name: zookeeper-datalog
         hostPath:
-          path: /data/zookeeper-datalog
+          path: /data/nakadi/zookeeper-datalog
           type: Directory
       - name: kafka-data
         hostPath:
-          path: /data/kafka-data
+          path: /data/nakadi/kafka-data
           type: Directory
       - name: kafka-secrets
         hostPath:
-          path: /data/kafka-secrets
+          path: /data/nakadi/kafka-secrets
           type: Directory
       - name: postgres-data
         hostPath:
-          path: /data/postgres-data
+          path: /data/nakadi/postgres-data
           type: Directory
       containers:
-      - name: zookeeper
+      - name: nakadi-postgres
+        image: postgres:16
+        env:
+        - name: POSTGRES_PASSWORD
+          value: password
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgres-data
+      - name: nakadi-zookeeper
         image: zookeeper:3.6
         env:
         - name: ZOO_ADMINSERVER_ENABLED
@@ -46,7 +56,7 @@ spec:
           name: zookeeper-data
         - mountPath: /datalog
           name: zookeeper-datalog
-      - name: kafka
+      - name: nakadi-kafka
         image: bitnami/kafka:3.6
         env:
         - name: BITNAMI_DEBUG
@@ -90,7 +100,7 @@ spec:
         - name: NAKADI_ZOOKEEPER_CONNECTIONSTRING
           value: "zookeeper://localhost:2181"
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:localhost://postgres/nakadi
+          value: jdbc:postgresql://localhost/nakadi
         - name: SPRING_DATASOURCE_USERNAME
           value: nakadi
         - name: SPRING_DATASOURCE_PASSWORD
