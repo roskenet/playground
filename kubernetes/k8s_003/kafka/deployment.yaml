@@ -17,11 +17,11 @@ spec:
       volumes:
       - name: kafka-data
         hostPath:
-          path: /data/kafka-data-alone
+          path: /data/kafka/data
           type: Directory
       - name: kafka-secrets
         hostPath:
-          path: /data/kafka-secrets-alone
+          path: /data/kafka/secrets
           type: Directory
       containers:
       - name: kafka
@@ -36,7 +36,7 @@ spec:
         - name: KAFKA_BROKER_ID
           value: "0"
         - name: KAFKA_CFG_ADVERTISED_LISTENERS
-          value: "INTERNAL://localhost:9092,EXTERNAL://localhost:29092,CLIENT://localhost:9093"
+          value: "INTERNAL://kafka:9092,EXTERNAL://localhost:29092,CLIENT://localhost:9093"
         - name: KAFKA_CFG_LISTENERS
           value: "INTERNAL://localhost:9092,EXTERNAL://0.0.0.0:29092,CLIENT://:9093"
         - name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP

@@ -17,11 +17,11 @@ spec:
       volumes:
       - name: zookeeper-data
         hostPath:
-          path: /data/zookeeper-data
+          path: /data/zookeeper/data
           type: Directory 
       - name: zookeeper-datalog
         hostPath:
-          path: /data/zookeeper-datalog
+          path: /data/zookeeper/datalog
           type: Directory
       containers:
       - name: zookeeper
@@ -34,9 +34,3 @@ spec:
           name: zookeeper-data
         - mountPath: /datalog
           name: zookeeper-datalog
-#        livenessProbe:
-#          httpGet:
-#            path: /health
-#            port: 8080
-#          initialDelaySeconds: 30
-#          periodSeconds: 30
