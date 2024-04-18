@@ -1,7 +1,6 @@
-# Setup Postgresql
+# A local nakadi for minikube
 
-CREATE USER nakadi CREATEROLE PASSWORD 'nakadi';
-
-## Storage
-
-The storage.yaml is obsolete and only here for how-to purpose.
+1. Build a nakadi jar
+2. Build a nakadi container 
+3. kubectl apply -f deployment.yaml , service.yaml, ingress.yaml
+4. execute database script from nakadi sources dir
