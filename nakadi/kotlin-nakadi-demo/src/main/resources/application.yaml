@@ -8,25 +8,25 @@ fahrschein:
   defaults:
     nakadi-url: http://nakadi.192-168-49-2.nip.io
     application-name: nakadi-demo
-    consumer-group: nakadi-demo-application
-    stream-parameters:
-      batch-limit: 1000
-      max-uncommitted-events: 5000
-      batch-flush-timeout: 5
-    oauth:
-      enabled: false
-      credentials-directory: /meta/credentials
-    record-metrics: true
-    http:
-      content-encoding: gzip
-    backoff:
-      enabled: true
+#    consumer-group: nakadi-demo-application
+#    stream-parameters:
+#      batch-limit: 1000
+#      max-uncommitted-events: 5000
+#      batch-flush-timeout: 5
+#    oauth:
+#      enabled: false
+#      credentials-directory: /meta/credentials
+#    record-metrics: true
+#    http:
+#      content-encoding: gzip
+#    backoff:
+#      enabled: true
   consumers:
-    orders:
+    helloworld:
       topics:
-      - order.ORDER_RECEIVED
-      stream-parameters:
-        batch-limit: 5
-        max-uncommitted-events: 20
-      backoff:
-        enabled: false
+      - demo.hello-world
+#      stream-parameters:
+#        batch-limit: 5
+#        max-uncommitted-events: 20
+#      backoff:
+#        enabled: false

@@ -9,13 +9,12 @@ import org.springframework.boot.runApplication
 class NakadiDemoApplication: CommandLineRunner {
 
     @Autowired
-    lateinit var myListener: MyListener
+    lateinit var myListener: HelloworldNakadiListener
 
     override fun run(vararg args: String?) {
         println("Hello World")
-        myListener.doSomething();
+        var userInput = readln();
     }
-
 }
 
 fun main(args: Array<String>) {
