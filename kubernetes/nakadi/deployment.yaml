@@ -36,11 +36,11 @@ spec:
           path: /data/nakadi/postgres-data
           type: Directory
       containers:
-      - name: nakadi-ui
-        image: roskenet/nakadi-ui:2.0.0
-        env: 
-        - name: NAKADI_API_URL
-          value: http://localhost:8080
+#      - name: nakadi-ui
+#        image: roskenet/nakadi-ui:2.0.0
+#        env: 
+#        - name: NAKADI_API_URL
+#          value: http://localhost:8080
       - name: nakadi-postgres
         image: postgres:16
         env:
