@@ -7,15 +7,15 @@ import java.util.List;
 import java.util.Locale;
 
 @Component
-public class OrdersNakadiListener implements NakadiListener<Order> {
+public class HelloworldNakadiListener implements NakadiListener<HelloWorld> {
     @Override
-    public Class<Order> getEventType() {
-        return Order.class;
+    public Class<HelloWorld> getEventType() {
+        return HelloWorld.class;
     }
 
     @Override
-    public void accept(List<Order> events) {
-        for (Order o : events) {
+    public void accept(List<HelloWorld> events) {
+        for (HelloWorld o : events) {
             System.out.println(o.getName().toUpperCase(Locale.GERMAN));
         }
     }

@@ -22,9 +22,9 @@ fahrschein:
     backoff:
       enabled: true
   consumers:
-    helloworld:
+    orders:
       topics:
-      - demo.hello-world
+      - order.ORDER_RECEIVED
       stream-parameters:
         batch-limit: 5
         max-uncommitted-events: 20
