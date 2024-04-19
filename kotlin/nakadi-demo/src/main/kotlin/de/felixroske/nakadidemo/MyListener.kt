@@ -13,7 +13,7 @@ data class Order(val someString: String,
 class MyListener {
 
     @Autowired
-    @Qualifier("orders")
+    @Qualifier("helloworld")
     lateinit var nakadiClient: NakadiClient
 
     fun doSomething() {

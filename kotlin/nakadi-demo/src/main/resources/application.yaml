@@ -6,9 +6,9 @@ spring:
 
 fahrschein:
   defaults:
-    nakadi-url: http://localhost:9090
-    application-name: example-application
-    consumer-group: example-consumergroup
+    nakadi-url: http://nakadi.192-168-49-2.nip.io
+    application-name: nakadi-demo
+    consumer-group: nakadi-demo-application
     stream-parameters:
       batch-limit: 1000
       max-uncommitted-events: 5000
@@ -22,9 +22,9 @@ fahrschein:
     backoff:
       enabled: true
   consumers:
-    orders:
+    helloworld:
       topics:
-      - order.ORDER_RECEIVED
+      - demo.hello-world
       stream-parameters:
         batch-limit: 5
         max-uncommitted-events: 20
