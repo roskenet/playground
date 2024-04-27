@@ -15,5 +15,6 @@ target_compile_options(Blink PRIVATE
     "-Wextra"
     "-pedantic"
 )
+
 arduino_avr_hex(Blink)
 arduino_avr_upload(Blink ${ARDUINO_PORT})

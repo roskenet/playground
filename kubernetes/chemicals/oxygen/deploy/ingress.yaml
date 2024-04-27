@@ -4,7 +4,7 @@ metadata:
   name: oxygen
 spec:
   rules:
-    - host: "oxygen.192-168-39-53.nip.io"
+    - host: "oxygen.192-168-39-234.nip.io"
       http:
         paths:
           - pathType: Prefix
