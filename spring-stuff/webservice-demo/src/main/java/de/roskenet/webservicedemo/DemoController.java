@@ -42,7 +42,7 @@ public class DemoController {
 //           String sureName,
 //           String firstName,
 //           String nickName
-            DemoController.DemoParameters parameters
+            DemoParameters parameters
     ) {
        return "Hello " + parameters.getSure_name() + " " + parameters.getFirst_name() + " " + parameters.getNick_name();
     }
