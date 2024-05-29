@@ -15,7 +15,6 @@ spec:
       containers:
         - name: postgres
           image: postgres:16
-          imagePullPolicy: "IfNotPresent"
           ports:
             - containerPort: 5432
           envFrom:
@@ -27,5 +26,5 @@ spec:
       volumes:
         - name: postgres
           hostPath:
-            path: /data/postgres
+            path: /mnt/minikube/postgres
             type: Directory
