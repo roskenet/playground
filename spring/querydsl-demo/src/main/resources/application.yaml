@@ -1,0 +1,6 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/querydsl_demo
+    username: postgres
+    password: postgres

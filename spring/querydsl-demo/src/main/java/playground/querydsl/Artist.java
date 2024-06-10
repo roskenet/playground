@@ -1,13 +1,14 @@
 package playground.querydsl;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
 public class Artist {
 
+    @Id
     private UUID id;
     private String name;
     private LocalDate activeFrom;
@@ -37,14 +38,11 @@ public class Artist {
         this.activeTo = activeTo;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    @Id
     public UUID getId() {
         return id;
     }
 
-
+    public void setId(UUID id) {
+        this.id = id;
+    }
 }
