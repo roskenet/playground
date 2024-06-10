@@ -17,10 +17,9 @@ public class ArtistService {
     }
 
     public List<Artist> getFiltered() {
-        BooleanBuilder builder = new BooleanBuilder();
-
         QArtist qArtist = QArtist.artist;
 
+        BooleanBuilder builder = new BooleanBuilder();
         builder.and(qArtist.name.eq("Prince"));
 
         return StreamSupport
