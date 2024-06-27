@@ -61,6 +61,7 @@ WHERE id > 99000
 VACUUM t_test;
 SELECT pg_size_pretty(pg_relation_size('t_test'));
 
+/*
  Although only 2% of the data has been deleted,
  the size of the table has gone down by two-thirds.
  The reason for this is that if VACUUM only finds dead rows after
@@ -95,3 +96,4 @@ autovacuum_vacuum_insert_threshold = 1000
 
  Most of this... if not all... is stolen from:
    Schönig, Hans-Jürgen; Mastering PostgreSQL 15; Packt Publishing, 2023
+/*
