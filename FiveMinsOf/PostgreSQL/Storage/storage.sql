@@ -1,3 +1,7 @@
+-- Why is disk space consumption so oddly in PostgreSQL?
+-- When executing INSERTS or UPDATES it sometimes bloats the table...
+-- ...sometimes it doesn't...
+
 -- Insert Data:
 DROP TABLE t_test;
 CREATE TABLE t_test (id int) WITH (autovacuum_enabled = off);
@@ -41,7 +45,7 @@ VACUUM t_test;
 -- And again: the size hasn't changed:
 SELECT pg_size_pretty(pg_relation_size('t_test'));
 
--- We basically read the from disk backwards:
+-- We basically read the disk backwards:
 -- (BTW: The order is deterministic!)
 SELECT CTID, id from t_test ORDER BY CTID DESC;
 
@@ -67,3 +71,12 @@ SELECT pg_size_pretty(pg_relation_size('t_test'));
  Therefore, storage consumption will most likely
  stay somewhat the same unless all rows are deleted.
  */
+
+ /*
+PostgreSQL Docs:
+The FULL option is not recommended for routine use.
+...
+VACUUM FULL should not be used as a problem solver by default.
+...
+Rely on the autovacuum tool in Postgres! It knows what to do and when!
+*/
