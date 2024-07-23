@@ -102,7 +102,7 @@ spec:
         - mountPath: /etc/kafka/secrets
           name: kafka-secrets
       - name: nakadi
-        image: roskenet/nakadi:3.0.0
+        image: roskenet/nakadi:4.0.0
         env:
         - name: NAKADI_OAUTH2_MODE
           value: "OFF"
