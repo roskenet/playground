@@ -26,4 +26,4 @@ spec:
       volumes:
       - name: config
         configMap:
-          name: redis-config
+          name: redis
