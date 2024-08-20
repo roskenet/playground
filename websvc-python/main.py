@@ -1,11 +1,13 @@
-from flask import Flask
+from flask import Flask, request
 from hello_websvc import hello
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/post', methods=['POST'])
 def index():
+    body = request.get_json()
+
     return hello.hello_world('World')
 
 
