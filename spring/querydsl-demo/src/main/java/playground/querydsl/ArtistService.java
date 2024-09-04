@@ -19,12 +19,12 @@ public class ArtistService {
     public List<Artist> getFiltered() {
         QArtist qArtist = QArtist.artist;
 
-        BooleanBuilder builder = new BooleanBuilder();
-        builder.and(qArtist.name.eq("Prince"));
+        BooleanBuilder predicate = new BooleanBuilder();
+        predicate.and(qArtist.name.eq("Prince"));
 
         return StreamSupport
                 .stream(artistRepository
-                        .findAll(builder.getValue())
+                        .findAll(predicate.getValue())
                         .spliterator(), false)
                 .collect(Collectors.toList());
     }
