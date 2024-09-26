@@ -1,13 +1,17 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: oxygen
-  namespace: oxygen
+  namespace: chemicals
 spec:
   rules:
   - host: oxygen.minikube
     http:
       paths:
-        - backend:
-            serviceName: oxygen
-            servicePort: 80
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service: 
+            name: oxygen
+            port: 
+              name: api
