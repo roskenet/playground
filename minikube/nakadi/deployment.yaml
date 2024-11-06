@@ -36,11 +36,11 @@ spec:
 #          path: /mnt/minikube/mounts/nakadi/postgres-data
 #          type: Directory
       containers:
-#      - name: nakadi-ui
-#        image: roskenet/nakadi-ui:2.0.0
-#        env: 
-#        - name: NAKADI_API_URL
-#          value: http://localhost:8080
+      - name: nakadi-ui
+        image: roskenet/nakadi-ui:3.1.0
+        env: 
+        - name: NAKADI_API_URL
+          value: http://nakadi.192-168-49-2.nip.io
 #      - name: nakadi-postgres
 #        image: postgres:16
 #        env:
@@ -102,14 +102,14 @@ spec:
         - mountPath: /etc/kafka/secrets
           name: kafka-secrets
       - name: nakadi
-        image: roskenet/nakadi:4.0.0
+        image: roskenet/nakadi:5.0.0
         env:
         - name: NAKADI_OAUTH2_MODE
           value: "OFF"
         - name: NAKADI_ZOOKEEPER_CONNECTIONSTRING
           value: "zookeeper://localhost:2181"
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:postgresql://postgres.192-168-49-2.nip.io/nakadi
+          value: jdbc:postgresql://postgres/nakadi
         - name: SPRING_DATASOURCE_USERNAME
           value: nakadi
         - name: SPRING_DATASOURCE_PASSWORD

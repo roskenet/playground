@@ -14,13 +14,12 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: postgres:16.3
-          imagePullPolicy: "IfNotPresent"
+          image: postgres:16
           ports:
             - containerPort: 5432
           envFrom:
             - configMapRef:
-                name: postgres-config
+                name: postgres
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgres
