@@ -26,7 +26,7 @@ public class GanymedeService {
 
         String accessToken = authorizedClient.getAccessToken().getTokenValue();
 
-    WebClient webClient = WebClient.builder()
+        WebClient webClient = WebClient.builder()
                 .baseUrl("http://ganymede.minikube")
                 .defaultHeader("Authorization", "Bearer " + accessToken)
                 .build();
