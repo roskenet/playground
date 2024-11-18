@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: io
+  labels:
+    app: io
+spec:
+  selector:
+    app: io
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
