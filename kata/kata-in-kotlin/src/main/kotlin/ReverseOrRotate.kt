@@ -15,13 +15,16 @@ import kotlin.test.assertEquals
 
 fun revRot(nums: String, sz: Int): String {
 
+//        var s = "733049910872815764"
     var accu = ""
     nums.chunked(sz) {
-        if (it.toString().toInt() % 2 == 0) {
+        if (it.map { it.toInt() }.sum() % 2 == 0) {
             accu += it.reversed()
         }
-        else
-            accu = accu.plus(it.subSequence(0, it.length - 1)).plus(it.get(it.length - 1))
+        else {
+            accu = accu.plus(it.subSequence(0, it.length -1)) + it[it.length -1]
+        }
+//            accu = accu.plus(it.subSequence(0, it.length - 1)).plus(it.get(it.length - 1))
     }
 
     return accu
