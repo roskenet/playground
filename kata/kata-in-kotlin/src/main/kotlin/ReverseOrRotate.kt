@@ -1,4 +1,4 @@
-package revrot
+package kata.revrot
 
 import jdk.internal.joptsimple.internal.Strings
 import kotlin.test.Test
@@ -40,10 +40,9 @@ class revrotMainTest {
         println("Fixed Tests: revRot")
         var s = "733049910872815764"
         testing(revRot(s, 5), "330479108928157")
-//        s = "73304991087281576455176044327690580265896"
-//        testing(revRot(s, 8), "1994033775182780067155464327690480265895")
-//        s = "73304991087281576455176044327690580265896896028"
-//        testing(revRot(s, 8), "1994033775182780067155464327690480265895")
-
+        s = "73304991087281576455176044327690580265896"
+        testing(revRot(s, 8), "1994033775182780067155464327690480265895")
+        s = "73304991087281576455176044327690580265896896028"
+        testing(revRot(s, 8), "1994033775182780067155464327690480265895")
     }
 }
