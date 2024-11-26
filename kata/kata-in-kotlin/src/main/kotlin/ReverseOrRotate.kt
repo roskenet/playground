@@ -1,6 +1,5 @@
 package revrot
 
-import jdk.internal.joptsimple.internal.Strings
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -14,19 +13,20 @@ import kotlin.test.assertEquals
 // Put together these modified chunks and return the result as a string.
 
 fun revRot(nums: String, sz: Int): String {
-
-//        var s = "733049910872815764"
     var accu = ""
     nums.chunked(sz) {
-        if (it.map { it.toInt() }.sum() % 2 == 0) {
-            accu += it.reversed()
+        if (it.length == sz) {
+            var sum = 0
+            for (c in it) {
+                sum = sum + Character.getNumericValue(c)
+            }
+            if (sum % 2 == 0) {
+                accu += it.reversed()
+            } else {
+                accu = accu + it.subSequence(1, it.length) + it[0]
+            }
         }
-        else {
-            accu = accu.plus(it.subSequence(0, it.length -1)) + it[it.length -1]
-        }
-//            accu = accu.plus(it.subSequence(0, it.length - 1)).plus(it.get(it.length - 1))
     }
-
     return accu
 }
 
@@ -40,10 +40,10 @@ class revrotMainTest {
         println("Fixed Tests: revRot")
         var s = "733049910872815764"
         testing(revRot(s, 5), "330479108928157")
-//        s = "73304991087281576455176044327690580265896"
-//        testing(revRot(s, 8), "1994033775182780067155464327690480265895")
-//        s = "73304991087281576455176044327690580265896896028"
-//        testing(revRot(s, 8), "1994033775182780067155464327690480265895")
+        s = "73304991087281576455176044327690580265896"
+        testing(revRot(s, 8), "1994033775182780067155464327690480265895")
+        s = "73304991087281576455176044327690580265896896028"
+        testing(revRot(s, 8), "1994033775182780067155464327690480265895")
 
     }
 }
