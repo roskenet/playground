@@ -4,6 +4,8 @@ metadata:
   name: io
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+  labels:
+    app: io
 spec:
   rules:
     - host: io.minikube
