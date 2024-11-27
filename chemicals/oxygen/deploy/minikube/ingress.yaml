@@ -1,20 +1,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: excalidraw
+  name: oxygen
   labels:
-    app: excalidraw
+    app: oxygen
   annotations:
+    maintainer: "felix@roskenet.de"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: excalidraw.minikube
+    - host: oxygen.minikube
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: excalidraw
+                name: oxygen
                 port:
-                  number: 80
+                  name: http
