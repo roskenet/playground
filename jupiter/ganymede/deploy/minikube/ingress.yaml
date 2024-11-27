@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: ganymede
   annotations:
+    maintainer: "felix@felix-roske.de"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:

@@ -714,7 +714,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "secret": "**********",
+      "secret": "ganymede-secret",
       "redirectUris": [
         "http://ganymede.minikube/*"
       ],
@@ -817,7 +817,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "secret": "**********",
+      "secret": "io-secret",
       "redirectUris": [
         "/*"
       ],
