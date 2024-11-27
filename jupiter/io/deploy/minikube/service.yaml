@@ -4,6 +4,8 @@ metadata:
   name: io
   labels:
     app: io
+  annotations:
+    maintainer: "felix@felix-roske.de"
 spec:
   selector:
     app: io

@@ -4,6 +4,8 @@ metadata:
   name: ganymede
   labels:
     app: ganymede
+  annotations:
+    maintainer: "felix@felix-roske.de"
 spec:
   selector:
     app: ganymede
