@@ -1,8 +1,3 @@
 spring:
   application:
     name: oxygen
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://keycloak.minikube/realms/chemicals
