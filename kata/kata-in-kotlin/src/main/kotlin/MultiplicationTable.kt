@@ -6,9 +6,10 @@ import kotlin.test.assertTrue
 // https://www.codewars.com/kata/534d2f5b5371ecf8d2000a08/train/kotlin
 
 object KataSolution {
-    fun multiplicationTable(size: Int): Array<IntArray> {
-        TODO()
-    }
+    fun multiplicationTable(size: Int): Array<IntArray> =
+        Array(size) {
+            i -> IntArray(size) { j -> (j+1) * (i+1) }
+        }
 }
 
 class ExampleTests {

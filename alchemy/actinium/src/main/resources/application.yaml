@@ -8,3 +8,6 @@ spring:
           issuer-uri: http://keycloak.minikube/realms/alchemy
   jackson:
     property-naming-strategy: SNAKE_CASE
+
+scope:
+  read: SCOPE_profile
