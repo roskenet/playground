@@ -4,8 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 fun disemvowel(str: String): String {
-    str.map { it.toLowerCase() }
-//    return "";
+    return str.filterNot { it in "aeiouAEIOU" }
 }
 
 class Tests {
