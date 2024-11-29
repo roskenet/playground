@@ -8,7 +8,7 @@
         <version>3.3.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>flx.chemicals</groupId>
+    <groupId>alchemy</groupId>
     <artifactId>oxygen</artifactId>
     <version>0.0.0</version>
     <name>oxygen</name>

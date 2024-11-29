@@ -1,20 +1,22 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: excalidraw
+  name: actinium
   labels:
-    app: excalidraw
+    project: alchemy
+    app: actinium
   annotations:
+    maintainer: "felix@roskenet.de"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: excalidraw.minikube
+    - host: actinium.minikube
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: excalidraw
+                name: actinium
                 port:
-                  number: 80
+                  name: http
