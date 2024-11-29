@@ -1,5 +1,7 @@
 # Chemicals
 
+The chemicals playground provides a set of standard microservices.
+
 ## Oxygen 
 Kotlin SpringBoot REST
 
