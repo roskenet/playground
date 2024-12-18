@@ -5,7 +5,7 @@ fun main() {
 }
 
 fun rangePlayground() {
-    for(i in 1..100 step 2) {
+    for(i in 100 downTo 1 step 2) {
         println(i)
     }
 }
