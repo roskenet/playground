@@ -1,9 +1,15 @@
 package de.felixroske
 
+
+fun doSomethingWithCities(index: Int, city: String): String {
+   return "$index: $city"
+}
+
 fun main() {
 
-    val cities = mutableListOf("Paris", "Berlin", "Brussels", "Vienna", "Berlin")
+    val citySet = setOf("Berlin", "Hamburg", "Berlin", "Stuttgart")
+        .sorted()
+        .mapIndexed(::doSomethingWithCities)
 
-    val mapIndexed = cities.toSet().sorted().mapIndexed { i, s -> println("$i: $s") }
-
+    println(citySet)
 }
