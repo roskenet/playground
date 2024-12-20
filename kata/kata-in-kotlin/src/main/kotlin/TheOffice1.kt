@@ -6,8 +6,7 @@ import kotlin.test.assertEquals
 // https://www.codewars.com/kata/57ecf6efc7fe13eb070000e1/train/kotlin
 
 fun outed(meet: Map<String, Int>, boss: String): String {
-
-    return ""
+    return if (((meet.values.sum() + meet.getOrDefault(boss, 0)) / meet.size) <= 5) "Get Out Now!" else "Nice Work Champ!"
 }
 
 class TestExample {

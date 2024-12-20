@@ -1,15 +1,25 @@
-package de.felixroske
+package de.felixroske.coroutinestudy
 
 import kotlinx.coroutines.*
+import kotlin.system.measureTimeMillis
 
-suspend fun main() {
-    myFirstCoroutine()
+fun main() = runBlocking {
+    val measureTimeMillis = measureTimeMillis {
+        val name = async { getName() }
+        val doSomething = async { doSomething() }
+        println("Hallo ${name.await()} in the repo ${doSomething.await()}")
+    }
+
+    println("Programm finished in $measureTimeMillis ms")
 }
 
-suspend fun myFirstCoroutine() = coroutineScope {
-    launch {
-       delay(1000)
-       println("Kotlin Coroutines World!")
-    }
-    println("Hello")
+suspend fun getName(): String {
+    delay(1000L)
+    return "Felix"
+
+}
+
+suspend fun doSomething(): String {
+    delay(1000L)
+    return "Playground"
 }
