@@ -1,7 +1,7 @@
 package main
 
-import eachcons "kata-in-go/eachcons"
+import "kata-in-go/nondecompprimes"
 
 func main() {
-	eachcons.RunEachConsTest()
+	nondecompprimes.Dotest()
 }
