@@ -15,9 +15,9 @@ func RunEachConsTest() {
 
 func EachCons(arr []int, n int) [][]int {
 
-	for k, v := range arr {
-		a1 := make([]int, n)
-	}
+	//for k, v := range arr {
+	//	a1 := make([]int, n)
+	//}
 
 	return [][]int{}
 }
