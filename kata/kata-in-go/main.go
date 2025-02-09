@@ -1,7 +1,7 @@
 package main
 
-import "kata-in-go/nondecompprimes"
+import "kata-in-go/gradebook"
 
 func main() {
-	nondecompprimes.Dotest()
+	gradebook.TestGetGrade()
 }
