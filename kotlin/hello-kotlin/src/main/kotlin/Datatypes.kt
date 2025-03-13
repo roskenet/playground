@@ -11,4 +11,6 @@ fun main() {
     val myChar: Char = '4'
     val myString: String = "The answer to the ultimate question of Life, the Universe and Everything is 42"
     val myBoolean: Boolean = true
+
+    println("Hello World")
 }
