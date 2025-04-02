@@ -2,11 +2,14 @@ package main
 
 import (
 	"fmt"
+	"learn-go/ifacedemo"
 )
 
 func main() {
 	s := "gopher"
 	fmt.Println("Hello and welcome, %s!", s)
+
+	ifacedemo.Show()
 
 	playWithSlices()
 }
