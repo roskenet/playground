@@ -1,6 +1,26 @@
-# Nakadi subscriptions
+# Nakadi Playground
 
-## Create one
+## Run docker image
+
+docker run --name nakadi --rm -d -p 9191:8080 roskenet/scnakadi:0.0.12
+
+## Create event-type
+
+```sh
+
+curl -v -XPOST "http://localhost:9191/event-types" -H "Content-type: application/json" -d '{
+  "name": "music.artist",
+  "owning_application": "order-service",
+  "category": "undefined",
+  "partition_strategy": "random",
+  "schema": {
+    "type": "json_schema",
+    "schema": "{ \"properties\": { \"name\": { \"type\": \"string\" } } }"
+  }
+}'  
+```
+
+## Create subscription
 
 ```sh
 curl -v -XPOST "http:///nakadi.minikube/subscriptions" -H "Content-type: application/json" -d '{
