@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+nakadi:
+  oauth2:
+    mode: OFF
+
+db:
+  host: localhost
+  port: 5432
+  name: nakadi
+  user: nakadi
+  password: nakadi
+
+zookeeper:
+  connection-string: localhost:2181
+
+kafka:
+  brokers: localhost:9092
+
