@@ -27,8 +27,9 @@ RUN wget https://downloads.apache.org/kafka/${KAFKA_VERSION}/kafka_${SCALA_VERSI
     rm kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz
 
 # Add Nakadi JAR and config
-COPY nakadi.jar /opt/nakadi.jar
+COPY nakadi/app/build/libs/app.jar /opt/nakadi.jar
 COPY application.yml /opt/application.yml
+COPY nakadi/database/nakadi /tmp/database
 
 # Add start scripts
 COPY scripts/start.sh /opt/start.sh
