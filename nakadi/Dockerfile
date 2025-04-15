@@ -2,7 +2,7 @@
 # 1. STAGE: Build Container
 #############################
 
-FROM ubuntu:24.04 as builder
+FROM ubuntu:24.04 AS builder
 
 ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /opt
@@ -68,8 +68,6 @@ COPY --from=builder /etc/supervisor/conf.d/supervisord.conf /etc/supervisor/conf
 
 RUN chmod +x /opt/start.sh /opt/init-db.sh
 RUN mkdir -p /var/log/supervisor
-
-EXPOSE 5432 2181 9092 8080
 
 CMD ["/opt/start.sh"]
 
