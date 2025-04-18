@@ -20,8 +20,7 @@ public class QuerydslApplication implements CommandLineRunner {
         System.out.println("Hello World!");
 
         ArtistService.SearchParams params =
-                new ArtistService.SearchParams();
-        params.name = "Prince";
+                new ArtistService.SearchParams("Prince");
 
         artistService.getFiltered(params).stream()
                 .map(Artist::getName)

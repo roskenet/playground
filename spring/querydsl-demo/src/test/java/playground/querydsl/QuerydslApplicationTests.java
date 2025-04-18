@@ -16,8 +16,7 @@ class QuerydslApplicationTests {
 
     @Test
     void searchForPrince() {
-        var searchParams = new ArtistService.SearchParams();
-        searchParams.name = "Prince";
+        var searchParams = new ArtistService.SearchParams("Prince");
 
         var filteredArtists = artistService
                 .getFiltered(searchParams).stream()

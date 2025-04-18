@@ -10,9 +10,7 @@ import java.util.stream.StreamSupport;
 @Service
 public class ArtistService {
 
-    public static class SearchParams {
-        public String name;
-    }
+    public record SearchParams(String name) {}
 
     private final ArtistRepository artistRepository;
 
