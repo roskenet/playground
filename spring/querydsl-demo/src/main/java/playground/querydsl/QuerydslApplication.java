@@ -19,7 +19,13 @@ public class QuerydslApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         System.out.println("Hello World!");
 
-        artistService.getFiltered().stream().map(Artist::getName).forEach(System.out::println);
+        ArtistService.SearchParams params =
+                new ArtistService.SearchParams();
+        params.name = "Prince";
+
+        artistService.getFiltered(params).stream()
+                .map(Artist::getName)
+                .forEach(System.out::println);
 
     }
 }
