@@ -22,7 +22,9 @@ public class ArtistService {
         QArtist qArtist = QArtist.artist;
 
         BooleanBuilder predicate = new BooleanBuilder();
-        predicate.and(qArtist.name.eq(params.name));
+        if (params.name != null) {
+            predicate.and(qArtist.name.eq(params.name));
+        }
 
         return StreamSupport
                 .stream(artistRepository
